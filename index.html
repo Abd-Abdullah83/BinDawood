@@ -189,9 +189,11 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
 .fb-bar::-webkit-scrollbar{display:none}
 .fb{padding:.85rem 1.8rem;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:var(--t);white-space:nowrap;border-right:1px solid var(--border);font-family:var(--fb)}
 .fb:hover,.fb.ac{background:var(--gold);color:var(--black)}
-.pg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.pc{background:var(--card);overflow:hidden;position:relative}
+.pg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;align-items:start}
+.pc{max-width:100%;width:100%}
+  .pc{background:var(--card);overflow:hidden;position:relative}
 .pi{position:relative;height:400px;overflow:hidden}
+.pg-grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
 .pib{position:absolute;inset:0;transition:transform .6s ease;background-size:cover;background-position:center}
 .pc:hover .pib{transform:scale(1.05)}
 .pbg{position:absolute;top:1rem;right:1rem;background:var(--gold);color:var(--black);font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;padding:.32rem .75rem;font-weight:500;z-index:1}
