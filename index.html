@@ -216,8 +216,7 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
    TAILORING PAGE
    ============================ */
 .tl-wrap{position:relative;max-width:860px;margin:4rem auto 0}
-.tl-line{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border);transform:translateX(-50%)}
-.tl-step{display:grid;grid-template-columns:1fr auto 1fr;gap:3rem;align-items:center;margin-bottom:4.5rem}
+.tl-wrap::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border);transform:translateX(-50%)}.tl-step{display:grid;grid-template-columns:1fr auto 1fr;gap:3rem;align-items:center;margin-bottom:4.5rem}
 .tl-step:last-child{margin-bottom:0}
 .tl-step:nth-child(odd) .ts-c{text-align:right;grid-column:1}
 .tl-step:nth-child(odd) .ts-e{grid-column:3}
@@ -227,7 +226,7 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
 .ts-m{width:56px;height:56px;border:1px solid var(--gold);background:var(--black);display:flex;align-items:center;justify-content:center;transform:rotate(45deg);flex-shrink:0;position:relative;z-index:1}
 .ts-mi{transform:rotate(-45deg);font-family:var(--fd);font-size:1.1rem;color:var(--gold)}
 .ts-t{font-family:var(--fd);font-size:1.5rem;color:var(--ivory);margin-bottom:.6rem}
-.ts-d{font-size:.8rem;color:var(--muted);line-height:1.85}
+.tl-d{font-size:.8rem;color:var(--muted);line-height:1.85}
 
 /* ============================
    ABOUT PAGE
@@ -341,7 +340,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   .gi:nth-child(2){height:300px}
   .pg-grid{grid-template-columns:1fr}
   .ts-it{padding:0 1.2rem}
-  .tl-line{display:none}
+  .tl-wrap::before{display:none}
   .tl-step{grid-template-columns:auto 1fr;gap:1.4rem}
   .tl-step:nth-child(odd) .ts-c{text-align:left;grid-column:2}
   .tl-step:nth-child(even) .ts-c{text-align:left;grid-column:2;grid-row:auto}
@@ -864,12 +863,12 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   <section class="sec sec-dg">
     <div class="con">
       <div class="tl-wrap">
-        <div class="tl-line"></div>
+       
         <div class="tl-step rv">
           <div class="ts-c">
             <p class="eyebrow" style="margin-bottom:.6rem">Step One</p>
             <p class="ts-t">Choose Your Design</p>
-            <p class="ts-d">Browse our signature lookbook and sample collection. Our consultants understand your event, your personality, and the aesthetic you're aiming for — then guide you to the designs that will make you feel extraordinary.</p>
+            <p class="tl-d">Browse our signature lookbook and sample collection. Our consultants understand your event, your personality, and the aesthetic you're aiming for — then guide you to the designs that will make you feel extraordinary.</p>
           </div>
           <div class="ts-m"><span class="ts-mi">I</span></div>
           <div class="ts-e"></div>
@@ -880,14 +879,14 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           <div class="ts-c">
             <p class="eyebrow" style="margin-bottom:.6rem">Step Two</p>
             <p class="ts-t">Select Your Fabric</p>
-            <p class="ts-d">Choose from our curated library of imported and local fabrics — Banarasi silk brocades, Italian velvet, premium organza, and more. We'll help you match fabric weight and colour to your occasion and season.</p>
+            <p class="tl-d">Choose from our curated library of imported and local fabrics — Banarasi silk brocades, Italian velvet, premium organza, and more. We'll help you match fabric weight and colour to your occasion and season.</p>
           </div>
         </div>
         <div class="tl-step rv">
           <div class="ts-c">
             <p class="eyebrow" style="margin-bottom:.6rem">Step Three</p>
             <p class="ts-t">Precision Measurements</p>
-            <p class="ts-d">Our master tailor takes over 22 measurements to map your body perfectly. For overseas clients, we provide a detailed self-measurement guide with video support — ensuring a precise fit from afar.</p>
+            <p class="tl-d">Our master tailor takes over 22 measurements to map your body perfectly. For overseas clients, we provide a detailed self-measurement guide with video support — ensuring a precise fit from afar.</p>
           </div>
           <div class="ts-m"><span class="ts-mi">III</span></div>
           <div class="ts-e"></div>
@@ -898,14 +897,14 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           <div class="ts-c">
             <p class="eyebrow" style="margin-bottom:.6rem">Step Four</p>
             <p class="ts-t">Fitting Sessions</p>
-            <p class="ts-d">We schedule one to three fittings depending on complexity. Each session is an opportunity to refine the silhouette, adjust embroidery placement, and perfect every detail until it is immaculate.</p>
+            <p class="tl-d">We schedule one to three fittings depending on complexity. Each session is an opportunity to refine the silhouette, adjust embroidery placement, and perfect every detail until it is immaculate.</p>
           </div>
         </div>
         <div class="tl-step rv">
           <div class="ts-c">
             <p class="eyebrow" style="margin-bottom:.6rem">Step Five</p>
             <p class="ts-t">Final Delivery</p>
-            <p class="ts-d">Your completed ensemble is steam-pressed, inspected, and presented in our signature packaging. Delivery to your door, or collected in our boutique — your wedding wardrobe, complete and perfect.</p>
+            <p class="tl-d">Your completed ensemble is steam-pressed, inspected, and presented in our signature packaging. Delivery to your door, or collected in our boutique — your wedding wardrobe, complete and perfect.</p>
           </div>
           <div class="ts-m"><span class="ts-mi">V</span></div>
           <div class="ts-e"></div>
