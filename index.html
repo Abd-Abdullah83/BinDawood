@@ -111,6 +111,7 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
 
 /* SECTION */
 .sec{padding:90px 0}
+@media(max-width:768px){.sec{padding:55px 0}}
 .sec-dg{background:var(--dark)}
 .sec-gd{background:var(--green-d);position:relative;overflow:hidden}
 .sec-iv{background:var(--ivory);color:var(--black)}
@@ -329,6 +330,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   .ft-g{grid-template-columns:1fr 1fr;gap:2.5rem}
   .ab-g{grid-template-columns:1fr;gap:3rem}
   .ct-g{grid-template-columns:1fr}
+  @media(max-width:480px){.ct-g{gap:1.5rem}.ct-ib{padding:1.5rem 1rem}}
 }
 @media(max-width:768px){
   :root{--nh:68px}
@@ -350,7 +352,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   .ts-e{display:none!important}
   .ts-m{grid-column:1!important}
   .f-row{grid-template-columns:1fr}
-  .f-wrap{padding:2rem 1.5rem}
+.f-wrap{padding:1.5rem 1rem}
   .ft-g{grid-template-columns:1fr}
   .ft-lo{font-size:1.2rem}
 .ft-ds{max-width:100%}
@@ -1404,7 +1406,7 @@ initReveal();
 // ---- PRODUCT FILTER ----
 function filterProd(cat,btn){
   document.querySelectorAll('.pc').forEach(function(c){
-    c.style.display=(cat==='all'||c.getAttribute('data-cat')===cat)?'block':'none';
+c.style.display=(cat==='all'||c.getAttribute('data-cat')===cat)?'':'none';
   });
   if(btn){
     document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('ac')});
