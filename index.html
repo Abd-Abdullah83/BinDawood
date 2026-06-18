@@ -1,999 +1,1984 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BinDawood Dulha House — Sialkot</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --black:#0c0a09;
-  --ink:#1b1512;
-  --ivory:#f6f1e6;
-  --ivory-dim:#ece4d2;
-  --gold:#c9a25c;
-  --gold-bright:#e7c87e;
-  --maroon:#5a1320;
-  --maroon-deep:#3c0d16;
-  --emerald:#0f4c3a;
-  --line:rgba(201,162,92,0.35);
-  --shadow:0 18px 50px rgba(0,0,0,0.35);
-  --radius:2px;
-  --display:'Cormorant Garamond', serif;
-  --label:'Jost', sans-serif;
-  --body:'Inter', sans-serif;
-}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto;}
-  *{animation:none !important; transition:none !important;}
-}
-body{
-  margin:0;
-  background:var(--ivory);
-  color:var(--ink);
-  font-family:var(--body);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit;text-decoration:none;}
-img,svg{display:block;max-width:100%;}
-:focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px;}
-.eyebrow{
-  font-family:var(--label);
-  text-transform:uppercase;
-  letter-spacing:0.22em;
-  font-size:0.72rem;
-  color:var(--gold);
-}
-.eyebrow--light{color:var(--gold-bright);}
-h1,h2,h3{font-family:var(--display); font-weight:500; margin:0 0 .4em;}
-h1{font-size:clamp(2.6rem,6vw,5rem); line-height:1.05;}
-h2{font-size:clamp(1.9rem,3.6vw,2.8rem); line-height:1.1;}
-h3{font-size:1.4rem;}
-p{margin:0 0 1em;}
-.section{padding:96px 24px; max-width:1200px; margin:0 auto;}
-.section--dark{background:var(--black); color:var(--ivory-dim); max-width:none; padding:96px 0;}
-.section--dark .inner{max-width:1200px; margin:0 auto; padding:0 24px;}
-.btn{
-  font-family:var(--label);
-  text-transform:uppercase;
-  letter-spacing:0.14em;
-  font-size:0.78rem;
-  padding:14px 30px;
-  border-radius:var(--radius);
-  border:1px solid var(--gold);
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  transition:background .25s ease, color .25s ease, transform .25s ease;
-  background:transparent;
-}
-.btn:hover{transform:translateY(-2px);}
-.btn--filled{background:var(--gold); color:var(--black); border-color:var(--gold);}
-.btn--filled:hover{background:var(--gold-bright);}
-.btn--ghost-light{color:var(--ivory); border-color:rgba(246,241,230,0.5);}
-.btn--ghost-light:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
-.btn--ghost-dark{color:var(--ink); border-color:var(--ink);}
-.btn--ghost-dark:hover{border-color:var(--maroon); color:var(--maroon);}
-.btn--sm{padding:9px 18px; font-size:0.68rem;}
-.icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.4;}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinDawood Dulha House — Sialkot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        /* ── same variables & base styles as before ── */
+        :root {
+            --black: #0c0a09;
+            --ink: #1b1512;
+            --ivory: #f6f1e6;
+            --ivory-dim: #ece4d2;
+            --gold: #c9a25c;
+            --gold-bright: #e7c87e;
+            --maroon: #5a1320;
+            --maroon-deep: #3c0d16;
+            --emerald: #0f4c3a;
+            --line: rgba(201, 162, 92, 0.35);
+            --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+            --radius: 2px;
+            --display: 'Cormorant Garamond', serif;
+            --label: 'Jost', sans-serif;
+            --body: 'Inter', sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+        body {
+            margin: 0;
+            background: var(--ivory);
+            color: var(--ink);
+            font-family: var(--body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+        :focus-visible {
+            outline: 2px solid var(--gold-bright);
+            outline-offset: 3px;
+        }
+        .eyebrow {
+            font-family: var(--label);
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-size: 0.72rem;
+            color: var(--gold);
+        }
+        .eyebrow--light {
+            color: var(--gold-bright);
+        }
+        h1,
+        h2,
+        h3 {
+            font-family: var(--display);
+            font-weight: 500;
+            margin: 0 0 .4em;
+        }
+        h1 {
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            line-height: 1.05;
+        }
+        h2 {
+            font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+            line-height: 1.1;
+        }
+        h3 {
+            font-size: 1.4rem;
+        }
+        p {
+            margin: 0 0 1em;
+        }
+        .section {
+            padding: 96px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section--dark {
+            background: var(--black);
+            color: var(--ivory-dim);
+            max-width: none;
+            padding: 96px 0;
+        }
+        .section--dark .inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .btn {
+            font-family: var(--label);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 0.78rem;
+            padding: 14px 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background .25s ease, color .25s ease, transform .25s ease;
+            background: transparent;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn--filled {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+        .btn--filled:hover {
+            background: var(--gold-bright);
+        }
+        .btn--ghost-light {
+            color: var(--ivory);
+            border-color: rgba(246, 241, 230, 0.5);
+        }
+        .btn--ghost-light:hover {
+            border-color: var(--gold-bright);
+            color: var(--gold-bright);
+        }
+        .btn--ghost-dark {
+            color: var(--ink);
+            border-color: var(--ink);
+        }
+        .btn--ghost-dark:hover {
+            border-color: var(--maroon);
+            color: var(--maroon);
+        }
+        .btn--sm {
+            padding: 9px 18px;
+            font-size: 0.68rem;
+        }
+        .icon {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.4;
+        }
 
-/* ---- stitch divider, the brand's signature motif ---- */
-.stitch{
-  display:flex; align-items:center; gap:10px;
-  width:100%; max-width:340px; margin:28px 0;
-  color:var(--gold);
-}
-.stitch svg{flex:1; height:14px; width:100%; stroke:currentColor; fill:none; stroke-width:1.4; stroke-dasharray:6 8;}
-.stitch--center{margin-left:auto;margin-right:auto;}
+        /* ── stitch divider ── */
+        .stitch {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 340px;
+            margin: 28px 0;
+            color: var(--gold);
+        }
+        .stitch svg {
+            flex: 1;
+            height: 14px;
+            width: 100%;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.4;
+            stroke-dasharray: 6 8;
+        }
+        .stitch--center {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-/* ---- nav ---- */
-.nav{
-  position:fixed; top:0; left:0; right:0; z-index:60;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:18px 28px;
-  background:rgba(12,10,9,0.0);
-  transition:background .35s ease, padding .35s ease;
-}
-.nav.scrolled{background:rgba(12,10,9,0.92); padding:12px 28px; backdrop-filter:blur(6px); box-shadow:0 6px 24px rgba(0,0,0,0.3);}
-.brand{display:flex; align-items:center; gap:10px; color:var(--ivory);}
-.brand-mark{width:38px;height:38px;border:1px solid var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-size:1.1rem; color:var(--gold);}
-.brand-text{display:flex; flex-direction:column; line-height:1.05;}
-.brand-text strong{font-family:var(--display); font-size:1.05rem; letter-spacing:.02em;}
-.brand-text span{font-family:var(--label); font-size:0.6rem; letter-spacing:.2em; color:var(--gold); text-transform:uppercase;}
-.nav-links{display:flex; gap:26px; align-items:center;}
-.nav-links a{font-family:var(--label); font-size:0.74rem; text-transform:uppercase; letter-spacing:.14em; color:var(--ivory-dim); padding:6px 0; border-bottom:1px solid transparent;}
-.nav-links a:hover{color:var(--gold-bright); border-color:var(--gold-bright);}
-.nav-cta{display:flex; align-items:center; gap:14px;}
-.nav-burger{display:none; background:none; border:none; color:var(--ivory); cursor:pointer;}
-@media (max-width:900px){
-  .nav-links{position:fixed; top:0; right:0; height:100vh; width:78%; max-width:320px; background:var(--black); flex-direction:column; justify-content:center; align-items:flex-start; padding:40px; gap:22px; transform:translateX(100%); transition:transform .35s ease;}
-  .nav-links.open{transform:translateX(0);}
-  .nav-burger{display:block;}
-  .nav-cta .btn span.cta-label{display:none;}
-}
+        /* ── nav ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 60;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 28px;
+            background: rgba(12, 10, 9, 0.0);
+            transition: background .35s ease, padding .35s ease;
+        }
+        .nav.scrolled {
+            background: rgba(12, 10, 9, 0.92);
+            padding: 12px 28px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--ivory);
+        }
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--display);
+            font-size: 1.1rem;
+            color: var(--gold);
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.05;
+        }
+        .brand-text strong {
+            font-family: var(--display);
+            font-size: 1.05rem;
+            letter-spacing: .02em;
+        }
+        .brand-text span {
+            font-family: var(--label);
+            font-size: 0.6rem;
+            letter-spacing: .2em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+        .nav-links a {
+            font-family: var(--label);
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            color: var(--ivory-dim);
+            padding: 6px 0;
+            border-bottom: 1px solid transparent;
+        }
+        .nav-links a:hover {
+            color: var(--gold-bright);
+            border-color: var(--gold-bright);
+        }
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .nav-burger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--ivory);
+            cursor: pointer;
+        }
+        @media (max-width: 900px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 78%;
+                max-width: 320px;
+                background: var(--black);
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 40px;
+                gap: 22px;
+                transform: translateX(100%);
+                transition: transform .35s ease;
+            }
+            .nav-links.open {
+                transform: translateX(0);
+            }
+            .nav-burger {
+                display: block;
+            }
+            .nav-cta .btn span.cta-label {
+                display: none;
+            }
+        }
 
-/* ---- hero ---- */
-.hero{
-  position:relative; min-height:100vh; display:flex; align-items:center;
-  background:var(--black); color:var(--ivory); overflow:hidden;
-}
-.hero-pattern{position:absolute; inset:0; opacity:0.16; pointer-events:none;}
-.hero-veil{position:absolute; inset:0; background:radial-gradient(circle at 30% 20%, rgba(90,19,32,0.35), transparent 55%), linear-gradient(180deg, rgba(12,10,9,0.2), rgba(12,10,9,0.95));}
-.hero-inner{position:relative; z-index:2; max-width:760px; padding:140px 28px 80px;}
-.hero h1{margin-bottom:18px;}
-.hero h1 em{font-style:italic; color:var(--gold-bright);}
-.hero p.lede{font-family:var(--body); font-size:1.08rem; color:var(--ivory-dim); max-width:520px;}
-.hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-top:30px;}
+        /* ── hero ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--black);
+            color: var(--ivory);
+            overflow: hidden;
+        }
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.16;
+            pointer-events: none;
+        }
+        .hero-veil {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(90, 19, 32, 0.35), transparent 55%), linear-gradient(180deg, rgba(12, 10, 9, 0.2), rgba(12, 10, 9, 0.95));
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            padding: 140px 28px 80px;
+        }
+        .hero h1 {
+            margin-bottom: 18px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold-bright);
+        }
+        .hero p.lede {
+            font-family: var(--body);
+            font-size: 1.08rem;
+            color: var(--ivory-dim);
+            max-width: 520px;
+        }
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
 
-/* ---- featured categories rail ---- */
-.rail-wrap{margin-top:80px;}
-.rail{display:flex; gap:18px; overflow-x:auto; padding-bottom:14px; scroll-snap-type:x proximity;}
-.rail::-webkit-scrollbar{height:6px;}
-.rail::-webkit-scrollbar-thumb{background:var(--gold); border-radius:4px;}
-.rail-card{
-  scroll-snap-align:start; flex:0 0 200px; min-height:230px;
-  border:1px solid var(--line); border-radius:var(--radius);
-  background:linear-gradient(160deg, rgba(201,162,92,0.08), transparent);
-  padding:20px; display:flex; flex-direction:column; justify-content:space-between;
-  cursor:pointer; transition:border-color .25s ease, transform .25s ease;
-}
-.rail-card:hover{border-color:var(--gold); transform:translateY(-4px);}
-.rail-card .icon{width:30px;height:30px; color:var(--gold);}
-.rail-card h3{color:var(--ivory); font-size:1.15rem; margin-top:14px;}
-.rail-card span{font-family:var(--label); font-size:0.65rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-bright);}
+        /* ── featured categories rail ── */
+        .rail-wrap {
+            margin-top: 80px;
+        }
+        .rail {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            padding-bottom: 14px;
+            scroll-snap-type: x proximity;
+        }
+        .rail::-webkit-scrollbar {
+            height: 6px;
+        }
+        .rail::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 4px;
+        }
+        .rail-card {
+            scroll-snap-align: start;
+            flex: 0 0 200px;
+            min-height: 230px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: linear-gradient(160deg, rgba(201, 162, 92, 0.08), transparent);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: border-color .25s ease, transform .25s ease;
+        }
+        .rail-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+        .rail-card .icon {
+            width: 30px;
+            height: 30px;
+            color: var(--gold);
+        }
+        .rail-card h3 {
+            color: var(--ivory);
+            font-size: 1.15rem;
+            margin-top: 14px;
+        }
+        .rail-card span {
+            font-family: var(--label);
+            font-size: 0.65rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--gold-bright);
+        }
 
-/* ---- brand values ---- */
-.values-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:40px;}
-.value-item{padding:28px 18px; border-right:1px solid var(--line); text-align:left;}
-.value-item:last-child{border-right:none;}
-.value-item .icon{color:var(--gold); margin-bottom:14px;}
-.value-item h3{font-size:1.05rem; color:var(--ivory);}
-.value-item p{font-size:0.86rem; color:var(--ivory-dim); margin:0;}
-@media (max-width:900px){
-  .values-grid{grid-template-columns:repeat(2,1fr);}
-  .value-item{border-right:1px solid var(--line); border-bottom:1px solid var(--line);}
-}
+        /* ── brand values ── */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            margin-top: 40px;
+        }
+        .value-item {
+            padding: 28px 18px;
+            border-right: 1px solid var(--line);
+            text-align: left;
+        }
+        .value-item:last-child {
+            border-right: none;
+        }
+        .value-item .icon {
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .value-item h3 {
+            font-size: 1.05rem;
+            color: var(--ivory);
+        }
+        .value-item p {
+            font-size: 0.86rem;
+            color: var(--ivory-dim);
+            margin: 0;
+        }
+        @media (max-width: 900px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .value-item {
+                border-right: 1px solid var(--line);
+                border-bottom: 1px solid var(--line);
+            }
+        }
 
-/* ---- section headers (light bg) ---- */
-.section-head{max-width:640px; margin-bottom:48px;}
-.section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
-.section-head--light h2, .section-head--light .eyebrow{color:var(--ivory);}
+        /* ── section headers ── */
+        .section-head {
+            max-width: 640px;
+            margin-bottom: 48px;
+        }
+        .section-head.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .section-head--light h2,
+        .section-head--light .eyebrow {
+            color: var(--ivory);
+        }
 
-/* ---- collections ---- */
-.filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px;}
-.filter-pill{
-  font-family:var(--label); font-size:0.7rem; text-transform:uppercase; letter-spacing:.12em;
-  padding:9px 18px; border:1px solid var(--maroon); border-radius:30px; cursor:pointer; background:transparent; color:var(--maroon);
-  transition:background .2s ease, color .2s ease;
-}
-.filter-pill.active, .filter-pill:hover{background:var(--maroon); color:var(--ivory);}
-.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:26px;}
-.card{
-  background:#fff; border:1px solid rgba(0,0,0,0.06); border-radius:var(--radius); overflow:hidden;
-  box-shadow:0 10px 26px rgba(20,12,8,0.06); display:flex; flex-direction:column; cursor:pointer;
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.card:hover{transform:translateY(-5px); box-shadow:0 18px 36px rgba(20,12,8,0.14);}
-.card-media{position:relative; aspect-ratio:4/5; overflow:hidden;}
-.card-media svg{width:100%; height:100%;}
-.badge{
-  position:absolute; top:12px; left:12px; background:var(--gold); color:var(--black);
-  font-family:var(--label); font-size:0.6rem; letter-spacing:.1em; text-transform:uppercase;
-  padding:5px 10px; border-radius:2px;
-}
-.card-body{padding:18px 18px 20px; display:flex; flex-direction:column; gap:8px; flex:1;}
-.card-body h3{font-size:1.15rem; margin:0;}
-.card-body p{font-size:0.86rem; color:#555; margin:0; flex:1;}
-.card-actions{display:flex; gap:10px; margin-top:6px;}
-.card-actions .btn{flex:1; justify-content:center; font-size:0.62rem; padding:10px 8px;}
+        /* ── collections ── */
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .filter-pill {
+            font-family: var(--label);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            padding: 9px 18px;
+            border: 1px solid var(--maroon);
+            border-radius: 30px;
+            cursor: pointer;
+            background: transparent;
+            color: var(--maroon);
+            transition: background .2s ease, color .2s ease;
+        }
+        .filter-pill.active,
+        .filter-pill:hover {
+            background: var(--maroon);
+            color: var(--ivory);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 26px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 26px rgba(20, 12, 8, 0.06);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 36px rgba(20, 12, 8, 0.14);
+        }
+        .card-media {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            background: #1b1512;
+        }
+        .card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .card-media .placeholder-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1b1512;
+            color: var(--gold-bright);
+            font-family: var(--display);
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+        }
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--gold);
+            color: var(--black);
+            font-family: var(--label);
+            font-size: 0.6rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 2px;
+        }
+        .card-body {
+            padding: 18px 18px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+        .card-body h3 {
+            font-size: 1.15rem;
+            margin: 0;
+        }
+        .card-body p {
+            font-size: 0.86rem;
+            color: #555;
+            margin: 0;
+            flex: 1;
+        }
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .card-actions .btn {
+            flex: 1;
+            justify-content: center;
+            font-size: 0.62rem;
+            padding: 10px 8px;
+        }
 
-/* ---- modal / lightbox ---- */
-.modal-overlay{
-  position:fixed; inset:0; background:rgba(12,10,9,0.82); z-index:90;
-  display:none; align-items:center; justify-content:center; padding:24px;
-}
-.modal-overlay.open{display:flex;}
-.modal{
-  background:var(--ivory); max-width:880px; width:100%; max-height:90vh; overflow:auto;
-  border-radius:var(--radius); display:grid; grid-template-columns:1fr 1fr; position:relative;
-}
-@media (max-width:760px){.modal{grid-template-columns:1fr;}}
-.modal-close{position:absolute; top:14px; right:14px; background:rgba(0,0,0,0.55); color:#fff; border:none; border-radius:50%; width:34px; height:34px; cursor:pointer; z-index:5; display:flex; align-items:center; justify-content:center;}
-.modal-media{aspect-ratio:4/5;}
-.modal-media svg{width:100%; height:100%;}
-.modal-info{padding:34px;}
-.modal-info .tags{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 18px;}
-.tag{font-family:var(--label); font-size:0.62rem; letter-spacing:.1em; text-transform:uppercase; border:1px solid var(--maroon); color:var(--maroon); padding:4px 10px; border-radius:20px;}
-.modal-info .btn{width:100%; justify-content:center; margin-top:8px;}
+        /* ── modal ── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(12, 10, 9, 0.82);
+            z-index: 90;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .modal-overlay.open {
+            display: flex;
+        }
+        .modal {
+            background: var(--ivory);
+            max-width: 880px;
+            width: 100%;
+            max-height: 90vh;
+            overflow: auto;
+            border-radius: var(--radius);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+        }
+        @media (max-width: 760px) {
+            .modal {
+                grid-template-columns: 1fr;
+            }
+        }
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+        .modal-media {
+            aspect-ratio: 4/5;
+            background: #1b1512;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .modal-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .modal-media .placeholder-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1b1512;
+            color: var(--gold-bright);
+            font-family: var(--display);
+            font-size: 1.6rem;
+            text-align: center;
+            padding: 30px;
+        }
+        .modal-info {
+            padding: 34px;
+        }
+        .modal-info .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 14px 0 18px;
+        }
+        .tag {
+            font-family: var(--label);
+            font-size: 0.62rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            border: 1px solid var(--maroon);
+            color: var(--maroon);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .modal-info .btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: 8px;
+        }
 
-/* ---- tailoring timeline ---- */
-.timeline{display:flex; gap:0; overflow-x:auto; margin-top:50px; counter-reset:step;}
-.tl-step{flex:1; min-width:200px; padding:0 22px 0 0; position:relative;}
-.tl-step:not(:last-child)::after{content:""; position:absolute; top:26px; right:0; width:22px; height:1px; background:var(--gold); display:none;}
-@media (min-width:760px){.tl-step:not(:last-child)::after{display:block;}}
-.tl-icon{width:54px; height:54px; border:1px solid var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:18px; color:var(--maroon);}
-.tl-step h3{font-size:1.1rem;}
-.tl-step p{font-size:0.86rem; color:#555;}
-@media (max-width:760px){.timeline{flex-direction:column; gap:30px;}}
+        /* ── tailoring timeline ── */
+        .timeline {
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            margin-top: 50px;
+            counter-reset: step;
+        }
+        .tl-step {
+            flex: 1;
+            min-width: 200px;
+            padding: 0 22px 0 0;
+            position: relative;
+        }
+        .tl-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 26px;
+            right: 0;
+            width: 22px;
+            height: 1px;
+            background: var(--gold);
+            display: none;
+        }
+        @media (min-width: 760px) {
+            .tl-step:not(:last-child)::after {
+                display: block;
+            }
+        }
+        .tl-icon {
+            width: 54px;
+            height: 54px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            color: var(--maroon);
+        }
+        .tl-step h3 {
+            font-size: 1.1rem;
+        }
+        .tl-step p {
+            font-size: 0.86rem;
+            color: #555;
+        }
+        @media (max-width: 760px) {
+            .timeline {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
 
-/* ---- about ---- */
-.about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:start;}
-@media (max-width:860px){.about-grid{grid-template-columns:1fr;}}
-.crest{border:1px solid var(--line); padding:40px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; background:linear-gradient(160deg, rgba(90,19,32,0.04), transparent);}
-.crest .icon{width:64px; height:64px; color:var(--maroon);}
-.stat-row{display:flex; gap:30px; margin-top:24px;}
-.stat-row div{font-family:var(--display); font-size:2.1rem; color:var(--maroon);}
-.stat-row span{display:block; font-family:var(--label); font-size:0.62rem; letter-spacing:.1em; text-transform:uppercase; color:#777; margin-top:4px;}
+        /* ── about ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: start;
+        }
+        @media (max-width: 860px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .crest {
+            border: 1px solid var(--line);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+            background: linear-gradient(160deg, rgba(90, 19, 32, 0.04), transparent);
+        }
+        .crest .icon {
+            width: 64px;
+            height: 64px;
+            color: var(--maroon);
+        }
+        .stat-row {
+            display: flex;
+            gap: 30px;
+            margin-top: 24px;
+        }
+        .stat-row div {
+            font-family: var(--display);
+            font-size: 2.1rem;
+            color: var(--maroon);
+        }
+        .stat-row span {
+            display: block;
+            font-family: var(--label);
+            font-size: 0.62rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #777;
+            margin-top: 4px;
+        }
 
-/* ---- appointment ---- */
-.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-@media (max-width:700px){.form-grid{grid-template-columns:1fr;}}
-.field{display:flex; flex-direction:column; gap:6px;}
-.field.full{grid-column:1/-1;}
-.field label{font-family:var(--label); font-size:0.68rem; letter-spacing:.1em; text-transform:uppercase; color:#777;}
-.field input, .field select, .field textarea{
-  font-family:var(--body); font-size:0.95rem; padding:12px 14px; border:1px solid #d8cdb8; border-radius:var(--radius); background:#fff; color:var(--ink);
-}
-.field input:focus, .field select:focus, .field textarea:focus{border-color:var(--gold);}
-.form-note{font-size:0.82rem; color:#777; margin-top:14px;}
-.toast{margin-top:18px; padding:14px 18px; border:1px solid var(--emerald); color:var(--emerald); background:rgba(15,76,58,0.06); border-radius:var(--radius); display:none; font-size:0.9rem;}
-.toast.show{display:block;}
+        /* ── appointment ── */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        @media (max-width: 700px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .field.full {
+            grid-column: 1/-1;
+        }
+        .field label {
+            font-family: var(--label);
+            font-size: 0.68rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #777;
+        }
+        .field input,
+        .field select,
+        .field textarea {
+            font-family: var(--body);
+            font-size: 0.95rem;
+            padding: 12px 14px;
+            border: 1px solid #d8cdb8;
+            border-radius: var(--radius);
+            background: #fff;
+            color: var(--ink);
+        }
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: var(--gold);
+        }
+        .form-note {
+            font-size: 0.82rem;
+            color: #777;
+            margin-top: 14px;
+        }
+        .toast {
+            margin-top: 18px;
+            padding: 14px 18px;
+            border: 1px solid var(--emerald);
+            color: var(--emerald);
+            background: rgba(15, 76, 58, 0.06);
+            border-radius: var(--radius);
+            display: none;
+            font-size: 0.9rem;
+        }
+        .toast.show {
+            display: block;
+        }
 
-/* ---- testimonials ---- */
-.testi-wrap{position:relative; max-width:720px; margin:0 auto; text-align:center;}
-.testi-quote{font-family:var(--display); font-style:italic; font-size:1.5rem; color:var(--ivory); min-height:140px;}
-.testi-name{font-family:var(--label); font-size:0.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-bright); margin-top:14px;}
-.testi-nav{display:flex; justify-content:center; gap:18px; margin-top:30px;}
-.testi-nav button{background:none; border:1px solid var(--gold); color:var(--gold-bright); border-radius:50%; width:40px; height:40px; cursor:pointer; display:flex; align-items:center; justify-content:center;}
-.testi-dots{display:flex; gap:8px; justify-content:center; margin-top:18px;}
-.testi-dots span{width:7px; height:7px; border-radius:50%; background:rgba(201,162,92,0.35); cursor:pointer;}
-.testi-dots span.active{background:var(--gold-bright);}
+        /* ── testimonials ── */
+        .testi-wrap {
+            position: relative;
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .testi-quote {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--ivory);
+            min-height: 140px;
+        }
+        .testi-name {
+            font-family: var(--label);
+            font-size: 0.72rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--gold-bright);
+            margin-top: 14px;
+        }
+        .testi-nav {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 30px;
+        }
+        .testi-nav button {
+            background: none;
+            border: 1px solid var(--gold);
+            color: var(--gold-bright);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .testi-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 18px;
+        }
+        .testi-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(201, 162, 92, 0.35);
+            cursor: pointer;
+        }
+        .testi-dots span.active {
+            background: var(--gold-bright);
+        }
 
-/* ---- contact ---- */
-.contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px;}
-@media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
-.contact-info-item{display:flex; gap:14px; margin-bottom:22px; align-items:flex-start;}
-.contact-info-item .icon{color:var(--maroon); flex-shrink:0; margin-top:2px;}
-.map-frame{border:1px solid var(--line); width:100%; height:260px; margin-top:10px;}
+        /* ── contact ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        @media (max-width: 860px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .contact-info-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 22px;
+            align-items: flex-start;
+        }
+        .contact-info-item .icon {
+            color: var(--maroon);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .map-frame {
+            border: 1px solid var(--line);
+            width: 100%;
+            height: 260px;
+            margin-top: 10px;
+        }
 
-/* ---- faq ---- */
-.faq-item{border-bottom:1px solid var(--line); padding:18px 0;}
-.faq-q{display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:14px;}
-.faq-q h3{margin:0; font-size:1.1rem;}
-.faq-q .icon{transition:transform .25s ease; color:var(--gold); flex-shrink:0;}
-.faq-item.open .faq-q .icon{transform:rotate(45deg);}
-.faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
-.faq-a p{padding-top:10px; color:#555; font-size:0.92rem;}
+        /* ── faq ── */
+        .faq-item {
+            border-bottom: 1px solid var(--line);
+            padding: 18px 0;
+        }
+        .faq-q {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 14px;
+        }
+        .faq-q h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .faq-q .icon {
+            transition: transform .25s ease;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+        .faq-item.open .faq-q .icon {
+            transform: rotate(45deg);
+        }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s ease;
+        }
+        .faq-a p {
+            padding-top: 10px;
+            color: #555;
+            font-size: 0.92rem;
+        }
 
-/* ---- footer ---- */
-.footer{background:var(--black); color:var(--ivory-dim); padding:60px 24px 30px;}
-.footer-inner{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;}
-@media (max-width:760px){.footer-inner{grid-template-columns:1fr; gap:30px;}}
-.footer h4{font-family:var(--label); font-size:0.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
-.footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;}
-.footer ul a{font-size:0.88rem; color:var(--ivory-dim);}
-.footer ul a:hover{color:var(--gold-bright);}
-.footer-bottom{max-width:1200px; margin:40px auto 0; padding-top:20px; border-top:1px solid rgba(246,241,230,0.12); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.78rem; color:rgba(246,241,230,0.5);}
-.footer-bottom button{background:none; border:none; color:rgba(246,241,230,0.5); font-size:0.78rem; cursor:pointer; text-decoration:underline;}
+        /* ── footer ── */
+        .footer {
+            background: var(--black);
+            color: var(--ivory-dim);
+            padding: 60px 24px 30px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 760px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        .footer h4 {
+            font-family: var(--label);
+            font-size: 0.72rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer ul a {
+            font-size: 0.88rem;
+            color: var(--ivory-dim);
+        }
+        .footer ul a:hover {
+            color: var(--gold-bright);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(246, 241, 230, 0.12);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.78rem;
+            color: rgba(246, 241, 230, 0.5);
+        }
+        .footer-bottom button {
+            background: none;
+            border: none;
+            color: rgba(246, 241, 230, 0.5);
+            font-size: 0.78rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
 
-/* ---- whatsapp fab ---- */
-.fab{
-  position:fixed; bottom:26px; right:26px; z-index:70;
-  background:#1f9d55; color:#fff; width:58px; height:58px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(0,0,0,0.3);
-  animation:pulse 2.6s infinite;
-}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,157,85,0.45);}70%{box-shadow:0 0 0 14px rgba(31,157,85,0);}100%{box-shadow:0 0 0 0 rgba(31,157,85,0);}}
+        /* ── whatsapp fab ── */
+        .fab {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            z-index: 70;
+            background: #1f9d55;
+            color: #fff;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+            animation: pulse 2.6s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(31, 157, 85, 0.45);
+            }
+            70% {
+                box-shadow: 0 0 0 14px rgba(31, 157, 85, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(31, 157, 85, 0);
+            }
+        }
 
-/* ---- studio console (admin demo) ---- */
-.console-overlay{position:fixed; inset:0; background:rgba(12,10,9,0.88); z-index:95; display:none; align-items:flex-start; justify-content:center; padding:40px 20px; overflow:auto;}
-.console-overlay.open{display:flex;}
-.console{background:var(--ivory); width:100%; max-width:760px; border-radius:var(--radius); padding:34px; position:relative;}
-.console h2{font-size:1.6rem;}
-.console-list{margin-top:26px; display:flex; flex-direction:column; gap:10px; max-height:220px; overflow:auto; border-top:1px solid var(--line); padding-top:14px;}
-.console-row{display:flex; justify-content:space-between; align-items:center; font-size:0.88rem; border-bottom:1px solid rgba(0,0,0,0.06); padding-bottom:8px;}
-.console-row button{background:none; border:none; color:var(--maroon); cursor:pointer;}
-.console-note{font-size:0.78rem; color:#777; margin-top:18px;}
-</style>
+        /* ── studio console ── */
+        .console-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(12, 10, 9, 0.88);
+            z-index: 95;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow: auto;
+        }
+        .console-overlay.open {
+            display: flex;
+        }
+        .console {
+            background: var(--ivory);
+            width: 100%;
+            max-width: 760px;
+            border-radius: var(--radius);
+            padding: 34px;
+            position: relative;
+        }
+        .console h2 {
+            font-size: 1.6rem;
+        }
+        .console-list {
+            margin-top: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 220px;
+            overflow: auto;
+            border-top: 1px solid var(--line);
+            padding-top: 14px;
+        }
+        .console-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding-bottom: 8px;
+        }
+        .console-row button {
+            background: none;
+            border: none;
+            color: var(--maroon);
+            cursor: pointer;
+        }
+        .console-note {
+            font-size: 0.78rem;
+            color: #777;
+            margin-top: 18px;
+        }
+        .console .file-input-wrap {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .console .file-input-wrap input[type="text"] {
+            flex: 1;
+            min-width: 180px;
+            font-family: var(--body);
+            font-size: 0.9rem;
+            padding: 10px 12px;
+            border: 1px solid #d8cdb8;
+            border-radius: var(--radius);
+            background: #fff;
+        }
+        .console .file-input-wrap .btn {
+            flex-shrink: 0;
+        }
+        .console .image-preview {
+            margin-top: 6px;
+            max-width: 120px;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+        }
+    </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute">
-<defs>
-<symbol id="ic-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></symbol>
-<symbol id="ic-thread" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M6 12c2-3 10-3 12 0"/><path d="M6 12c2 3 10 3 12 0"/></symbol>
-<symbol id="ic-tape" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></symbol>
-<symbol id="ic-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6-3 12M15 3l-3 6 3 12"/></symbol>
-<symbol id="ic-fabric" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></symbol>
-<symbol id="ic-heritage" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></symbol>
-<symbol id="ic-fit" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3"/></symbol>
-<symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18M8 3v4M16 3v4"/></symbol>
-<symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
-<symbol id="ic-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 2.5a13 13 0 0 0 6 6L17 15l5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
-<symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></symbol>
-<symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
-<symbol id="ic-chevron" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
-<symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-<symbol id="ic-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></symbol>
-<symbol id="ic-whatsapp" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.6 13.8L3 21l4.4-1.3A9 9 0 1 0 12 3z" stroke-width="1.2"/><path d="M8.5 8.7c.3-1 1.1-1 1.6-.1l.6 1.1c.3.5.2 1-.1 1.4l-.5.6c.6 1.4 1.6 2.4 3 3l.6-.5c.4-.3.9-.4 1.4-.1l1.1.6c.9.5.9 1.3-.1 1.6-1.6.5-3.9-.1-5.7-1.9-1.8-1.8-2.4-4.1-1.9-5.7z" fill="currentColor" stroke="none"/></symbol>
-<symbol id="ic-turban" viewBox="0 0 24 24"><path d="M4 14c0-4 3.5-7 8-7s8 3 8 7"/><path d="M4 14c2 2 14 2 16 0"/><circle cx="12" cy="6" r="1.4" fill="currentColor" stroke="none"/></symbol>
-<symbol id="ic-coat" viewBox="0 0 24 24"><path d="M9 4l3 2 3-2 4 3-2 4-2-1v10H8V10l-2 1-2-4z"/></symbol>
-</defs>
-</svg>
+    <!-- ── icon sprite (same as before) ── -->
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <symbol id="ic-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></symbol>
+            <symbol id="ic-thread" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M6 12c2-3 10-3 12 0"/><path d="M6 12c2 3 10 3 12 0"/></symbol>
+            <symbol id="ic-tape" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></symbol>
+            <symbol id="ic-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6-3 12M15 3l-3 6 3 12"/></symbol>
+            <symbol id="ic-fabric" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></symbol>
+            <symbol id="ic-heritage" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></symbol>
+            <symbol id="ic-fit" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3"/></symbol>
+            <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18M8 3v4M16 3v4"/></symbol>
+            <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+            <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 2.5a13 13 0 0 0 6 6L17 15l5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+            <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></symbol>
+            <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+            <symbol id="ic-chevron" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+            <symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+            <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></symbol>
+            <symbol id="ic-whatsapp" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.6 13.8L3 21l4.4-1.3A9 9 0 1 0 12 3z" stroke-width="1.2"/><path d="M8.5 8.7c.3-1 1.1-1 1.6-.1l.6 1.1c.3.5.2 1-.1 1.4l-.5.6c.6 1.4 1.6 2.4 3 3l.6-.5c.4-.3.9-.4 1.4-.1l1.1.6c.9.5.9 1.3-.1 1.6-1.6.5-3.9-.1-5.7-1.9-1.8-1.8-2.4-4.1-1.9-5.7z" fill="currentColor" stroke="none"/></symbol>
+            <symbol id="ic-turban" viewBox="0 0 24 24"><path d="M4 14c0-4 3.5-7 8-7s8 3 8 7"/><path d="M4 14c2 2 14 2 16 0"/><circle cx="12" cy="6" r="1.4" fill="currentColor" stroke="none"/></symbol>
+            <symbol id="ic-coat" viewBox="0 0 24 24"><path d="M9 4l3 2 3-2 4 3-2 4-2-1v10H8V10l-2 1-2-4z"/></symbol>
+        </defs>
+    </svg>
 
-<nav class="nav" id="siteNav">
-  <a href="#home" class="brand">
-    <span class="brand-mark">BD</span>
-    <span class="brand-text"><strong>BinDawood</strong><span>Dulha House</span></span>
-  </a>
-  <div class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#collections">Collections</a>
-    <a href="#tailoring">Tailoring</a>
-    <a href="#about">About</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-    <a href="#faq">FAQ</a>
-  </div>
-  <div class="nav-cta">
-    <a href="#appointment" class="btn btn--filled btn--sm"><span class="cta-label">Book Appointment</span></a>
-    <button class="nav-burger" id="burgerBtn" aria-label="Open menu"><svg class="icon" style="stroke:#f6f1e6" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
-</nav>
+    <!-- ── nav ── -->
+    <nav class="nav" id="siteNav">
+        <a href="#home" class="brand">
+            <span class="brand-mark">BD</span>
+            <span class="brand-text"><strong>BinDawood</strong><span>Dulha House</span></span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#collections">Collections</a>
+            <a href="#tailoring">Tailoring</a>
+            <a href="#about">About</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <div class="nav-cta">
+            <a href="#appointment" class="btn btn--filled btn--sm"><span class="cta-label">Book Appointment</span></a>
+            <button class="nav-burger" id="burgerBtn" aria-label="Open menu"><svg class="icon" style="stroke:#f6f1e6" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+    </nav>
 
-<!-- HOME -->
-<section id="home" class="hero">
-  <svg class="hero-pattern" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <pattern id="latticeHero" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="#c9a25c" stroke-width="0.6"/>
-      </pattern>
-    </defs>
-    <rect width="400" height="400" fill="url(#latticeHero)"/>
-  </svg>
-  <div class="hero-veil"></div>
-  <div class="hero-inner">
-    <p class="eyebrow eyebrow--light">Sialkot, Punjab · Est. for the modern Pakistani groom</p>
-    <h1>Where Tradition Meets<br><em>Royal Elegance</em></h1>
-    <p class="lede">Hand-finished sherwanis, stone work suits and bespoke groom wear — crafted in our Sialkot atelier and fitted for grooms across Pakistan and abroad.</p>
-    <div class="hero-ctas">
-      <a href="#collections" class="btn btn--filled">Explore Collection</a>
-      <a href="#appointment" class="btn btn--ghost-light">Book Appointment</a>
-      <a id="heroWhatsapp" href="#" target="_blank" class="btn btn--ghost-light"><svg class="icon" style="width:16px;height:16px"><use href="#ic-whatsapp"/></svg> WhatsApp Us</a>
+    <!-- ── HOME ── -->
+    <section id="home" class="hero">
+        <svg class="hero-pattern" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <pattern id="latticeHero" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="#c9a25c" stroke-width="0.6"/>
+                </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#latticeHero)"/>
+        </svg>
+        <div class="hero-veil"></div>
+        <div class="hero-inner">
+            <p class="eyebrow eyebrow--light">Sialkot, Punjab · Est. for the modern Pakistani groom</p>
+            <h1>Where Tradition Meets<br><em>Royal Elegance</em></h1>
+            <p class="lede">Hand-finished sherwanis, stone work suits and bespoke groom wear — crafted in our Sialkot atelier and fitted for grooms across Pakistan and abroad.</p>
+            <div class="hero-ctas">
+                <a href="#collections" class="btn btn--filled">Explore Collection</a>
+                <a href="#appointment" class="btn btn--ghost-light">Book Appointment</a>
+                <a id="heroWhatsapp" href="#" target="_blank" class="btn btn--ghost-light"><svg class="icon" style="width:16px;height:16px"><use href="#ic-whatsapp"/></svg> WhatsApp Us</a>
+            </div>
+            <div class="rail-wrap">
+                <p class="eyebrow eyebrow--light">Featured Categories</p>
+                <div class="rail" id="categoryRail"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── brand values ── -->
+    <section class="section--dark">
+        <div class="inner">
+            <p class="eyebrow">The BinDawood Standard</p>
+            <h2 style="color:var(--ivory)">Five commitments behind every garment</h2>
+            <div class="values-grid">
+                <div class="value-item"><svg class="icon"><use href="#ic-fabric"/></svg><h3>Premium Fabrics</h3><p>Raw silk, velvet and jacquard sourced for drape and durability.</p></div>
+                <div class="value-item"><svg class="icon"><use href="#ic-thread"/></svg><h3>Custom Stitching</h3><p>Every order is cut to the individual, never pulled off a rack.</p></div>
+                <div class="value-item"><svg class="icon"><use href="#ic-scissors"/></svg><h3>Expert Tailoring</h3><p>Master tailors with decades of groom-wear experience in Sialkot.</p></div>
+                <div class="value-item"><svg class="icon"><use href="#ic-heritage"/></svg><h3>Heritage Craftsmanship</h3><p>Zardozi and hand embroidery techniques passed through generations.</p></div>
+                <div class="value-item"><svg class="icon"><use href="#ic-fit"/></svg><h3>Personalized Fittings</h3><p>In-studio or guided remotely for grooms ordering from overseas.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SIGNATURE ── -->
+    <section class="section" id="signature">
+        <div class="section-head">
+            <p class="eyebrow">Signature Collection</p>
+            <h2>This season's most requested pieces</h2>
+        </div>
+        <div class="grid" id="signatureGrid"></div>
+    </section>
+
+    <!-- ── COLLECTIONS ── -->
+    <section class="section" id="collections">
+        <div class="section-head">
+            <p class="eyebrow">The Full Catalog</p>
+            <h2>Browse by category</h2>
+            <p>Every piece below is custom-fitted. Tap a card for details, or send an inquiry directly on WhatsApp.</p>
+        </div>
+        <div class="filters" id="filterPills"></div>
+        <div class="grid" id="collectionsGrid"></div>
+    </section>
+
+    <!-- ── TAILORING ── -->
+    <section class="section" id="tailoring">
+        <div class="section-head center">
+            <p class="eyebrow">Custom Tailoring</p>
+            <h2>From first sketch to baraat-ready</h2>
+        </div>
+        <div class="timeline">
+            <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-coat"/></svg></div><h3>Choose Design</h3><p>Browse the collection or bring a reference image; our consultant refines the silhouette with you.</p></div>
+            <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-fabric"/></svg></div><h3>Select Fabric</h3><p>Compare swatches across silk, velvet, jacquard and raw cotton blends in person or by photo.</p></div>
+            <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-tape"/></svg></div><h3>Measurements</h3><p>Taken in-studio, or guided remotely over a WhatsApp video call for overseas grooms.</p></div>
+            <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-fit"/></svg></div><h3>Fitting Sessions</h3><p>Two to three fittings refine drape, sleeve and length before the final stitch.</p></div>
+            <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-calendar"/></svg></div><h3>Delivery</h3><p>Pressed, packed and ready before your function — delivered or collected in-studio.</p></div>
+        </div>
+        <div style="text-align:center; margin-top:50px;">
+            <a href="#appointment" class="btn btn--filled">Book Consultation</a>
+        </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section class="section" id="about" style="background:var(--ivory-dim);">
+        <div class="about-grid">
+            <div>
+                <p class="eyebrow">Our Heritage</p>
+                <h2>Built in Sialkot, worn at every Pakistani wedding it touches</h2>
+                <p>BinDawood Dulha House began as a single tailoring counter in Dara Arraian, built on the belief that a groom's wedding outfit deserves the same care as a bride's. Three generations later, the same hand-finishing techniques — zardozi, gota and dabka work — are still done by hand, panel by panel, rather than machine-replicated.</p>
+                <p>Every order that leaves our studio has been touched by a named tailor, fitted in a named session, and checked before it's pressed for delivery. That accountability, more than any single fabric or stitch, is what we mean by craftsmanship.</p>
+                <div class="stat-row">
+                    <div>3<span>Generations</span></div>
+                    <div>1000+<span>Grooms Dressed</span></div>
+                    <div>15+<span>Countries Shipped To</span></div>
+                </div>
+            </div>
+            <div class="crest">
+                <svg class="icon" style="width:64px;height:64px"><use href="#ic-heritage"/></svg>
+                <h3>Hand-finished, panel by panel</h3>
+                <p style="font-size:0.9rem; color:#666;">No embroidery on our stone work suits is machine-replicated — every motif is hand-set by a tailor who signs off on the finished panel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── APPOINTMENT ── -->
+    <section class="section" id="appointment">
+        <div class="section-head">
+            <p class="eyebrow">Book an Appointment</p>
+            <h2>Reserve a consultation or fitting</h2>
+            <p>Tell us what you need and a preferred time — our studio will confirm by phone or WhatsApp.</p>
+        </div>
+        <form id="appointmentForm">
+            <div class="form-grid">
+                <div class="field">
+                    <label for="apptService">Service</label>
+                    <select id="apptService" required>
+                        <option value="">Select a service</option>
+                        <option>Groom Consultation</option>
+                        <option>Measurements</option>
+                        <option>Custom Design</option>
+                        <option>Final Fitting</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="apptDate">Preferred Date</label>
+                    <input type="date" id="apptDate" required>
+                </div>
+                <div class="field">
+                    <label for="apptTime">Preferred Time</label>
+                    <select id="apptTime" required>
+                        <option value="">Select a time</option>
+                        <option>11:00 AM</option><option>1:00 PM</option><option>3:00 PM</option><option>5:00 PM</option><option>7:00 PM</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="apptPhone">Phone / WhatsApp</label>
+                    <input type="tel" id="apptPhone" required placeholder="03XX XXXXXXX">
+                </div>
+                <div class="field full">
+                    <label for="apptName">Full Name</label>
+                    <input type="text" id="apptName" required placeholder="Your name">
+                </div>
+                <div class="field full">
+                    <label for="apptNotes">Notes (optional)</label>
+                    <textarea id="apptNotes" rows="3" placeholder="Wedding date, design references, sizing concerns..."></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn--filled" style="margin-top:22px;">Confirm Appointment</button>
+            <p class="form-note">Saved appointments stay on this device for this demo studio build.</p>
+            <div class="toast" id="apptToast"></div>
+        </form>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section class="section--dark" id="testimonials">
+        <div class="inner">
+            <div class="section-head center section-head--light">
+                <p class="eyebrow">Testimonials</p>
+                <h2>Wedding stories from our grooms</h2>
+            </div>
+            <div class="testi-wrap">
+                <div class="testi-quote" id="testiQuote"></div>
+                <div class="testi-name" id="testiName"></div>
+                <div class="testi-nav">
+                    <button id="testiPrev" aria-label="Previous"><svg class="icon" style="width:16px;height:16px; transform:rotate(180deg)"><use href="#ic-chevron"/></svg></button>
+                    <button id="testiNext" aria-label="Next"><svg class="icon" style="width:16px;height:16px"><use href="#ic-chevron"/></svg></button>
+                </div>
+                <div class="testi-dots" id="testiDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section class="section" id="contact">
+        <div class="section-head">
+            <p class="eyebrow">Visit or Reach Us</p>
+            <h2>Contact the studio</h2>
+        </div>
+        <div class="contact-grid">
+            <div>
+                <div class="contact-info-item"><svg class="icon"><use href="#ic-pin"/></svg><div><strong>Address</strong><p style="margin:4px 0 0;">Dara Arraian, near Mujahid &amp; Abbottabad Road, Sialkot, Punjab, Pakistan</p></div></div>
+                <div class="contact-info-item"><svg class="icon"><use href="#ic-phone"/></svg><div><strong>Phone / WhatsApp</strong><p style="margin:4px 0 0;">+92 300 1234567 <span style="color:#999">(placeholder — update with your number)</span></p></div></div>
+                <div class="contact-info-item"><svg class="icon"><use href="#ic-mail"/></svg><div><strong>Email</strong><p style="margin:4px 0 0;">hello@bindawooddulhahouse.com</p></div></div>
+                <div class="contact-info-item"><svg class="icon"><use href="#ic-clock"/></svg><div><strong>Business Hours</strong><p style="margin:4px 0 0;">Mon–Sat, 11:00 AM – 9:00 PM (Friday: 11–1, 2:30–9)<br>Sunday by appointment</p></div></div>
+                <iframe class="map-frame" loading="lazy" title="Studio location map" src="https://www.openstreetmap.org/export/embed.html?bbox=74.48%2C32.46%2C74.56%2C32.53&amp;layer=mapnik&amp;marker=32.4945%2C74.5311"></iframe>
+            </div>
+            <form id="contactForm">
+                <div class="field full"><label for="cName">Name</label><input id="cName" type="text" required></div>
+                <div class="field full" style="margin-top:14px;"><label for="cReach">Phone or Email</label><input id="cReach" type="text" required></div>
+                <div class="field full" style="margin-top:14px;"><label for="cMsg">Message</label><textarea id="cMsg" rows="5" required placeholder="How can we help?"></textarea></div>
+                <button type="submit" class="btn btn--filled" style="margin-top:18px;">Send Inquiry</button>
+                <div class="toast" id="contactToast"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="section" id="faq" style="background:var(--ivory-dim);">
+        <div class="section-head">
+            <p class="eyebrow">Good to Know</p>
+            <h2>Frequently asked questions</h2>
+        </div>
+        <div id="faqList"></div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <h4>BinDawood Dulha House</h4>
+                <p style="max-width:320px; font-size:0.88rem;">Bespoke groom wear hand-finished in Sialkot, fitted for weddings across Pakistan and the diaspora.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#tailoring">Custom Tailoring</a></li>
+                    <li><a href="#appointment">Book Appointment</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Studio</h4>
+                <ul>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 BinDawood Dulha House, Sialkot.</span>
+            <button id="openConsole">Studio Console (catalog demo)</button>
+        </div>
+    </footer>
+
+    <!-- ── FAB ── -->
+    <a class="fab" id="fabWhatsapp" href="#" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" style="stroke:none; fill:#fff; width:28px; height:28px"><use href="#ic-whatsapp"/></svg></a>
+
+    <!-- ── PRODUCT MODAL ── -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-media" id="modalMedia"></div>
+            <div class="modal-info">
+                <p class="eyebrow" id="modalCategory"></p>
+                <h2 id="modalName"></h2>
+                <p id="modalDesc"></p>
+                <div class="tags" id="modalTags"></div>
+                <a class="btn btn--ghost-dark" id="modalInquire" href="#contact">Send Inquiry</a>
+                <a class="btn btn--filled" id="modalWhatsapp" href="#" target="_blank"><svg class="icon" style="width:16px;height:16px"><use href="#ic-whatsapp"/></svg> Ask on WhatsApp</a>
+            </div>
+        </div>
     </div>
 
-    <div class="rail-wrap">
-      <p class="eyebrow eyebrow--light">Featured Categories</p>
-      <div class="rail" id="categoryRail"></div>
+    <!-- ── STUDIO CONSOLE ── -->
+    <div class="console-overlay" id="consoleOverlay">
+        <div class="console">
+            <button class="modal-close" id="consoleClose">&times;</button>
+            <p class="eyebrow">Studio Console</p>
+            <h2>Add a product to the live catalog</h2>
+            <p style="font-size:0.85rem; color:#666;">Products added here appear instantly in Collections. You can paste an image URL (or use a placeholder service).</p>
+            <form id="consoleForm" style="margin-top:18px;">
+                <div class="form-grid">
+                    <div class="field full"><label>Product Name</label><input id="cpName" type="text" required></div>
+                    <div class="field"><label>Category</label><select id="cpCategory" required></select></div>
+                    <div class="field"><label>Custom Available?</label><select id="cpCustom"><option value="true">Yes</option><option value="false">No</option></select></div>
+                    <div class="field full"><label>Description</label><textarea id="cpDesc" rows="2" required></textarea></div>
+                    <!-- ── NEW: image URL field ── -->
+                    <div class="field full">
+                        <label>Image URL (optional)</label>
+                        <div class="file-input-wrap">
+                            <input type="text" id="cpImage" placeholder="https://example.com/sherwani.jpg or /images/local.jpg" />
+                            <button type="button" class="btn btn--sm btn--ghost-dark" id="previewImageBtn">Preview</button>
+                        </div>
+                        <div id="imagePreviewContainer" style="margin-top:6px;"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn--filled btn--sm" style="margin-top:16px;"><svg class="icon" style="width:14px;height:14px"><use href="#ic-plus"/></svg> Add Product</button>
+            </form>
+            <div class="console-list" id="consoleList"></div>
+            <p class="console-note">Items added here are tagged "Studio Added" and can be removed from this list.</p>
+        </div>
     </div>
-  </div>
-</section>
 
-<section class="section--dark">
-  <div class="inner">
-    <p class="eyebrow">The BinDawood Standard</p>
-    <h2 style="color:var(--ivory)">Five commitments behind every garment</h2>
-    <div class="values-grid">
-      <div class="value-item"><svg class="icon"><use href="#ic-fabric"/></svg><h3>Premium Fabrics</h3><p>Raw silk, velvet and jacquard sourced for drape and durability.</p></div>
-      <div class="value-item"><svg class="icon"><use href="#ic-thread"/></svg><h3>Custom Stitching</h3><p>Every order is cut to the individual, never pulled off a rack.</p></div>
-      <div class="value-item"><svg class="icon"><use href="#ic-scissors"/></svg><h3>Expert Tailoring</h3><p>Master tailors with decades of groom-wear experience in Sialkot.</p></div>
-      <div class="value-item"><svg class="icon"><use href="#ic-heritage"/></svg><h3>Heritage Craftsmanship</h3><p>Zardozi and hand embroidery techniques passed through generations.</p></div>
-      <div class="value-item"><svg class="icon"><use href="#ic-fit"/></svg><h3>Personalized Fittings</h3><p>In-studio or guided remotely for grooms ordering from overseas.</p></div>
-    </div>
-  </div>
-</section>
+    <script>
+        (function() {
 
-<section class="section" id="signature">
-  <div class="section-head">
-    <p class="eyebrow">Signature Collection</p>
-    <h2>This season's most requested pieces</h2>
-  </div>
-  <div class="grid" id="signatureGrid"></div>
-</section>
+            /* ── configuration ── */
+            var WHATSAPP_NUMBER = "923001234567"; // replace with your business number
 
-<!-- COLLECTIONS -->
-<section class="section" id="collections">
-  <div class="section-head">
-    <p class="eyebrow">The Full Catalog</p>
-    <h2>Browse by category</h2>
-    <p>Every piece below is custom-fitted. Tap a card for details, or send an inquiry directly on WhatsApp.</p>
-  </div>
-  <div class="filters" id="filterPills"></div>
-  <div class="grid" id="collectionsGrid"></div>
-</section>
+            /* ── categories ── */
+            var CATEGORIES = [
+                { slug: "sherwanis", name: "Sherwanis", icon: "ic-coat", motif: "lattice" },
+                { slug: "prince-coats", name: "Prince Coats", icon: "ic-coat", motif: "star" },
+                { slug: "pent-coats", name: "Pent Coats", icon: "ic-coat", motif: "vine" },
+                { slug: "waist-coats", name: "Waist Coats", icon: "ic-coat", motif: "paisley" },
+                { slug: "shalwar-qameez", name: "Shalwar Qameez", icon: "ic-fabric", motif: "lattice" },
+                { slug: "stone-work", name: "Stone Work Suits", icon: "ic-gem", motif: "paisley" },
+                { slug: "turbans", name: "Turbans (Kulla)", icon: "ic-turban", motif: "star" },
+                { slug: "formal-shirts", name: "Formal Shirts", icon: "ic-fabric", motif: "vine" }
+            ];
 
-<!-- TAILORING -->
-<section class="section" id="tailoring">
-  <div class="section-head center">
-    <p class="eyebrow">Custom Tailoring</p>
-    <h2>From first sketch to baraat-ready</h2>
-  </div>
-  <div class="timeline">
-    <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-coat"/></svg></div><h3>Choose Design</h3><p>Browse the collection or bring a reference image; our consultant refines the silhouette with you.</p></div>
-    <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-fabric"/></svg></div><h3>Select Fabric</h3><p>Compare swatches across silk, velvet, jacquard and raw cotton blends in person or by photo.</p></div>
-    <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-tape"/></svg></div><h3>Measurements</h3><p>Taken in-studio, or guided remotely over a WhatsApp video call for overseas grooms.</p></div>
-    <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-fit"/></svg></div><h3>Fitting Sessions</h3><p>Two to three fittings refine drape, sleeve and length before the final stitch.</p></div>
-    <div class="tl-step"><div class="tl-icon"><svg class="icon"><use href="#ic-calendar"/></svg></div><h3>Delivery</h3><p>Pressed, packed and ready before your function — delivered or collected in-studio.</p></div>
-  </div>
-  <div style="text-align:center; margin-top:50px;">
-    <a href="#appointment" class="btn btn--filled">Book Consultation</a>
-  </div>
-</section>
+            /* ── SEED PRODUCTS with image support ── */
+            var SEED_PRODUCTS = [{
+                id: "p1",
+                name: "Imperial Ivory Sherwani",
+                category: "sherwanis",
+                description: "Hand-embroidered ivory sherwani with gold thread detailing along the collar and cuffs.",
+                tags: ["signature", "wedding-season"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=500&fit=crop&crop=center" // placeholder
+            }, {
+                id: "p2",
+                name: "Maroon Heritage Sherwani",
+                category: "sherwanis",
+                description: "Deep maroon sherwani with raised zardozi work along the front panel.",
+                tags: ["heritage"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1615587506062-5c9ce7a2d53f?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p3",
+                name: "Champagne Prince Coat",
+                category: "prince-coats",
+                description: "Tailored prince coat in champagne jacquard with a mandarin collar.",
+                tags: ["signature"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p4",
+                name: "Onyx Velvet Prince Coat",
+                category: "prince-coats",
+                description: "Black velvet prince coat with subtle self-tone embroidery for evening functions.",
+                tags: ["evening"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1593032465173-0c3d7a7b6e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p5",
+                name: "Three-Piece Ivory Pent Coat Set",
+                category: "pent-coats",
+                description: "Waistcoat, coat and trouser set in ivory with fine gold piping.",
+                tags: ["classic"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p6",
+                name: "Two-Piece Slate Pent Coat",
+                category: "pent-coats",
+                description: "Slim slate-grey two-piece, well suited to daytime ceremonies.",
+                tags: ["daytime"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1593032465173-0c3d7a7b6e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p7",
+                name: "Gold Thread Waistcoat",
+                category: "waist-coats",
+                description: "Fitted waistcoat with fine gold thread embroidery across the chest panel.",
+                tags: ["layering"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1593032465173-0c3d7a7b6e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p8",
+                name: "Maroon Brocade Waistcoat",
+                category: "waist-coats",
+                description: "Brocade waistcoat in deep maroon, made for layering under the sherwani.",
+                tags: ["layering"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p9",
+                name: "Classic Ivory Shalwar Qameez",
+                category: "shalwar-qameez",
+                description: "Relaxed ivory shalwar qameez finished with a fine chikankari collar.",
+                tags: ["traditional"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1593032465173-0c3d7a7b6e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p10",
+                name: "Emerald Festive Shalwar Qameez",
+                category: "shalwar-qameez",
+                description: "Emerald shalwar qameez suited to mehndi and festive functions.",
+                tags: ["festive", "wedding-season"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p11",
+                name: "Crystal Stone Work Suit",
+                category: "stone-work",
+                description: "Hand-set crystal and stone embroidery across the full front panel — our most requested piece.",
+                tags: ["signature", "stone-work"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p12",
+                name: "Antique Gold Stone Suit",
+                category: "stone-work",
+                description: "Antique gold stone work with a heavier border, built for the baraat entrance.",
+                tags: ["stone-work", "wedding-season"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1593032465173-0c3d7a7b6e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p13",
+                name: "Gold Kulla Turban",
+                category: "turbans",
+                description: "Structured kulla turban wrapped in gold-edged fabric.",
+                tags: ["accessory"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p14",
+                name: "Maroon Silk Turban",
+                category: "turbans",
+                description: "Silk turban in maroon with a centred kalgi mount.",
+                tags: ["accessory"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p15",
+                name: "Ivory Mandarin Collar Shirt",
+                category: "formal-shirts",
+                description: "Fitted mandarin collar shirt for layering beneath the sherwani.",
+                tags: ["essential"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1593032465173-0c3d7a7b6e8b?w=400&h=500&fit=crop&crop=center"
+            }, {
+                id: "p16",
+                name: "Champagne Pinstripe Shirt",
+                category: "formal-shirts",
+                description: "Subtle champagne pinstripe shirt designed for the pent coat set.",
+                tags: ["essential"],
+                customAvailable: true,
+                image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&h=500&fit=crop&crop=center"
+            }];
 
-<!-- ABOUT -->
-<section class="section" id="about" style="background:var(--ivory-dim);">
-  <div class="about-grid">
-    <div>
-      <p class="eyebrow">Our Heritage</p>
-      <h2>Built in Sialkot, worn at every Pakistani wedding it touches</h2>
-      <p>BinDawood Dulha House began as a single tailoring counter in Dara Arraian, built on the belief that a groom's wedding outfit deserves the same care as a bride's. Three generations later, the same hand-finishing techniques — zardozi, gota and dabka work — are still done by hand, panel by panel, rather than machine-replicated.</p>
-      <p>Every order that leaves our studio has been touched by a named tailor, fitted in a named session, and checked before it's pressed for delivery. That accountability, more than any single fabric or stitch, is what we mean by craftsmanship.</p>
-      <div class="stat-row">
-        <div>3<span>Generations</span></div>
-        <div>1000+<span>Grooms Dressed</span></div>
-        <div>15+<span>Countries Shipped To</span></div>
-      </div>
-    </div>
-    <div class="crest">
-      <svg class="icon" style="width:64px;height:64px"><use href="#ic-heritage"/></svg>
-      <h3>Hand-finished, panel by panel</h3>
-      <p style="font-size:0.9rem; color:#666;">No embroidery on our stone work suits is machine-replicated — every motif is hand-set by a tailor who signs off on the finished panel.</p>
-    </div>
-  </div>
-</section>
+            var TESTIMONIALS = [
+                { name: "Ahmed R. — Sialkot", quote: "I booked late for my own wedding and the team still delivered a stone work suit that fit perfectly at the first fitting." },
+                { name: "Bilal K. — London, UK", quote: "Sent my measurements over a WhatsApp call and the sherwani that arrived fit better than anything I've bought off a rack." },
+                { name: "Hassan M. — Lahore", quote: "The hand embroidery on my prince coat was worth every fitting session — you can tell it wasn't machine-made." },
+                { name: "Usman T. — Dubai, UAE", quote: "Needed a turnaround in under two weeks and they made it happen without rushing the stitching quality." }
+            ];
 
-<!-- APPOINTMENT -->
-<section class="section" id="appointment">
-  <div class="section-head">
-    <p class="eyebrow">Book an Appointment</p>
-    <h2>Reserve a consultation or fitting</h2>
-    <p>Tell us what you need and a preferred time — our studio will confirm by phone or WhatsApp.</p>
-  </div>
-  <form id="appointmentForm">
-    <div class="form-grid">
-      <div class="field">
-        <label for="apptService">Service</label>
-        <select id="apptService" required>
-          <option value="">Select a service</option>
-          <option>Groom Consultation</option>
-          <option>Measurements</option>
-          <option>Custom Design</option>
-          <option>Final Fitting</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="apptDate">Preferred Date</label>
-        <input type="date" id="apptDate" required>
-      </div>
-      <div class="field">
-        <label for="apptTime">Preferred Time</label>
-        <select id="apptTime" required>
-          <option value="">Select a time</option>
-          <option>11:00 AM</option><option>1:00 PM</option><option>3:00 PM</option><option>5:00 PM</option><option>7:00 PM</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="apptPhone">Phone / WhatsApp</label>
-        <input type="tel" id="apptPhone" required placeholder="03XX XXXXXXX">
-      </div>
-      <div class="field full">
-        <label for="apptName">Full Name</label>
-        <input type="text" id="apptName" required placeholder="Your name">
-      </div>
-      <div class="field full">
-        <label for="apptNotes">Notes (optional)</label>
-        <textarea id="apptNotes" rows="3" placeholder="Wedding date, design references, sizing concerns..."></textarea>
-      </div>
-    </div>
-    <button type="submit" class="btn btn--filled" style="margin-top:22px;">Confirm Appointment</button>
-    <p class="form-note">Saved appointments stay on this device for this demo studio build.</p>
-    <div class="toast" id="apptToast"></div>
-  </form>
-</section>
+            var FAQS = [
+                { q: "Do you offer custom stitching?", a: "Yes — every garment is cut and stitched to individual measurements rather than pulled from ready-made stock." },
+                { q: "What is the delivery time?", a: "Standard custom orders take 3–4 weeks depending on detailing. Stone work and heavy embroidery pieces may take longer." },
+                { q: "Do you handle overseas orders?", a: "Yes. We guide measurements over a WhatsApp video call and ship internationally once fittings are confirmed remotely." },
+                { q: "Can you handle urgent orders?", a: "Rush orders are accepted when our schedule allows — message us your wedding date and we'll confirm availability." },
+                { q: "What fabric types are available?", a: "Raw silk, velvet, jacquard and cotton blends, with swatches available in-studio or photographed on request." },
+                { q: "How does the booking process work?", a: "Book a consultation, choose your design and fabric, complete measurements, attend fittings, then collect or receive delivery." }
+            ];
 
-<!-- TESTIMONIALS -->
-<section class="section--dark" id="testimonials">
-  <div class="inner">
-    <div class="section-head center section-head--light">
-      <p class="eyebrow">Testimonials</p>
-      <h2>Wedding stories from our grooms</h2>
-    </div>
-    <div class="testi-wrap">
-      <div class="testi-quote" id="testiQuote"></div>
-      <div class="testi-name" id="testiName"></div>
-      <div class="testi-nav">
-        <button id="testiPrev" aria-label="Previous"><svg class="icon" style="width:16px;height:16px; transform:rotate(180deg)"><use href="#ic-chevron"/></svg></button>
-        <button id="testiNext" aria-label="Next"><svg class="icon" style="width:16px;height:16px"><use href="#ic-chevron"/></svg></button>
-      </div>
-      <div class="testi-dots" id="testiDots"></div>
-    </div>
-  </div>
-</section>
+            var STUDIO_KEY = "studio:products";
+            var PRODUCTS = SEED_PRODUCTS.slice();
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="section-head">
-    <p class="eyebrow">Visit or Reach Us</p>
-    <h2>Contact the studio</h2>
-  </div>
-  <div class="contact-grid">
-    <div>
-      <div class="contact-info-item"><svg class="icon"><use href="#ic-pin"/></svg><div><strong>Address</strong><p style="margin:4px 0 0;">Dara Arraian, near Mujahid &amp; Abbottabad Road, Sialkot, Punjab, Pakistan</p></div></div>
-      <div class="contact-info-item"><svg class="icon"><use href="#ic-phone"/></svg><div><strong>Phone / WhatsApp</strong><p style="margin:4px 0 0;">+92 300 1234567 <span style="color:#999">(placeholder — update with your number)</span></p></div></div>
-      <div class="contact-info-item"><svg class="icon"><use href="#ic-mail"/></svg><div><strong>Email</strong><p style="margin:4px 0 0;">hello@bindawooddulhahouse.com</p></div></div>
-      <div class="contact-info-item"><svg class="icon"><use href="#ic-clock"/></svg><div><strong>Business Hours</strong><p style="margin:4px 0 0;">Mon–Sat, 11:00 AM – 9:00 PM (Friday: 11–1, 2:30–9)<br>Sunday by appointment</p></div></div>
-      <iframe class="map-frame" loading="lazy" title="Studio location map" src="https://www.openstreetmap.org/export/embed.html?bbox=74.48%2C32.46%2C74.56%2C32.53&amp;layer=mapnik&amp;marker=32.4945%2C74.5311"></iframe>
-    </div>
-    <form id="contactForm">
-      <div class="field full"><label for="cName">Name</label><input id="cName" type="text" required></div>
-      <div class="field full" style="margin-top:14px;"><label for="cReach">Phone or Email</label><input id="cReach" type="text" required></div>
-      <div class="field full" style="margin-top:14px;"><label for="cMsg">Message</label><textarea id="cMsg" rows="5" required placeholder="How can we help?"></textarea></div>
-      <button type="submit" class="btn btn--filled" style="margin-top:18px;">Send Inquiry</button>
-      <div class="toast" id="contactToast"></div>
-    </form>
-  </div>
-</section>
+            /* ── helpers ── */
+            function waLink(text) {
+                return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+            }
+            document.getElementById("heroWhatsapp").href = waLink("Hi BinDawood Dulha House, I'd like to know more about your collection.");
+            document.getElementById("fabWhatsapp").href = waLink("Hi BinDawood Dulha House, I have a question.");
 
-<!-- FAQ -->
-<section class="section" id="faq" style="background:var(--ivory-dim);">
-  <div class="section-head">
-    <p class="eyebrow">Good to Know</p>
-    <h2>Frequently asked questions</h2>
-  </div>
-  <div id="faqList"></div>
-</section>
+            function categoryName(slug) {
+                var c = CATEGORIES.filter(function(x) { return x.slug === slug; })[0];
+                return c ? c.name : slug;
+            }
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <h4>BinDawood Dulha House</h4>
-      <p style="max-width:320px; font-size:0.88rem;">Bespoke groom wear hand-finished in Sialkot, fitted for weddings across Pakistan and the diaspora.</p>
-    </div>
-    <div>
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="#collections">Collections</a></li>
-        <li><a href="#tailoring">Custom Tailoring</a></li>
-        <li><a href="#appointment">Book Appointment</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Studio</h4>
-      <ul>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 BinDawood Dulha House, Sialkot.</span>
-    <button id="openConsole">Studio Console (catalog demo)</button>
-  </div>
-</footer>
+            /* ── IMAGE RENDERER ── */
+            function renderProductImage(product, alt) {
+                var src = product.image || null;
+                if (src && src.trim() !== "") {
+                    return '<img src="' + src + '" alt="' + (alt || product.name) + '" loading="lazy" />';
+                } else {
+                    // fallback: stylised placeholder with product name
+                    return '<div class="placeholder-img">' + product.name + '</div>';
+                }
+            }
 
-<a class="fab" id="fabWhatsapp" href="#" target="_blank" aria-label="Chat on WhatsApp"><svg class="icon" style="stroke:none; fill:#fff; width:28px; height:28px"><use href="#ic-whatsapp"/></svg></a>
+            /* ── build card ── */
+            function buildCard(p) {
+                var div = document.createElement("div");
+                div.className = "card";
+                var badgeHtml = p.customAvailable ? '<span class="badge">Custom Available</span>' : '';
+                div.innerHTML =
+                    '<div class="card-media">' +
+                    badgeHtml +
+                    renderProductImage(p) +
+                    '</div>' +
+                    '<div class="card-body">' +
+                    '<h3>' + p.name + '</h3>' +
+                    '<p>' + p.description + '</p>' +
+                    '<div class="card-actions">' +
+                    '<button class="btn btn--ghost-dark btn--sm" data-action="inquire">Inquire</button>' +
+                    '<a class="btn btn--filled btn--sm" target="_blank" href="' + waLink("Hi, I'm interested in the " + p.name +
+                        ".") + '">WhatsApp</a>' +
+                    '</div>' +
+                    '</div>';
+                div.addEventListener("click", function(e) {
+                    if (e.target && e.target.getAttribute && e.target.getAttribute("data-action") === "inquire") {
+                        openModal(p);
+                        e.stopPropagation();
+                        return;
+                    }
+                    if (e.target.tagName !== "A") { openModal(p); }
+                });
+                return div;
+            }
 
-<!-- PRODUCT MODAL -->
-<div class="modal-overlay" id="productModal">
-  <div class="modal">
-    <button class="modal-close" id="modalClose">&times;</button>
-    <div class="modal-media" id="modalMedia"></div>
-    <div class="modal-info">
-      <p class="eyebrow" id="modalCategory"></p>
-      <h2 id="modalName"></h2>
-      <p id="modalDesc"></p>
-      <div class="tags" id="modalTags"></div>
-      <a class="btn btn--ghost-dark" id="modalInquire" href="#contact">Send Inquiry</a>
-      <a class="btn btn--filled" id="modalWhatsapp" href="#" target="_blank"><svg class="icon" style="width:16px;height:16px"><use href="#ic-whatsapp"/></svg> Ask on WhatsApp</a>
-    </div>
-  </div>
-</div>
+            /* ── modal ── */
+            var modal = document.getElementById("productModal");
 
-<!-- STUDIO CONSOLE (admin demo) -->
-<div class="console-overlay" id="consoleOverlay">
-  <div class="console">
-    <button class="modal-close" id="consoleClose">&times;</button>
-    <p class="eyebrow">Studio Console</p>
-    <h2>Add a product to the live catalog</h2>
-    <p style="font-size:0.85rem; color:#666;">This demonstrates the dynamic catalog: products added here appear instantly in Collections above — no code changes, no redeploy. Saved to shared artifact storage, visible to anyone who opens this page.</p>
-    <form id="consoleForm" style="margin-top:18px;">
-      <div class="form-grid">
-        <div class="field full"><label>Product Name</label><input id="cpName" type="text" required></div>
-        <div class="field"><label>Category</label><select id="cpCategory" required></select></div>
-        <div class="field"><label>Custom Available?</label><select id="cpCustom"><option value="true">Yes</option><option value="false">No</option></select></div>
-        <div class="field full"><label>Description</label><textarea id="cpDesc" rows="2" required></textarea></div>
-      </div>
-      <button type="submit" class="btn btn--filled btn--sm" style="margin-top:16px;"><svg class="icon" style="width:14px;height:14px"><use href="#ic-plus"/></svg> Add Product</button>
-    </form>
-    <div class="console-list" id="consoleList"></div>
-    <p class="console-note">Items added here are tagged "Studio Added" in the catalog and can be removed from this list.</p>
-  </div>
-</div>
+            function openModal(p) {
+                var media = document.getElementById("modalMedia");
+                media.innerHTML = renderProductImage(p);
+                document.getElementById("modalCategory").textContent = categoryName(p.category);
+                document.getElementById("modalName").textContent = p.name;
+                document.getElementById("modalDesc").textContent = p.description;
+                var tagsEl = document.getElementById("modalTags");
+                tagsEl.innerHTML = "";
+                (p.tags || []).concat(p.customAvailable ? ["custom available"] : []).forEach(function(t) {
+                    var s = document.createElement("span");
+                    s.className = "tag";
+                    s.textContent = t;
+                    tagsEl.appendChild(s);
+                });
+                document.getElementById("modalWhatsapp").href = waLink("Hi, I'm interested in the " + p.name + ".");
+                modal.classList.add("open");
+            }
+            document.getElementById("modalClose").addEventListener("click", function() { modal.classList.remove("open"); });
+            modal.addEventListener("click", function(e) { if (e.target === modal) modal.classList.remove("open"); });
 
-<script>
-(function(){
+            /* ── render functions ── */
+            function renderCollections() {
+                var grid = document.getElementById("collectionsGrid");
+                grid.innerHTML = "";
+                var list = currentFilter === "all" ? PRODUCTS : PRODUCTS.filter(function(p) { return p.category ===
+                        currentFilter; });
+                list.forEach(function(p) { grid.appendChild(buildCard(p)); });
+            }
 
-  var WHATSAPP_NUMBER = "923001234567"; // placeholder — replace with the real business number
+            function renderSignature() {
+                var grid = document.getElementById("signatureGrid");
+                grid.innerHTML = "";
+                PRODUCTS.filter(function(p) { return p.tags.indexOf("signature") > -1; }).slice(0, 3).forEach(function(p) {
+                    grid.appendChild(buildCard(p));
+                });
+            }
 
-  var CATEGORIES = [
-    {slug:"sherwanis", name:"Sherwanis", icon:"ic-coat", motif:"lattice"},
-    {slug:"prince-coats", name:"Prince Coats", icon:"ic-coat", motif:"star"},
-    {slug:"pent-coats", name:"Pent Coats", icon:"ic-coat", motif:"vine"},
-    {slug:"waist-coats", name:"Waist Coats", icon:"ic-coat", motif:"paisley"},
-    {slug:"shalwar-qameez", name:"Shalwar Qameez", icon:"ic-fabric", motif:"lattice"},
-    {slug:"stone-work", name:"Stone Work Suits", icon:"ic-gem", motif:"paisley"},
-    {slug:"turbans", name:"Turbans (Kulla)", icon:"ic-turban", motif:"star"},
-    {slug:"formal-shirts", name:"Formal Shirts", icon:"ic-fabric", motif:"vine"}
-  ];
+            var currentFilter = "all";
 
-  var SEED_PRODUCTS = [
-    {id:"p1", name:"Imperial Ivory Sherwani", category:"sherwanis", description:"Hand-embroidered ivory sherwani with gold thread detailing along the collar and cuffs.", tags:["signature","wedding-season"], customAvailable:true},
-    {id:"p2", name:"Maroon Heritage Sherwani", category:"sherwanis", description:"Deep maroon sherwani with raised zardozi work along the front panel.", tags:["heritage"], customAvailable:true},
-    {id:"p3", name:"Champagne Prince Coat", category:"prince-coats", description:"Tailored prince coat in champagne jacquard with a mandarin collar.", tags:["signature"], customAvailable:true},
-    {id:"p4", name:"Onyx Velvet Prince Coat", category:"prince-coats", description:"Black velvet prince coat with subtle self-tone embroidery for evening functions.", tags:["evening"], customAvailable:true},
-    {id:"p5", name:"Three-Piece Ivory Pent Coat Set", category:"pent-coats", description:"Waistcoat, coat and trouser set in ivory with fine gold piping.", tags:["classic"], customAvailable:true},
-    {id:"p6", name:"Two-Piece Slate Pent Coat", category:"pent-coats", description:"Slim slate-grey two-piece, well suited to daytime ceremonies.", tags:["daytime"], customAvailable:true},
-    {id:"p7", name:"Gold Thread Waistcoat", category:"waist-coats", description:"Fitted waistcoat with fine gold thread embroidery across the chest panel.", tags:["layering"], customAvailable:true},
-    {id:"p8", name:"Maroon Brocade Waistcoat", category:"waist-coats", description:"Brocade waistcoat in deep maroon, made for layering under the sherwani.", tags:["layering"], customAvailable:true},
-    {id:"p9", name:"Classic Ivory Shalwar Qameez", category:"shalwar-qameez", description:"Relaxed ivory shalwar qameez finished with a fine chikankari collar.", tags:["traditional"], customAvailable:true},
-    {id:"p10", name:"Emerald Festive Shalwar Qameez", category:"shalwar-qameez", description:"Emerald shalwar qameez suited to mehndi and festive functions.", tags:["festive","wedding-season"], customAvailable:true},
-    {id:"p11", name:"Crystal Stone Work Suit", category:"stone-work", description:"Hand-set crystal and stone embroidery across the full front panel — our most requested piece.", tags:["signature","stone-work"], customAvailable:true},
-    {id:"p12", name:"Antique Gold Stone Suit", category:"stone-work", description:"Antique gold stone work with a heavier border, built for the baraat entrance.", tags:["stone-work","wedding-season"], customAvailable:true},
-    {id:"p13", name:"Gold Kulla Turban", category:"turbans", description:"Structured kulla turban wrapped in gold-edged fabric.", tags:["accessory"], customAvailable:true},
-    {id:"p14", name:"Maroon Silk Turban", category:"turbans", description:"Silk turban in maroon with a centred kalgi mount.", tags:["accessory"], customAvailable:true},
-    {id:"p15", name:"Ivory Mandarin Collar Shirt", category:"formal-shirts", description:"Fitted mandarin collar shirt for layering beneath the sherwani.", tags:["essential"], customAvailable:true},
-    {id:"p16", name:"Champagne Pinstripe Shirt", category:"formal-shirts", description:"Subtle champagne pinstripe shirt designed for the pent coat set.", tags:["essential"], customAvailable:true}
-  ];
+            function setFilter(slug) {
+                currentFilter = slug;
+                buildFilterPills();
+                renderCollections();
+            }
 
-  var TESTIMONIALS = [
-    {name:"Ahmed R. — Sialkot", quote:"I booked late for my own wedding and the team still delivered a stone work suit that fit perfectly at the first fitting."},
-    {name:"Bilal K. — London, UK", quote:"Sent my measurements over a WhatsApp call and the sherwani that arrived fit better than anything I've bought off a rack."},
-    {name:"Hassan M. — Lahore", quote:"The hand embroidery on my prince coat was worth every fitting session — you can tell it wasn't machine-made."},
-    {name:"Usman T. — Dubai, UAE", quote:"Needed a turnaround in under two weeks and they made it happen without rushing the stitching quality."}
-  ];
+            function buildFilterPills() {
+                var container = document.getElementById("filterPills");
+                container.innerHTML = "";
+                var all = document.createElement("button");
+                all.className = "filter-pill" + (currentFilter === "all" ? " active" : "");
+                all.textContent = "All";
+                all.addEventListener("click", function() { setFilter("all"); });
+                container.appendChild(all);
+                CATEGORIES.forEach(function(c) {
+                    var b = document.createElement("button");
+                    b.className = "filter-pill" + (currentFilter === c.slug ? " active" : "");
+                    b.textContent = c.name;
+                    b.addEventListener("click", function() { setFilter(c.slug); });
+                    container.appendChild(b);
+                });
+            }
 
-  var FAQS = [
-    {q:"Do you offer custom stitching?", a:"Yes — every garment is cut and stitched to individual measurements rather than pulled from ready-made stock."},
-    {q:"What is the delivery time?", a:"Standard custom orders take 3–4 weeks depending on detailing. Stone work and heavy embroidery pieces may take longer."},
-    {q:"Do you handle overseas orders?", a:"Yes. We guide measurements over a WhatsApp video call and ship internationally once fittings are confirmed remotely."},
-    {q:"Can you handle urgent orders?", a:"Rush orders are accepted when our schedule allows — message us your wedding date and we'll confirm availability."},
-    {q:"What fabric types are available?", a:"Raw silk, velvet, jacquard and cotton blends, with swatches available in-studio or photographed on request."},
-    {q:"How does the booking process work?", a:"Book a consultation, choose your design and fabric, complete measurements, attend fittings, then collect or receive delivery."}
-  ];
+            function renderAll() {
+                buildFilterPills();
+                renderCollections();
+                renderSignature();
+            }
 
-  var STUDIO_KEY = "studio:products";
-  var PRODUCTS = SEED_PRODUCTS.slice();
+            /* ── category rail ── */
+            var categoryRail = document.getElementById("categoryRail");
+            CATEGORIES.forEach(function(c) {
+                var card = document.createElement("div");
+                card.className = "rail-card";
+                card.innerHTML = '<svg class="icon"><use href="#' + c.icon + '"/></svg><div><h3>' + c.name +
+                    '</h3><span>View Collection</span></div>';
+                card.addEventListener("click", function() { setFilter(c.slug);
+                    document.getElementById("collections").scrollIntoView({ behavior: "smooth" }); });
+                categoryRail.appendChild(card);
+            });
 
-  function waLink(text){
-    return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
-  }
-  document.getElementById("heroWhatsapp").href = waLink("Hi BinDawood Dulha House, I'd like to know more about your collection.");
-  document.getElementById("fabWhatsapp").href = waLink("Hi BinDawood Dulha House, I have a question.");
+            /* ── storage ── */
+            function loadStudioProducts() {
+                if (!window.storage) { renderAll(); return; }
+                window.storage.get(STUDIO_KEY, true).then(function(res) {
+                    try {
+                        var extra = res && res.value ? JSON.parse(res.value) : [];
+                        PRODUCTS = SEED_PRODUCTS.concat(extra);
+                    } catch (e) { PRODUCTS = SEED_PRODUCTS.slice(); }
+                    renderAll();
+                    renderConsoleList();
+                }).catch(function() {
+                    PRODUCTS = SEED_PRODUCTS.slice();
+                    renderAll();
+                    renderConsoleList();
+                });
+            }
 
-  /* ---------- motif SVG generator (signature visual element) ---------- */
-  var motifIdCounter = 0;
-  function motifSvg(motifType, label){
-    motifIdCounter++;
-    var pid = "mot" + motifIdCounter;
-    var tint = motifType === "paisley" ? "#5a1320" : motifType === "star" ? "#0f4c3a" : "#c9a25c";
-    var bg = "#15110f";
-    var pattern = "";
-    if(motifType === "lattice"){
-      pattern = '<pattern id="'+pid+'" width="34" height="34" patternUnits="userSpaceOnUse">'+
-        '<path d="M0 17 L17 0 L34 17 L17 34 Z" fill="none" stroke="'+tint+'" stroke-width="1"/></pattern>';
-    } else if(motifType === "star"){
-      pattern = '<pattern id="'+pid+'" width="40" height="40" patternUnits="userSpaceOnUse">'+
-        '<path d="M20 4 L24 16 L36 16 L26 23 L30 35 L20 28 L10 35 L14 23 L4 16 L16 16 Z" fill="none" stroke="'+tint+'" stroke-width="0.9"/></pattern>';
-    } else if(motifType === "vine"){
-      pattern = '<pattern id="'+pid+'" width="50" height="50" patternUnits="userSpaceOnUse">'+
-        '<path d="M0 25 Q12 5 25 25 T50 25" fill="none" stroke="'+tint+'" stroke-width="1"/>'+
-        '<circle cx="12" cy="14" r="2" fill="'+tint+'"/><circle cx="37" cy="36" r="2" fill="'+tint+'"/></pattern>';
-    } else {
-      pattern = '<pattern id="'+pid+'" width="44" height="44" patternUnits="userSpaceOnUse">'+
-        '<path d="M22 4c10 0 10 18 0 18S12 4 22 4z" fill="none" stroke="'+tint+'" stroke-width="1"/>'+
-        '<circle cx="22" cy="30" r="3" fill="none" stroke="'+tint+'" stroke-width="1"/></pattern>';
-    }
-    var safe = (label || "").replace(/&/g,"&amp;").replace(/</g,"&lt;");
-    return '<svg viewBox="0 0 300 375" xmlns="http://www.w3.org/2000/svg">'+
-      '<defs>'+pattern+'</defs>'+
-      '<rect width="300" height="375" fill="'+bg+'"/>'+
-      '<rect width="300" height="375" fill="url(#'+pid+')"/>'+
-      '<rect x="0" y="300" width="300" height="75" fill="rgba(12,10,9,0.55)"/>'+
-      '<text x="20" y="345" font-family="Cormorant Garamond, serif" font-style="italic" font-size="22" fill="'+ (motifType==="lattice" ? "#e7c87e" : "#f6f1e6") +'">'+safe+'</text>'+
-      '</svg>';
-  }
+            function saveStudioProducts(list) {
+                if (!window.storage) return Promise.resolve();
+                return window.storage.set(STUDIO_KEY, JSON.stringify(list), true).catch(function(err) {
+                    console.error("Storage error", err);
+                });
+            }
 
-  /* ---------- storage helpers ---------- */
-  function loadStudioProducts(){
-    if(!window.storage){ renderAll(); return; }
-    window.storage.get(STUDIO_KEY, true).then(function(res){
-      try{
-        var extra = res && res.value ? JSON.parse(res.value) : [];
-        PRODUCTS = SEED_PRODUCTS.concat(extra);
-      }catch(e){ PRODUCTS = SEED_PRODUCTS.slice(); }
-      renderAll();
-      renderConsoleList();
-    }).catch(function(){
-      PRODUCTS = SEED_PRODUCTS.slice();
-      renderAll();
-      renderConsoleList();
-    });
-  }
-  function saveStudioProducts(list){
-    if(!window.storage) return Promise.resolve();
-    return window.storage.set(STUDIO_KEY, JSON.stringify(list), true).catch(function(err){
-      console.error("Storage error", err);
-    });
-  }
-  function getStudioExtras(){
-    return PRODUCTS.filter(function(p){ return p.studioAdded; });
-  }
+            function getStudioExtras() {
+                return PRODUCTS.filter(function(p) { return p.studioAdded; });
+            }
 
-  /* ---------- category rail + filters ---------- */
-  var categoryRail = document.getElementById("categoryRail");
-  var filterPills = document.getElementById("filterPills");
-  CATEGORIES.forEach(function(c){
-    var card = document.createElement("div");
-    card.className = "rail-card";
-    card.innerHTML = '<svg class="icon"><use href="#'+c.icon+'"/></svg><div><h3>'+c.name+'</h3><span>View Collection</span></div>';
-    card.addEventListener("click", function(){ setFilter(c.slug); document.getElementById("collections").scrollIntoView({behavior:"smooth"}); });
-    categoryRail.appendChild(card);
-  });
+            /* ── console ── */
+            var consoleOverlay = document.getElementById("consoleOverlay");
+            document.getElementById("openConsole").addEventListener("click", function() { consoleOverlay.classList.add(
+                    "open"); });
+            document.getElementById("consoleClose").addEventListener("click", function() { consoleOverlay.classList.remove(
+                    "open"); });
+            consoleOverlay.addEventListener("click", function(e) { if (e.target === consoleOverlay) consoleOverlay.classList
+                    .remove("open"); });
 
-  var currentFilter = "all";
-  function buildFilterPills(){
-    filterPills.innerHTML = "";
-    var all = document.createElement("button");
-    all.className = "filter-pill" + (currentFilter==="all" ? " active" : "");
-    all.textContent = "All";
-    all.addEventListener("click", function(){ setFilter("all"); });
-    filterPills.appendChild(all);
-    CATEGORIES.forEach(function(c){
-      var b = document.createElement("button");
-      b.className = "filter-pill" + (currentFilter===c.slug ? " active" : "");
-      b.textContent = c.name;
-      b.addEventListener("click", function(){ setFilter(c.slug); });
-      filterPills.appendChild(b);
-    });
-  }
-  function setFilter(slug){
-    currentFilter = slug;
-    buildFilterPills();
-    renderCollections();
-  }
+            var cpCategory = document.getElementById("cpCategory");
+            CATEGORIES.forEach(function(c) {
+                var o = document.createElement("option");
+                o.value = c.slug;
+                o.textContent = c.name;
+                cpCategory.appendChild(o);
+            });
 
-  /* ---------- card builder ---------- */
-  function categoryName(slug){
-    var c = CATEGORIES.filter(function(x){return x.slug===slug;})[0];
-    return c ? c.name : slug;
-  }
-  function categoryMotif(slug){
-    var c = CATEGORIES.filter(function(x){return x.slug===slug;})[0];
-    return c ? c.motif : "lattice";
-  }
-  function buildCard(p){
-    var div = document.createElement("div");
-    div.className = "card";
-    var badgeHtml = p.customAvailable ? '<span class="badge">Custom Available</span>' : '';
-    div.innerHTML =
-      '<div class="card-media">'+badgeHtml+motifSvg(categoryMotif(p.category), p.name)+'</div>'+
-      '<div class="card-body">'+
-        '<h3>'+p.name+'</h3>'+
-        '<p>'+p.description+'</p>'+
-        '<div class="card-actions">'+
-          '<button class="btn btn--ghost-dark btn--sm" data-action="inquire">Inquire</button>'+
-          '<a class="btn btn--filled btn--sm" target="_blank" href="'+waLink("Hi, I'm interested in the "+p.name+".")+'">WhatsApp</a>'+
-        '</div>'+
-      '</div>';
-    div.addEventListener("click", function(e){
-      if(e.target && e.target.getAttribute && e.target.getAttribute("data-action")==="inquire"){
-        openModal(p);
-        e.stopPropagation();
-        return;
-      }
-      if(e.target.tagName !== "A"){ openModal(p); }
-    });
-    return div;
-  }
+            /* image preview in console */
+            document.getElementById("previewImageBtn").addEventListener("click", function() {
+                var url = document.getElementById("cpImage").value.trim();
+                var container = document.getElementById("imagePreviewContainer");
+                if (url) {
+                    container.innerHTML = '<img src="' + url + '" alt="preview" class="image-preview" style="max-width:120px;border-radius:4px;" onerror="this.style.display=\'none\'" />';
+                } else {
+                    container.innerHTML = '';
+                }
+            });
 
-  function renderCollections(){
-    var grid = document.getElementById("collectionsGrid");
-    grid.innerHTML = "";
-    var list = currentFilter==="all" ? PRODUCTS : PRODUCTS.filter(function(p){return p.category===currentFilter;});
-    list.forEach(function(p){ grid.appendChild(buildCard(p)); });
-  }
-  function renderSignature(){
-    var grid = document.getElementById("signatureGrid");
-    grid.innerHTML = "";
-    PRODUCTS.filter(function(p){ return p.tags.indexOf("signature")>-1; }).slice(0,3).forEach(function(p){
-      grid.appendChild(buildCard(p));
-    });
-  }
-  function renderAll(){
-    buildFilterPills();
-    renderCollections();
-    renderSignature();
-  }
+            function renderConsoleList() {
+                var list = document.getElementById("consoleList");
+                list.innerHTML = "";
+                var extras = getStudioExtras();
+                if (extras.length === 0) {
+                    list.innerHTML = '<p style="font-size:0.82rem;color:#999;">No studio-added products yet — add one above to see it appear live in Collections.</p>';
+                    return;
+                }
+                extras.forEach(function(p) {
+                    var row = document.createElement("div");
+                    row.className = "console-row";
+                    row.innerHTML = '<span>' + p.name + ' — ' + categoryName(p.category) + ' ' + (p.image ?
+                        '📷' : '') + '</span>';
+                    var btn = document.createElement("button");
+                    btn.innerHTML = '<svg class="icon" style="width:16px;height:16px"><use href="#ic-trash"/></svg>';
+                    btn.addEventListener("click", function() { removeStudioProduct(p.id); });
+                    row.appendChild(btn);
+                    list.appendChild(row);
+                });
+            }
 
-  /* ---------- product modal ---------- */
-  var modal = document.getElementById("productModal");
-  function openModal(p){
-    document.getElementById("modalMedia").innerHTML = motifSvg(categoryMotif(p.category), p.name);
-    document.getElementById("modalCategory").textContent = categoryName(p.category);
-    document.getElementById("modalName").textContent = p.name;
-    document.getElementById("modalDesc").textContent = p.description;
-    var tagsEl = document.getElementById("modalTags");
-    tagsEl.innerHTML = "";
-    (p.tags||[]).concat(p.customAvailable ? ["custom available"] : []).forEach(function(t){
-      var s = document.createElement("span"); s.className="tag"; s.textContent = t; tagsEl.appendChild(s);
-    });
-    document.getElementById("modalWhatsapp").href = waLink("Hi, I'm interested in the "+p.name+".");
-    modal.classList.add("open");
-  }
-  document.getElementById("modalClose").addEventListener("click", function(){ modal.classList.remove("open"); });
-  modal.addEventListener("click", function(e){ if(e.target===modal) modal.classList.remove("open"); });
+            document.getElementById("consoleForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+                var imageUrl = document.getElementById("cpImage").value.trim();
+                var product = {
+                    id: "studio-" + Date.now(),
+                    name: document.getElementById("cpName").value,
+                    category: cpCategory.value,
+                    description: document.getElementById("cpDesc").value,
+                    tags: ["Studio Added"],
+                    customAvailable: document.getElementById("cpCustom").value === "true",
+                    studioAdded: true,
+                    image: imageUrl || null
+                };
+                PRODUCTS.push(product);
+                var extras = getStudioExtras();
+                saveStudioProducts(extras).finally(function() {
+                    renderAll();
+                    renderConsoleList();
+                    e.target.reset();
+                    document.getElementById("imagePreviewContainer").innerHTML = "";
+                });
+            });
 
-  /* ---------- testimonials ---------- */
-  var tIndex = 0;
-  function renderTestimonial(){
-    document.getElementById("testiQuote").textContent = '\u201C' + TESTIMONIALS[tIndex].quote + '\u201D';
-    document.getElementById("testiName").textContent = TESTIMONIALS[tIndex].name;
-    var dots = document.getElementById("testiDots");
-    dots.innerHTML = "";
-    TESTIMONIALS.forEach(function(_, i){
-      var d = document.createElement("span");
-      if(i===tIndex) d.className = "active";
-      d.addEventListener("click", function(){ tIndex = i; renderTestimonial(); });
-      dots.appendChild(d);
-    });
-  }
-  document.getElementById("testiPrev").addEventListener("click", function(){ tIndex = (tIndex-1+TESTIMONIALS.length)%TESTIMONIALS.length; renderTestimonial(); });
-  document.getElementById("testiNext").addEventListener("click", function(){ tIndex = (tIndex+1)%TESTIMONIALS.length; renderTestimonial(); });
-  setInterval(function(){ tIndex = (tIndex+1)%TESTIMONIALS.length; renderTestimonial(); }, 6000);
-  renderTestimonial();
+            function removeStudioProduct(id) {
+                PRODUCTS = PRODUCTS.filter(function(p) { return p.id !== id; });
+                var extras = getStudioExtras();
+                saveStudioProducts(extras).finally(function() {
+                    renderAll();
+                    renderConsoleList();
+                });
+            }
 
-  /* ---------- FAQ ---------- */
-  var faqList = document.getElementById("faqList");
-  FAQS.forEach(function(item){
-    var el = document.createElement("div");
-    el.className = "faq-item";
-    el.innerHTML = '<div class="faq-q"><h3>'+item.q+'</h3><svg class="icon"><use href="#ic-plus"/></svg></div><div class="faq-a"><p>'+item.a+'</p></div>';
-    var q = el.querySelector(".faq-q");
-    var a = el.querySelector(".faq-a");
-    q.addEventListener("click", function(){
-      var isOpen = el.classList.contains("open");
-      document.querySelectorAll(".faq-item").forEach(function(other){
-        other.classList.remove("open");
-        other.querySelector(".faq-a").style.maxHeight = null;
-      });
-      if(!isOpen){
-        el.classList.add("open");
-        a.style.maxHeight = a.scrollHeight + "px";
-      }
-    });
-    faqList.appendChild(el);
-  });
+            /* ── testimonials ── */
+            var tIndex = 0;
 
-  /* ---------- appointment form ---------- */
-  document.getElementById("appointmentForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var record = {
-      service: document.getElementById("apptService").value,
-      date: document.getElementById("apptDate").value,
-      time: document.getElementById("apptTime").value,
-      phone: document.getElementById("apptPhone").value,
-      name: document.getElementById("apptName").value,
-      notes: document.getElementById("apptNotes").value,
-      submittedAt: new Date().toISOString()
-    };
-    var toast = document.getElementById("apptToast");
-    function showToast(){
-      toast.textContent = "Thanks, " + record.name + " — your " + record.service.toLowerCase() + " request for " + record.date + " at " + record.time + " has been received. We'll confirm by phone or WhatsApp.";
-      toast.classList.add("show");
-      e.target.reset();
-    }
-    if(window.storage){
-      window.storage.get("appointments", false).then(function(res){
-        var list = [];
-        try{ list = res && res.value ? JSON.parse(res.value) : []; }catch(err){ list = []; }
-        list.push(record);
-        return window.storage.set("appointments", JSON.stringify(list), false);
-      }).catch(function(){
-        return window.storage.set("appointments", JSON.stringify([record]), false).catch(function(){});
-      }).finally(function(){ showToast(); });
-    } else {
-      showToast();
-    }
-  });
+            function renderTestimonial() {
+                document.getElementById("testiQuote").textContent = '\u201C' + TESTIMONIALS[tIndex].quote + '\u201D';
+                document.getElementById("testiName").textContent = TESTIMONIALS[tIndex].name;
+                var dots = document.getElementById("testiDots");
+                dots.innerHTML = "";
+                TESTIMONIALS.forEach(function(_, i) {
+                    var d = document.createElement("span");
+                    if (i === tIndex) d.className = "active";
+                    d.addEventListener("click", function() { tIndex = i;
+                        renderTestimonial(); });
+                    dots.appendChild(d);
+                });
+            }
+            document.getElementById("testiPrev").addEventListener("click", function() { tIndex = (tIndex - 1 +
+                    TESTIMONIALS.length) % TESTIMONIALS.length;
+                renderTestimonial(); });
+            document.getElementById("testiNext").addEventListener("click", function() { tIndex = (tIndex + 1) % TESTIMONIALS
+                    .length;
+                renderTestimonial(); });
+            setInterval(function() { tIndex = (tIndex + 1) % TESTIMONIALS.length;
+                renderTestimonial(); }, 6000);
+            renderTestimonial();
 
-  /* ---------- contact form ---------- */
-  document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var toast = document.getElementById("contactToast");
-    toast.textContent = "Thanks — we've received your message and will reply shortly.";
-    toast.classList.add("show");
-    e.target.reset();
-  });
+            /* ── FAQ ── */
+            var faqList = document.getElementById("faqList");
+            FAQS.forEach(function(item) {
+                var el = document.createElement("div");
+                el.className = "faq-item";
+                el.innerHTML =
+                    '<div class="faq-q"><h3>' + item.q +
+                    '</h3><svg class="icon"><use href="#ic-plus"/></svg></div><div class="faq-a"><p>' + item.a +
+                    '</p></div>';
+                var q = el.querySelector(".faq-q");
+                var a = el.querySelector(".faq-a");
+                q.addEventListener("click", function() {
+                    var isOpen = el.classList.contains("open");
+                    document.querySelectorAll(".faq-item").forEach(function(other) {
+                        other.classList.remove("open");
+                        other.querySelector(".faq-a").style.maxHeight = null;
+                    });
+                    if (!isOpen) {
+                        el.classList.add("open");
+                        a.style.maxHeight = a.scrollHeight + "px";
+                    }
+                });
+                faqList.appendChild(el);
+            });
 
-  /* ---------- nav scroll + mobile menu ---------- */
-  var nav = document.getElementById("siteNav");
-  window.addEventListener("scroll", function(){
-    if(window.scrollY > 40) nav.classList.add("scrolled"); else nav.classList.remove("scrolled");
-  });
-  var burger = document.getElementById("burgerBtn");
-  var navLinks = document.getElementById("navLinks");
-  burger.addEventListener("click", function(){ navLinks.classList.toggle("open"); });
-  navLinks.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ navLinks.classList.remove("open"); }); });
+            /* ── appointment form ── */
+            document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+                var record = {
+                    service: document.getElementById("apptService").value,
+                    date: document.getElementById("apptDate").value,
+                    time: document.getElementById("apptTime").value,
+                    phone: document.getElementById("apptPhone").value,
+                    name: document.getElementById("apptName").value,
+                    notes: document.getElementById("apptNotes").value,
+                    submittedAt: new Date().toISOString()
+                };
+                var toast = document.getElementById("apptToast");
 
-  /* ---------- studio console (admin demo) ---------- */
-  var consoleOverlay = document.getElementById("consoleOverlay");
-  document.getElementById("openConsole").addEventListener("click", function(){ consoleOverlay.classList.add("open"); });
-  document.getElementById("consoleClose").addEventListener("click", function(){ consoleOverlay.classList.remove("open"); });
-  consoleOverlay.addEventListener("click", function(e){ if(e.target===consoleOverlay) consoleOverlay.classList.remove("open"); });
+                function showToast() {
+                    toast.textContent = "Thanks, " + record.name + " — your " + record.service.toLowerCase() +
+                        " request for " + record.date + " at " + record.time +
+                        " has been received. We'll confirm by phone or WhatsApp.";
+                    toast.classList.add("show");
+                    e.target.reset();
+                }
+                if (window.storage) {
+                    window.storage.get("appointments", false).then(function(res) {
+                        var list = [];
+                        try { list = res && res.value ? JSON.parse(res.value) : []; } catch (err) { list = []; }
+                        list.push(record);
+                        return window.storage.set("appointments", JSON.stringify(list), false);
+                    }).catch(function() {
+                        return window.storage.set("appointments", JSON.stringify([record]), false).catch(
+                        function() {});
+                    }).finally(function() { showToast(); });
+                } else {
+                    showToast();
+                }
+            });
 
-  var cpCategory = document.getElementById("cpCategory");
-  CATEGORIES.forEach(function(c){
-    var o = document.createElement("option"); o.value = c.slug; o.textContent = c.name; cpCategory.appendChild(o);
-  });
+            /* ── contact form ── */
+            document.getElementById("contactForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+                var toast = document.getElementById("contactToast");
+                toast.textContent = "Thanks — we've received your message and will reply shortly.";
+                toast.classList.add("show");
+                e.target.reset();
+            });
 
-  function renderConsoleList(){
-    var list = document.getElementById("consoleList");
-    list.innerHTML = "";
-    var extras = getStudioExtras();
-    if(extras.length===0){
-      list.innerHTML = '<p style="font-size:0.82rem;color:#999;">No studio-added products yet — add one above to see it appear live in Collections.</p>';
-      return;
-    }
-    extras.forEach(function(p){
-      var row = document.createElement("div");
-      row.className = "console-row";
-      row.innerHTML = '<span>'+p.name+' — '+categoryName(p.category)+'</span>';
-      var btn = document.createElement("button");
-      btn.innerHTML = '<svg class="icon" style="width:16px;height:16px"><use href="#ic-trash"/></svg>';
-      btn.addEventListener("click", function(){ removeStudioProduct(p.id); });
-      row.appendChild(btn);
-      list.appendChild(row);
-    });
-  }
+            /* ── nav ── */
+            var nav = document.getElementById("siteNav");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 40) nav.classList.add("scrolled");
+                else nav.classList.remove("scrolled");
+            });
+            var burger = document.getElementById("burgerBtn");
+            var navLinks = document.getElementById("navLinks");
+            burger.addEventListener("click", function() { navLinks.classList.toggle("open"); });
+            navLinks.querySelectorAll("a").forEach(function(a) { a.addEventListener("click", function() { navLinks
+                        .classList.remove("open"); }); });
 
-  document.getElementById("consoleForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var product = {
-      id: "studio-" + Date.now(),
-      name: document.getElementById("cpName").value,
-      category: cpCategory.value,
-      description: document.getElementById("cpDesc").value,
-      tags: ["Studio Added"],
-      customAvailable: document.getElementById("cpCustom").value === "true",
-      studioAdded: true
-    };
-    PRODUCTS.push(product);
-    var extras = getStudioExtras();
-    saveStudioProducts(extras).finally(function(){
-      renderAll();
-      renderConsoleList();
-      e.target.reset();
-    });
-  });
+            /* ── init ── */
+            loadStudioProducts();
 
-  function removeStudioProduct(id){
-    PRODUCTS = PRODUCTS.filter(function(p){ return p.id !== id; });
-    var extras = getStudioExtras();
-    saveStudioProducts(extras).finally(function(){
-      renderAll();
-      renderConsoleList();
-    });
-  }
-
-  loadStudioProducts();
-})();
-</script>
+        })();
+    </script>
 </body>
 </html>
