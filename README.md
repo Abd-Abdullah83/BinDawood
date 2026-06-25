@@ -6,7 +6,7 @@
 
 **Sialkot's Premier Luxury Groom Wear House — Now Online**
 
-[![Website](https://img.shields.io/badge/Live%20Site-bindawoddulhahouse.com-C9A55A?style=for-the-badge)](https://bindawoddulhahouse.com)
+[![Website](https://img.shields.io/badge/Live%20Site-bindawoddulhahouse.com-C9A55A?style=for-the-badge)](abd-abdullah83.github.io/BinDawood/)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Book%20Now-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/923337777882)
 [![Location](https://img.shields.io/badge/Sialkot-Punjab%2C%20Pakistan-1C3A2C?style=for-the-badge)]()
 
