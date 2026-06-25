@@ -369,6 +369,17 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   .fg{grid-template-columns:1fr}
   .st-r{grid-template-columns:1fr}
 }
+  /* PRODUCT IMAGE SLIDER */
+.pslider{position:relative;width:100%;height:100%;overflow:hidden}
+.pslider-track{display:flex;height:100%;transition:transform .4s ease}
+.pslider-track img{min-width:100%;width:100%;height:100%;object-fit:cover;flex-shrink:0}
+.pslider-btn{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;background:rgba(10,10,10,.65);border:1px solid rgba(201,165,90,.5);color:var(--gold);font-size:.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:background .2s}
+.pslider-btn:hover{background:rgba(201,165,90,.25)}
+.pslider-prev{left:8px}
+.pslider-next{right:8px}
+.pslider-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:5}
+.pslider-dot{width:5px;height:5px;border-radius:50%;background:rgba(245,240,230,.4);cursor:pointer;transition:background .2s}
+.pslider-dot.ac{background:var(--gold)}
 </style>
 </head>
 <body>
@@ -743,7 +754,19 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 
       <!-- PRINCE COATS -->
       <div class="pc" data-cat="prince">
-        <div class="pi"><div class="pib p3"></div><div class="emb"></div><div class="pbg">Ready &amp; Custom</div></div>
+      
+  <div class="pi">
+    <div class="pslider">
+      <div class="pslider-track">
+        <img src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat">
+        <img src="images/prince-coats/pc12.jpg" alt="Navy Imperial Prince Coat 2">
+      </div>
+      <button class="pslider-btn pslider-prev">&#8249;</button>
+      <button class="pslider-btn pslider-next">&#8250;</button>
+      <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+    </div>
+    <div class="emb"></div><div class="pbg">Ready &amp; Custom</div>
+  </div>
         <div class="pif">
           <p class="pct">Prince Coat</p>
           <p class="pn">Navy Imperial Prince Coat</p>
@@ -755,7 +778,22 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="prince">
-        <div class="pi"><img src="images/prince-coats/midnight-garden.jpg" alt="Midnight Garden Prince Coat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+      
+  <div class="pi">
+    <div class="pslider">
+      <div class="pslider-track">
+        <img src="images/prince-coats/midnight-garden.jpg" alt="Midnight Garden Prince Coat">
+        <img src="images/prince-coats/pc22.jpg" alt="Midnight Garden 2">
+        <img src="images/prince-coats/pc23.jpg" alt="Midnight Garden 3">
+        <img src="images/prince-coats/pc24.jpg" alt="Midnight Garden 4">
+        <img src="images/prince-coats/pc25.jpg" alt="Midnight Garden 5">
+      </div>
+      <button class="pslider-btn pslider-prev">&#8249;</button>
+      <button class="pslider-btn pslider-next">&#8250;</button>
+      <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
+    </div>
+    <div class="emb"></div><div class="pbg">Custom Available</div>
+  </div>
         <div class="pif">
           <p class="pct">Prince Coat</p>
           <p class="pn">Midnight Garden Prince Coat</p>
@@ -765,10 +803,237 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           </div>
         </div>
       </div>
+<!-- PRINCE COATS continued -->
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc31.jpg" alt="Prince Coat 3">
+              <img src="images/prince-coats/pc32.jpg" alt="Prince Coat 3 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 3</p>
+          <p class="pd">A refined statement piece with traditional craftsmanship and premium fabric. Available for customisation.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+3." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
 
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc41.jpg" alt="Prince Coat 4">
+              <img src="images/prince-coats/pc42.jpg" alt="Prince Coat 4 - 2">
+              <img src="images/prince-coats/pc43.jpg" alt="Prince Coat 4 - 3">
+              <img src="images/prince-coats/pc44.jpg" alt="Prince Coat 4 - 4">
+              <img src="images/prince-coats/pc45.jpg" alt="Prince Coat 4 - 5">
+              <img src="images/prince-coats/pc46.jpg" alt="Prince Coat 4 - 6">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 4</p>
+          <p class="pd">Exquisitely detailed with rich embroidery and a tailored silhouette. One of our most sought-after bespoke designs.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+4." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc51.jpg" alt="Prince Coat 5">
+              <img src="images/prince-coats/pc52.jpg" alt="Prince Coat 5 - 2">
+              <img src="images/prince-coats/pc53.jpg" alt="Prince Coat 5 - 3">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 5</p>
+          <p class="pd">Classic prince coat silhouette with premium fabric and elegant detailing. Ideal for Barat and Walima.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+5." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc61.jpg" alt="Prince Coat 6">
+              <img src="images/prince-coats/pc62.jpg" alt="Prince Coat 6 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 6</p>
+          <p class="pd">A timeless formal piece with intricate embroidery work, perfect for the discerning groom.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+6." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc71.jpg" alt="Prince Coat 7">
+              <img src="images/prince-coats/pc72.jpg" alt="Prince Coat 7 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 7</p>
+          <p class="pd">Structured tailoring with modern sensibility. A bold yet refined choice for the contemporary groom.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+7." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc81.jpg" alt="Prince Coat 8">
+              <img src="images/prince-coats/pc82.jpg" alt="Prince Coat 8 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 8</p>
+          <p class="pd">Luxurious fabric with hand-finished details. A statement of understated royal elegance.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+8." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc91.jpg" alt="Prince Coat 9">
+              <img src="images/prince-coats/pc92.jpg" alt="Prince Coat 9 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 9</p>
+          <p class="pd">A richly textured piece with precise tailoring. Available in bespoke colour and embroidery options.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+9." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc101.jpg" alt="Prince Coat 10">
+              <img src="images/prince-coats/pc102.jpg" alt="Prince Coat 10 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 10</p>
+          <p class="pd">A full-length formal prince coat with a polished finish. Ideal for grand wedding ceremonies.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+10." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc111.jpg" alt="Prince Coat 11">
+              <img src="images/prince-coats/pc112.jpg" alt="Prince Coat 11 - 2">
+              <img src="images/prince-coats/pc113.jpg" alt="Prince Coat 11 - 3">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 11</p>
+          <p class="pd">Distinctive design with premium embellishments. A true showpiece for the barat ceremony.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+11." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="prince">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/prince-coats/pc121.jpg" alt="Prince Coat 12">
+              <img src="images/prince-coats/pc122.jpg" alt="Prince Coat 12 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Prince Coat</p>
+          <p class="pn">Prince Coat — Style 12</p>
+          <p class="pd">Elegant craftsmanship with a commanding presence. Our latest addition to the prince coat collection.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+12." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
       <!-- PENT COATS -->
-      <div class="pc" data-cat="pent">
-        <div class="pi"><div class="pib p6"></div><div class="emb"></div><div class="pbg">Custom Available</div></div>
+     <div class="pc" data-cat="pent">
+  <div class="pi">
+    <div class="pslider">
+      <div class="pslider-track">
+        <img src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic">
+        <img src="images/pent-coats/p12.jpg" alt="3-Piece Forest Classic 2">
+        <img src="images/pent-coats/p13.jpg" alt="3-Piece Forest Classic 3">
+      </div>
+      <button class="pslider-btn pslider-prev">&#8249;</button>
+      <button class="pslider-btn pslider-next">&#8250;</button>
+      <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
+    </div>
+    <div class="emb"></div><div class="pbg">Custom Available</div>
+  </div>
         <div class="pif">
           <p class="pct">Pent Coat</p>
           <p class="pn">3-Piece Forest Classic</p>
@@ -778,7 +1043,237 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           </div>
         </div>
       </div>
+<!-- PENT COATS continued -->
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p21.jpg" alt="Pent Coat 2">
+              <img src="images/pent-coats/p22.jpg" alt="Pent Coat 2 - 2">
+              <img src="images/pent-coats/p23.jpg" alt="Pent Coat 2 - 3">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 2</p>
+          <p class="pd">A sharp contemporary cut with premium suiting fabric. The modern groom's formal statement.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+2." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
 
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p31.jpg" alt="Pent Coat 3">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 3</p>
+          <p class="pd">Refined tailoring with classic proportions. A versatile piece suited for all wedding functions.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+3." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p41.jpg" alt="Pent Coat 4">
+              <img src="images/pent-coats/p42.jpg" alt="Pent Coat 4 - 2">
+              <img src="images/pent-coats/p43.jpg" alt="Pent Coat 4 - 3">
+              <img src="images/pent-coats/p44.jpg" alt="Pent Coat 4 - 4">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 4</p>
+          <p class="pd">Bold structure with premium fabric. A standout look for the groom who commands attention.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+4." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p51.jpg" alt="Pent Coat 5">
+              <img src="images/pent-coats/p52.jpg" alt="Pent Coat 5 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 5</p>
+          <p class="pd">Sleek and sophisticated — a two-piece formal suit with a tailored waistcoat finish.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+5." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p61.jpg" alt="Pent Coat 6">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 6</p>
+          <p class="pd">A minimalist formal piece with a strong silhouette. Pairs beautifully with our waist coat range.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+6." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p71.jpg" alt="Pent Coat 7">
+              <img src="images/pent-coats/p72.jpg" alt="Pent Coat 7 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 7</p>
+          <p class="pd">Structured jacket with clean lapels and a tailored trouser cut. The definition of sharp elegance.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+7." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p81.jpg" alt="Pent Coat 8">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 8</p>
+          <p class="pd">Premium fabric with a classic formal finish. A timeless wardrobe piece for every groom.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+8." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p91.jpg" alt="Pent Coat 9">
+              <img src="images/pent-coats/p92.jpg" alt="Pent Coat 9 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 9</p>
+          <p class="pd">Contemporary cut with a distinguished finish. A favourite among grooms seeking a modern look.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+9." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p101.jpg" alt="Pent Coat 10">
+              <img src="images/pent-coats/p102.jpg" alt="Pent Coat 10 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 10</p>
+          <p class="pd">A refined three-piece with subtle detailing and impeccable construction. Available in multiple colours.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+10." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p111.jpg" alt="Pent Coat 11">
+              <img src="images/pent-coats/p112.jpg" alt="Pent Coat 11 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 11</p>
+          <p class="pd">Strong silhouette with a polished drape. A confident choice for the Walima and formal receptions.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+11." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="pc" data-cat="pent">
+        <div class="pi">
+          <div class="pslider">
+            <div class="pslider-track">
+              <img src="images/pent-coats/p121.jpg" alt="Pent Coat 12">
+              <img src="images/pent-coats/p122.jpg" alt="Pent Coat 12 - 2">
+            </div>
+            <button class="pslider-btn pslider-prev">&#8249;</button>
+            <button class="pslider-btn pslider-next">&#8250;</button>
+            <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+          </div>
+          <div class="emb"></div><div class="pbg">Custom Available</div>
+        </div>
+        <div class="pif">
+          <p class="pct">Pent Coat</p>
+          <p class="pn">Pent Coat — Style 12</p>
+          <p class="pd">The latest addition to our pent coat line. A modern formal design with premium finishing and structure.</p>
+          <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+12." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
+        </div>
+      </div>
       <!-- WAIST COATS -->
       <div class="pc" data-cat="waist">
         <div class="pi"><div class="pib p9"></div><div class="emb"></div><div class="pbg">Ready &amp; Custom</div></div>
@@ -844,7 +1339,19 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="sherwani">
-        <div class="pi"><div class="pib p5"></div><div class="emb"></div><div class="pbg">Custom Available</div></div>
+       <div class="pc" data-cat="sherwani">
+  <div class="pi">
+    <div class="pslider">
+      <div class="pslider-track">
+        <img src="images/sherwanis/s41.jpg" alt="Ash & Silver Sherwani">
+        <img src="images/sherwanis/s42.jpg" alt="Ash & Silver Sherwani 2">
+      </div>
+      <button class="pslider-btn pslider-prev">&#8249;</button>
+      <button class="pslider-btn pslider-next">&#8250;</button>
+      <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
+    </div>
+    <div class="emb"></div><div class="pbg">Custom Available</div>
+  </div>
         <div class="pif">
           <p class="pct">Sherwani</p>
           <p class="pn">Ash &amp; Silver Sherwani</p>
@@ -1363,6 +1870,7 @@ function sp(id){
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('ac'));
   var pg=document.getElementById('pg-'+id);
   if(pg)pg.classList.add('ac');
+  if(pg)pg.querySelectorAll('.pslider').forEach(initSlider);
   document.querySelectorAll('.nm a').forEach(a=>{
     a.classList.toggle('ac',a.getAttribute('data-p')===id);
   });
@@ -1454,6 +1962,19 @@ document.addEventListener('DOMContentLoaded',function(){
   sp('home');
   nav.classList.add('sc');
 });
+  // ---- PRODUCT IMAGE SLIDERS ----
+function initSlider(wrap){
+  var track=wrap.querySelector('.pslider-track');
+  var imgs=track.querySelectorAll('img');
+  var dots=wrap.querySelectorAll('.pslider-dot');
+  var cur=0,total=imgs.length;
+  if(total<=1){wrap.querySelectorAll('.pslider-btn,.pslider-dots').forEach(function(e){e.style.display='none'});return;}
+  function go(n){cur=(n+total)%total;track.style.transform='translateX(-'+(cur*100)+'%)';dots.forEach(function(d,i){d.classList.toggle('ac',i===cur)});}
+  wrap.querySelector('.pslider-prev').addEventListener('click',function(e){e.stopPropagation();go(cur-1)});
+  wrap.querySelector('.pslider-next').addEventListener('click',function(e){e.stopPropagation();go(cur+1)});
+  dots.forEach(function(d,i){d.addEventListener('click',function(e){e.stopPropagation();go(i)})});
+}
+document.querySelectorAll('.pslider').forEach(initSlider);
 </script>
 </body>
 </html>
