@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BinDawood Dulha House — Sialkot's premier luxury groom wear. Custom sherwanis, prince coats, pent coats, waist coats & shalwar qameez. Book today.">
-<meta name="keywords" content="bindawood dulha house, dulha house sialkot, luxury sherwani sialkot, wedding sherwani for groom, prince coat for groom, prince coat with pant shirt, pent coat groom, waistcoat for groom, shalwar qameez groom, stone embroidered sherwani, groom turban kula, custom tailoring sialkot">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="description" content="BinDawood Dulha House — Sialkot's premier luxury groom wear. Custom sherwanis, prince coats, pent coats, waist coats & shalwar qameez, with worldwide shipping and wholesale/export orders for importers. Book today.">
+<meta name="keywords" content="bindawood dulha house, dulha house sialkot, luxury sherwani sialkot, wedding sherwani for groom, prince coat for groom, prince coat with pant shirt, pent coat groom, waistcoat for groom, shalwar qameez groom, stone embroidered sherwani, groom turban kula, custom tailoring sialkot, wholesale sherwani manufacturer pakistan, sherwani exporter sialkot, bulk custom groom wear importer">
   <meta property="og:type" content="business.business">
 <meta property="og:title" content="BinDawood Dulha House | Luxury Groom Wear — Sialkot, Pakistan">
 <meta property="og:description" content="Custom sherwanis, prince coats, pent coats, waist coats & shalwar qameez. Sialkot's premier groom wear house.">
@@ -244,7 +245,7 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
 .fi-g:focus{border-color:var(--gold);background:rgba(201,165,90,.05)}
 .fi-g::placeholder{color:var(--muted)}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-select.fi-g{appearance: none; -webkit-appearance:none;cursor:pointer}
+select.fi-g{appearance:none;-webkit-appearance:none;cursor:pointer}
 select.fi-g option{background:#1a1a1a}
 textarea.fi-g{min-height:130px;resize:vertical}
 .ct-g{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;margin-top:3.5rem}
@@ -634,9 +635,32 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 .ai-input:focus{border-color:var(--gold)}
 .ai-send{width:38px;height:38px;flex-shrink:0;background:var(--gold);color:var(--black);border:none;cursor:pointer;font-size:.85rem}
 .ai-send:hover{background:var(--gold-d)}
+
+/* ============================
+   PHASE 8: ACCESSIBILITY & PERFORMANCE POLISH
+   ============================ */
+/* Visible keyboard focus on every interactive element */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,
+.cc:focus-visible,.gi:focus-visible,.mi:focus-visible,.chip:focus-visible,.color-swatch:focus-visible,
+.tb-order-card:focus-visible,.pc:focus-visible,.fb:focus-visible,.wl-btn:focus-visible{
+  outline:2px solid var(--gold);outline-offset:3px;
+}
+button,a,input,textarea,select{outline-color:var(--gold)}
+
+/* Skip-to-content link for keyboard/screen reader users */
+.skip-link{position:absolute;top:-100px;left:1rem;background:var(--gold);color:var(--black);padding:.8rem 1.4rem;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;z-index:10000;transition:top .2s ease}
+.skip-link:focus{top:1rem}
+
+/* Respect reduced-motion preference: calm the pulses, slides, and reveals */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1!important;transform:none!important}
+  .hero-slide{transition:opacity .01ms!important}
+}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <!-- NAVIGATION -->
 <nav id="nav">
   <div class="ni">
@@ -702,14 +726,14 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 </nav>
 
 <!-- SEARCH OVERLAY -->
-<div class="search-ov" id="search-ov">
+<div class="search-ov" id="search-ov" role="dialog" aria-modal="true" aria-label="Search products">
   <div class="search-bar">
     <div class="search-in-wrap">
       <input class="search-in" id="search-in" type="text" placeholder="Search sherwanis, prince coats, kula…" autocomplete="off" oninput="runSearch(this.value)">
       <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
     </div>
   </div>
-  <div class="search-res" id="search-res"></div>
+  <div class="search-res" id="search-res" aria-live="polite"></div>
 </div>
 
 <!-- MOBILE MENU -->
@@ -734,6 +758,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 <!-- =====================
      PAGE: HOME
      ===================== -->
+<main id="main-content" role="main">
 <div class="pg ac" id="pg-home">
 
   <!-- HERO SLIDER -->
@@ -992,19 +1017,19 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
       <div class="hrow-track rv">
         <div class="pc">
-          <div class="pi"><img src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Signature</div></div>
+          <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Signature</div></div>
           <div class="pif"><p class="pct">Sherwani</p><p class="pn">Royal Ivory Sherwani</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Royal+Ivory+Sherwani.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
         <div class="pc">
-          <div class="pi"><img src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Popular</div></div>
+          <div class="pi"><img loading="lazy" decoding="async" src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Popular</div></div>
           <div class="pif"><p class="pct">Prince Coat</p><p class="pn">Navy Imperial Prince Coat</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Navy+Imperial+Prince+Coat.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
         <div class="pc">
-          <div class="pi"><img src="images/stone-embroidered/maroon-jewel.jpg" alt="Maroon Jewel Groom Suit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Most Opulent</div></div>
+          <div class="pi"><img loading="lazy" decoding="async" src="images/stone-embroidered/maroon-jewel.jpg" alt="Maroon Jewel Groom Suit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Most Opulent</div></div>
           <div class="pif"><p class="pct">Stone Embroidered</p><p class="pn">Maroon Jewel Groom Suit</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Maroon+Jewel+Groom+Suit.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
         <div class="pc">
-          <div class="pi"><img src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Bestseller</div></div>
+          <div class="pi"><img loading="lazy" decoding="async" src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Bestseller</div></div>
           <div class="pif"><p class="pct">Pent Coat</p><p class="pn">3-Piece Forest Classic</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+3-Piece+Forest+Classic+Pent+Coat.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
       </div>
@@ -1023,19 +1048,19 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
       <div class="hrow-track rv">
         <div class="pc">
-          <div class="pi"><img src="images/prince-coats/pc131.jpg" alt="Prince Coat 13" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
+          <div class="pi"><img loading="lazy" decoding="async" src="images/prince-coats/pc131.jpg" alt="Prince Coat 13" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
           <div class="pif"><p class="pct">Prince Coat</p><p class="pn">Prince Coat — Style 13</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
         <div class="pc">
-          <div class="pi"><img src="images/pent-coats/p142.jpg" alt="Pent Coat 14" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
+          <div class="pi"><img loading="lazy" decoding="async" src="images/pent-coats/p142.jpg" alt="Pent Coat 14" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
           <div class="pif"><p class="pct">Pent Coat</p><p class="pn">Pent Coat — Style 14</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+14.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
         <div class="pc">
-          <div class="pi"><img src="images/sherwanis/s131.jpg" alt="Sherwani Style 13" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
+          <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s131.jpg" alt="Sherwani Style 13" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
           <div class="pif"><p class="pct">Sherwani</p><p class="pn">Sherwani Style 13</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+sherwani+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
         <div class="pc">
-          <div class="pi"><img src="images/kula/k11.jpg" alt="Black Gold-Embroidered Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
+          <div class="pi"><img loading="lazy" decoding="async" src="images/kula/k11.jpg" alt="Black Gold-Embroidered Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
           <div class="pif"><p class="pct">Turban / Kula</p><p class="pn">Black Gold-Embroidered Pankha Kula</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Black+Gold-Embroidered+Pankha+Kula.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
       </div>
@@ -1051,39 +1076,39 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
       <div class="masonry rv">
         <div class="mi" onclick="sp('collections');filterProd('sherwani',null)">
-          <img src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani">
+          <img loading="lazy" decoding="async" src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani">
           <div class="mih"><span class="mit">Royal Ivory Sherwani</span></div>
         </div>
         <div class="mi" onclick="sp('collections');filterProd('prince',null)">
-          <img src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat">
+          <img loading="lazy" decoding="async" src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat">
           <div class="mih"><span class="mit">Navy Brocade Prince Coat</span></div>
         </div>
         <div class="mi" onclick="sp('collections');filterProd('sherwani',null)">
-          <img src="images/sherwanis/crimson-velvet.jpg" alt="Crimson Velvet Sherwani">
+          <img loading="lazy" decoding="async" src="images/sherwanis/crimson-velvet.jpg" alt="Crimson Velvet Sherwani">
           <div class="mih"><span class="mit">Crimson Velvet Sherwani</span></div>
         </div>
         <div class="mi" onclick="sp('collections');filterProd('stone',null)">
-          <img src="images/stone-embroidered/maroon-jewel.jpg" alt="Maroon Jewel Groom Suit">
+          <img loading="lazy" decoding="async" src="images/stone-embroidered/maroon-jewel.jpg" alt="Maroon Jewel Groom Suit">
           <div class="mih"><span class="mit">Maroon Jewel Groom Suit</span></div>
         </div>
         <div class="mi" onclick="sp('collections');filterProd('prince',null)">
-          <img src="images/prince-coats/midnight-garden.jpg" alt="Midnight Garden Prince Coat">
+          <img loading="lazy" decoding="async" src="images/prince-coats/midnight-garden.jpg" alt="Midnight Garden Prince Coat">
           <div class="mih"><span class="mit">Midnight Floral Coat</span></div>
         </div>
         <div class="mi" onclick="sp('collections');filterProd('kula',null)">
-          <img src="images/shalwar-qameez/collection.jpg" alt="Groom Kula & Shalwar-Qameez Collection">
+          <img loading="lazy" decoding="async" src="images/shalwar-qameez/collection.jpg" alt="Groom Kula & Shalwar-Qameez Collection">
           <div class="mih"><span class="mit">Groom Kula Collection &amp; Sherwanis</span></div>
         </div>
         <div class="mi" onclick="sp('collections');filterProd('pent',null)">
-          <img src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic">
+          <img loading="lazy" decoding="async" src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic">
           <div class="mih"><span class="mit">3-Piece Forest Classic</span></div>
         </div>
         <div class="mi" onclick="sp('collections');filterProd('stone',null)">
-          <img src="images/stone-embroidered/e21.jpg" alt="Ivory Multicolour Floral Sherwani">
+          <img loading="lazy" decoding="async" src="images/stone-embroidered/e21.jpg" alt="Ivory Multicolour Floral Sherwani">
           <div class="mih"><span class="mit">Ivory Multicolour Floral Sherwani</span></div>
         </div>
         <div class="mi" onclick="sp('collections');filterProd('waist',null)">
-          <img src="images/waist-coats/wc11.jpg" alt="Beige Diamond-Embroidered Waistcoat">
+          <img loading="lazy" decoding="async" src="images/waist-coats/wc11.jpg" alt="Beige Diamond-Embroidered Waistcoat">
           <div class="mih"><span class="mit">Beige Diamond-Embroidered Waistcoat</span></div>
         </div>
       </div>
@@ -1247,7 +1272,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 
       <!-- SHERWANIS -->
       <div class="pc" data-cat="sherwani">
-        <div class="pi"><img src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
           <p class="pn">Royal Ivory Sherwani</p>
@@ -1259,7 +1284,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="sherwani">
-        <div class="pi"><img src="images/sherwanis/crimson-velvet.jpg" alt="Crimson Velvet Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/crimson-velvet.jpg" alt="Crimson Velvet Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div>
           <div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
@@ -1272,7 +1297,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="sherwani">
-        <div class="pi"><img src="images/sherwanis/midnight-floral.jpg" alt="Midnight Floral Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/midnight-floral.jpg" alt="Midnight Floral Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
           <p class="pn">Midnight Floral Sherwani</p>
@@ -1283,7 +1308,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         </div>
       </div>
        <div class="pc" data-cat="sherwani">
-        <div class="pi"><img src="images/sherwanis/s51.jpg" alt="Sherwani Style -> 4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s51.jpg" alt="Sherwani Style -> 4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
           <p class="pn">Sherwani Style -> 4</p>
@@ -1294,7 +1319,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         </div>
       </div>
    <div class="pc" data-cat="sherwani">
-        <div class="pi"><img src="images/sherwanis/s61.jpg" alt="Sherwani Style -> 5" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s61.jpg" alt="Sherwani Style -> 5" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
           <p class="pn">Sherwani Style -> 5</p>
@@ -1305,7 +1330,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         </div>
       </div>
        <div class="pc" data-cat="sherwani">
-        <div class="pi"><img src="images/sherwanis/s72.jpg" alt="Sherwani Style -> 6" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s72.jpg" alt="Sherwani Style -> 6" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
           <p class="pn">Sherwani Style -> 6</p>
@@ -1320,11 +1345,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   <div class="pi">
     <div class="pslider">
       <div class="pslider-track">
-        <img src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat">
-        <img src="images/prince-coats/pc12.jpg" alt="Navy Imperial Prince Coat 2">
+        <img loading="lazy" decoding="async" src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat">
+        <img loading="lazy" decoding="async" src="images/prince-coats/pc12.jpg" alt="Navy Imperial Prince Coat 2">
       </div>
-      <button class="pslider-btn pslider-prev">&#8249;</button>
-      <button class="pslider-btn pslider-next">&#8250;</button>
+      <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+      <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
       <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
     </div>
     <div class="emb"></div><div class="pbg">Ready &amp; Custom</div>
@@ -1344,14 +1369,14 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   <div class="pi">
     <div class="pslider">
       <div class="pslider-track">
-        <img src="images/prince-coats/midnight-garden.jpg" alt="Midnight Garden Prince Coat">
-        <img src="images/prince-coats/pc22.jpg" alt="Midnight Garden 2">
-        <img src="images/prince-coats/pc23.jpg" alt="Midnight Garden 3">
-        <img src="images/prince-coats/pc24.jpg" alt="Midnight Garden 4">
-        <img src="images/prince-coats/pc25.jpg" alt="Midnight Garden 5">
+        <img loading="lazy" decoding="async" src="images/prince-coats/midnight-garden.jpg" alt="Midnight Garden Prince Coat">
+        <img loading="lazy" decoding="async" src="images/prince-coats/pc22.jpg" alt="Midnight Garden 2">
+        <img loading="lazy" decoding="async" src="images/prince-coats/pc23.jpg" alt="Midnight Garden 3">
+        <img loading="lazy" decoding="async" src="images/prince-coats/pc24.jpg" alt="Midnight Garden 4">
+        <img loading="lazy" decoding="async" src="images/prince-coats/pc25.jpg" alt="Midnight Garden 5">
       </div>
-      <button class="pslider-btn pslider-prev">&#8249;</button>
-      <button class="pslider-btn pslider-next">&#8250;</button>
+      <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+      <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
       <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
     </div>
     <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1369,11 +1394,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc31.jpg" alt="Prince Coat 3">
-              <img src="images/prince-coats/pc32.jpg" alt="Prince Coat 3 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc31.jpg" alt="Prince Coat 3">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc32.jpg" alt="Prince Coat 3 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1390,15 +1415,15 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc41.jpg" alt="Prince Coat 4">
-              <img src="images/prince-coats/pc42.jpg" alt="Prince Coat 4 - 2">
-              <img src="images/prince-coats/pc43.jpg" alt="Prince Coat 4 - 3">
-              <img src="images/prince-coats/pc44.jpg" alt="Prince Coat 4 - 4">
-              <img src="images/prince-coats/pc45.jpg" alt="Prince Coat 4 - 5">
-              <img src="images/prince-coats/pc46.jpg" alt="Prince Coat 4 - 6">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc41.jpg" alt="Prince Coat 4">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc42.jpg" alt="Prince Coat 4 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc43.jpg" alt="Prince Coat 4 - 3">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc44.jpg" alt="Prince Coat 4 - 4">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc45.jpg" alt="Prince Coat 4 - 5">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc46.jpg" alt="Prince Coat 4 - 6">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1415,12 +1440,12 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc51.jpg" alt="Prince Coat 5">
-              <img src="images/prince-coats/pc52.jpg" alt="Prince Coat 5 - 2">
-              <img src="images/prince-coats/pc53.jpg" alt="Prince Coat 5 - 3">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc51.jpg" alt="Prince Coat 5">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc52.jpg" alt="Prince Coat 5 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc53.jpg" alt="Prince Coat 5 - 3">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1437,11 +1462,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc61.jpg" alt="Prince Coat 6">
-              <img src="images/prince-coats/pc62.jpg" alt="Prince Coat 6 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc61.jpg" alt="Prince Coat 6">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc62.jpg" alt="Prince Coat 6 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1458,11 +1483,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc71.jpg" alt="Prince Coat 7">
-              <img src="images/prince-coats/pc72.jpg" alt="Prince Coat 7 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc71.jpg" alt="Prince Coat 7">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc72.jpg" alt="Prince Coat 7 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1479,11 +1504,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc81.jpg" alt="Prince Coat 8">
-              <img src="images/prince-coats/pc82.jpg" alt="Prince Coat 8 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc81.jpg" alt="Prince Coat 8">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc82.jpg" alt="Prince Coat 8 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1500,11 +1525,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc91.jpg" alt="Prince Coat 9">
-              <img src="images/prince-coats/pc92.jpg" alt="Prince Coat 9 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc91.jpg" alt="Prince Coat 9">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc92.jpg" alt="Prince Coat 9 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1521,11 +1546,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc101.jpg" alt="Prince Coat 10">
-              <img src="images/prince-coats/pc102.jpg" alt="Prince Coat 10 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc101.jpg" alt="Prince Coat 10">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc102.jpg" alt="Prince Coat 10 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1542,12 +1567,12 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc111.jpg" alt="Prince Coat 11">
-              <img src="images/prince-coats/pc112.jpg" alt="Prince Coat 11 - 2">
-              <img src="images/prince-coats/pc113.jpg" alt="Prince Coat 11 - 3">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc111.jpg" alt="Prince Coat 11">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc112.jpg" alt="Prince Coat 11 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc113.jpg" alt="Prince Coat 11 - 3">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1564,11 +1589,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc121.jpg" alt="Prince Coat 12">
-              <img src="images/prince-coats/pc122.jpg" alt="Prince Coat 12 - 2">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc121.jpg" alt="Prince Coat 12">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc122.jpg" alt="Prince Coat 12 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1584,10 +1609,10 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/prince-coats/pc131.jpg" alt="Prince Coat 13">
+              <img loading="lazy" decoding="async" src="images/prince-coats/pc131.jpg" alt="Prince Coat 13">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1604,12 +1629,12 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   <div class="pi">
     <div class="pslider">
       <div class="pslider-track">
-        <img src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic">
-        <img src="images/pent-coats/p12.jpg" alt="3-Piece Forest Classic 2">
-        <img src="images/pent-coats/p13.jpg" alt="3-Piece Forest Classic 3">
+        <img loading="lazy" decoding="async" src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic">
+        <img loading="lazy" decoding="async" src="images/pent-coats/p12.jpg" alt="3-Piece Forest Classic 2">
+        <img loading="lazy" decoding="async" src="images/pent-coats/p13.jpg" alt="3-Piece Forest Classic 3">
       </div>
-      <button class="pslider-btn pslider-prev">&#8249;</button>
-      <button class="pslider-btn pslider-next">&#8250;</button>
+      <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+      <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
       <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
     </div>
     <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1627,12 +1652,12 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p21.jpg" alt="Pent Coat 2">
-              <img src="images/pent-coats/p22.jpg" alt="Pent Coat 2 - 2">
-              <img src="images/pent-coats/p23.jpg" alt="Pent Coat 2 - 3">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p21.jpg" alt="Pent Coat 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p22.jpg" alt="Pent Coat 2 - 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p23.jpg" alt="Pent Coat 2 - 3">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1649,10 +1674,10 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p31.jpg" alt="Pent Coat 3">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p31.jpg" alt="Pent Coat 3">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1669,13 +1694,13 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p41.jpg" alt="Pent Coat 4">
-              <img src="images/pent-coats/p42.jpg" alt="Pent Coat 4 - 2">
-              <img src="images/pent-coats/p43.jpg" alt="Pent Coat 4 - 3">
-              <img src="images/pent-coats/p44.jpg" alt="Pent Coat 4 - 4">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p41.jpg" alt="Pent Coat 4">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p42.jpg" alt="Pent Coat 4 - 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p43.jpg" alt="Pent Coat 4 - 3">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p44.jpg" alt="Pent Coat 4 - 4">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1692,11 +1717,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p51.jpg" alt="Pent Coat 5">
-              <img src="images/pent-coats/p52.jpg" alt="Pent Coat 5 - 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p51.jpg" alt="Pent Coat 5">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p52.jpg" alt="Pent Coat 5 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1713,10 +1738,10 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p61.jpg" alt="Pent Coat 6">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p61.jpg" alt="Pent Coat 6">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1733,11 +1758,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p71.jpg" alt="Pent Coat 7">
-              <img src="images/pent-coats/p72.jpg" alt="Pent Coat 7 - 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p71.jpg" alt="Pent Coat 7">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p72.jpg" alt="Pent Coat 7 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1754,10 +1779,10 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p81.jpg" alt="Pent Coat 8">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p81.jpg" alt="Pent Coat 8">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1774,11 +1799,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p91.jpg" alt="Pent Coat 9">
-              <img src="images/pent-coats/p92.jpg" alt="Pent Coat 9 - 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p91.jpg" alt="Pent Coat 9">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p92.jpg" alt="Pent Coat 9 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1795,11 +1820,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p101.jpg" alt="Pent Coat 10">
-              <img src="images/pent-coats/p102.jpg" alt="Pent Coat 10 - 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p101.jpg" alt="Pent Coat 10">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p102.jpg" alt="Pent Coat 10 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1816,11 +1841,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p111.jpg" alt="Pent Coat 11">
-              <img src="images/pent-coats/p112.jpg" alt="Pent Coat 11 - 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p111.jpg" alt="Pent Coat 11">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p112.jpg" alt="Pent Coat 11 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1837,11 +1862,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p121.jpg" alt="Pent Coat 12">
-              <img src="images/pent-coats/p122.jpg" alt="Pent Coat 12 - 2">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p121.jpg" alt="Pent Coat 12">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p122.jpg" alt="Pent Coat 12 - 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1857,10 +1882,10 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p131.jpg" alt="Pent Coat 13">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p131.jpg" alt="Pent Coat 13">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1876,13 +1901,13 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/pent-coats/p142.jpg" alt="Pent Coat 14">
-               <img src="images/pent-coats/p144.jpg" alt="Pent Coat 12 - 2">
-               <img src="images/pent-coats/p143.jpg" alt="Pent Coat 12 - 3">
-               <img src="images/pent-coats/p141.jpg" alt="Pent Coat 12 - 4">
+              <img loading="lazy" decoding="async" src="images/pent-coats/p142.jpg" alt="Pent Coat 14">
+               <img loading="lazy" decoding="async" src="images/pent-coats/p144.jpg" alt="Pent Coat 12 - 2">
+               <img loading="lazy" decoding="async" src="images/pent-coats/p143.jpg" alt="Pent Coat 12 - 3">
+               <img loading="lazy" decoding="async" src="images/pent-coats/p141.jpg" alt="Pent Coat 12 - 4">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1896,7 +1921,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
       <!-- WAIST COATS -->
       <div class="pc" data-cat="waist">
-       <div class="pi"><img src="images/waist-coats/wc11.jpg" alt="Beige Diamond-Embroidered Waistcoat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+       <div class="pi"><img loading="lazy" decoding="async" src="images/waist-coats/wc11.jpg" alt="Beige Diamond-Embroidered Waistcoat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Waist Coat</p>
           <p class="pn">Beige Diamond-Embroidered Waistcoat</p>
@@ -1908,7 +1933,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="waist">
-       <div class="pi"><img src="images/shalwar-qameez/sq41.jpg" alt="Brown Lapel Waistcoat over Black Kurta" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+       <div class="pi"><img loading="lazy" decoding="async" src="images/shalwar-qameez/sq41.jpg" alt="Brown Lapel Waistcoat over Black Kurta" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Waist Coat</p>
           <p class="pn">Brown Lapel Waistcoat over Black Kurta</p>
@@ -1919,7 +1944,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         </div>
       </div>
 <div class="pc" data-cat="waist">
-       <div class="pi"><img src="images/shalwar-qameez/sq51.jpg" alt="Black Safari-Style Field Jacket" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+       <div class="pi"><img loading="lazy" decoding="async" src="images/shalwar-qameez/sq51.jpg" alt="Black Safari-Style Field Jacket" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Waist Coat</p>
           <p class="pn">Black Safari-Style Field Jacket</p>
@@ -1932,7 +1957,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       <!-- SHALWAR QAMEEZ -->
     
       <div class="pc" data-cat="shalwar">
-        <div class="pi"><img src="images/shalwar-qameez/sq21.jpg" alt="Maroon Embroidered Kids Kurta" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/shalwar-qameez/sq21.jpg" alt="Maroon Embroidered Kids Kurta" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Shalwar Qameez</p>
           <p class="pn">Maroon Embroidered Kids Kurta</p>
@@ -1947,11 +1972,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/shalwar-qameez/sq11.jpg" alt="Bottle Green Sequin Royal Kurta">
-              <img src="images/shalwar-qameez/sq12.jpg" alt="Bottle Green Sequin Kurta 2">
+              <img loading="lazy" decoding="async" src="images/shalwar-qameez/sq11.jpg" alt="Bottle Green Sequin Royal Kurta">
+              <img loading="lazy" decoding="async" src="images/shalwar-qameez/sq12.jpg" alt="Bottle Green Sequin Kurta 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1970,12 +1995,12 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/shalwar-qameez/sq31.jpg" alt="Ivory Gold-Embroidered Waist Jacket Set">
-              <img src="images/shalwar-qameez/sq32.jpg" alt="Ivory Gold-Embroidered Waist Jacket Set 2">
-              <img src="images/shalwar-qameez/sq33.jpg" alt="Ivory Gold-Embroidered Waist Jacket Set 3">
+              <img loading="lazy" decoding="async" src="images/shalwar-qameez/sq31.jpg" alt="Ivory Gold-Embroidered Waist Jacket Set">
+              <img loading="lazy" decoding="async" src="images/shalwar-qameez/sq32.jpg" alt="Ivory Gold-Embroidered Waist Jacket Set 2">
+              <img loading="lazy" decoding="async" src="images/shalwar-qameez/sq33.jpg" alt="Ivory Gold-Embroidered Waist Jacket Set 3">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -1996,12 +2021,12 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/stone-embroidered/e11.jpg" alt="Charcoal Asymmetric Beaded Jacket">
-              <img src="images/stone-embroidered/e12.jpg" alt="Charcoal Asymmetric Beaded Jacket 2">
-               <img src="images/stone-embroidered/e13.jpg" alt="Charcoal Asymmetric Beaded Jacket 3">
+              <img loading="lazy" decoding="async" src="images/stone-embroidered/e11.jpg" alt="Charcoal Asymmetric Beaded Jacket">
+              <img loading="lazy" decoding="async" src="images/stone-embroidered/e12.jpg" alt="Charcoal Asymmetric Beaded Jacket 2">
+               <img loading="lazy" decoding="async" src="images/stone-embroidered/e13.jpg" alt="Charcoal Asymmetric Beaded Jacket 3">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Made</div>
@@ -2020,11 +2045,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/stone-embroidered/e21.jpg" alt="Ivory Multicolour Floral Sherwani">
-              <img src="images/stone-embroidered/e22.jpg" alt="Ivory Multicolour Floral Sherwani 2">
+              <img loading="lazy" decoding="async" src="images/stone-embroidered/e21.jpg" alt="Ivory Multicolour Floral Sherwani">
+              <img loading="lazy" decoding="async" src="images/stone-embroidered/e22.jpg" alt="Ivory Multicolour Floral Sherwani 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Made</div>
@@ -2039,7 +2064,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         </div>
       </div>
        <div class="pc" data-cat="stone">
-        <div class="pi"><img src="images/stone-embroidered/maroon-jewel.jpg" alt="Maroon Jewel Groom Suit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Made</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/stone-embroidered/maroon-jewel.jpg" alt="Maroon Jewel Groom Suit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Made</div></div>
         <div class="pif">
           <p class="pct">Stone Embroidered</p>
           <p class="pn">Maroon Jewel Groom Suit</p>
@@ -2051,7 +2076,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
     <!-- KULA -->
       <div class="pc" data-cat="kula" data-new="1">
-        <div class="pi"><img src="images/kula/k11.jpg" alt="Black Gold-Embroidered Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/kula/k11.jpg" alt="Black Gold-Embroidered Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
         <div class="pif">
           <p class="pct">Turban / Kula</p>
           <p class="pn">Black Gold-Embroidered Pankha Kula</p>
@@ -2063,7 +2088,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="kula">
-        <div class="pi"><img src="images/kula/k21.jpg" alt="Black Rose-Gold Embroidered Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/kula/k21.jpg" alt="Black Rose-Gold Embroidered Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
         <div class="pif">
           <p class="pct">Turban / Kula</p>
           <p class="pn">Black Rose-Gold Embroidered Kula</p>
@@ -2075,7 +2100,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="kula">
-        <div class="pi"><img src="images/kula/k31.jpg" alt="Navy Velvet-Crowned Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/kula/k31.jpg" alt="Navy Velvet-Crowned Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
         <div class="pif">
           <p class="pct">Turban / Kula</p>
           <p class="pn">Navy Velvet-Crowned Pankha Kula</p>
@@ -2087,7 +2112,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="kula">
-        <div class="pi"><img src="images/kula/k41.jpg" alt="Ivory Feather Brooch Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/kula/k41.jpg" alt="Ivory Feather Brooch Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
         <div class="pif">
           <p class="pct">Turban / Kula</p>
           <p class="pn">Ivory Feather Brooch Kula</p>
@@ -2102,11 +2127,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   <div class="pi">
     <div class="pslider">
       <div class="pslider-track">
-        <img src="images/sherwanis/s41.jpg" alt="Ash & Silver Sherwani">
-        <img src="images/sherwanis/s42.jpg" alt="Ash & Silver Sherwani 2">
+        <img loading="lazy" decoding="async" src="images/sherwanis/s41.jpg" alt="Ash & Silver Sherwani">
+        <img loading="lazy" decoding="async" src="images/sherwanis/s42.jpg" alt="Ash & Silver Sherwani 2">
       </div>
-      <button class="pslider-btn pslider-prev">&#8249;</button>
-      <button class="pslider-btn pslider-next">&#8250;</button>
+      <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+      <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
       <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
     </div>
     <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -2124,11 +2149,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/sherwanis/s91.jpg" alt="Black Crystal Vine Kurta">
-              <img src="images/sherwanis/s92.jpg" alt="Black Crystal Vine Kurta 2">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s91.jpg" alt="Black Crystal Vine Kurta">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s92.jpg" alt="Black Crystal Vine Kurta 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -2144,7 +2169,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="sherwani">
-        <div class="pi"><img src="images/sherwanis/s101.jpg" alt="Slate Blue Vine-Embroidered Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s101.jpg" alt="Slate Blue Vine-Embroidered Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
           <p class="pn">Slate Blue Vine-Embroidered Sherwani</p>
@@ -2158,13 +2183,13 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/sherwanis/s111.jpg" alt="sherwani Style 11">
-              <img src="images/sherwanis/s112.jpg" alt="sherwani Style 11 2">
-               <img src="images/sherwanis/s113.jpg" alt="sherwani Style 11 3">
-               <img src="images/sherwanis/s114.jpg" alt="sherwani Style 11 4">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s111.jpg" alt="sherwani Style 11">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s112.jpg" alt="sherwani Style 11 2">
+               <img loading="lazy" decoding="async" src="images/sherwanis/s113.jpg" alt="sherwani Style 11 3">
+               <img loading="lazy" decoding="async" src="images/sherwanis/s114.jpg" alt="sherwani Style 11 4">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -2182,11 +2207,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/sherwanis/s121.jpg" alt="sherwani Style 12">
-              <img src="images/sherwanis/s122.jpg" alt="sherwani Style 12 2">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s121.jpg" alt="sherwani Style 12">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s122.jpg" alt="sherwani Style 12 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -2204,11 +2229,11 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img src="images/sherwanis/s131.jpg" alt="sherwani Style 13">
-              <img src="images/sherwanis/s132.jpg" alt="sherwani Style 13 2">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s131.jpg" alt="sherwani Style 13">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s132.jpg" alt="sherwani Style 13 2">
             </div>
-            <button class="pslider-btn pslider-prev">&#8249;</button>
-            <button class="pslider-btn pslider-next">&#8250;</button>
+            <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
+            <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
             <div class="pslider-dots"><div class="pslider-dot ac"></div><div class="pslider-dot"></div></div>
           </div>
           <div class="emb"></div><div class="pbg">Custom Available</div>
@@ -2224,7 +2249,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       </div>
 
       <div class="pc" data-cat="sherwani">
-        <div class="pi"><img src="images/sherwanis/s81.jpg" alt="Onyx Beaded Mosaic Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s81.jpg" alt="Onyx Beaded Mosaic Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
           <p class="pn">Onyx Beaded Mosaic Sherwani</p>
@@ -2289,7 +2314,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 </div><!-- /pg-product -->
 
 <!-- BUY NOW MODAL -->
-<div class="modal-ov" id="buy-modal">
+<div class="modal-ov" id="buy-modal" role="dialog" aria-modal="true" aria-label="Buy now order form">
   <div class="modal-box">
     <button class="search-close" onclick="closeBuyModal()" aria-label="Close" style="position:absolute;top:1.2rem;right:1.2rem">✕</button>
     <div class="sh"><span class="gl"></span><span class="eyebrow">Buy Now</span></div>
@@ -3179,6 +3204,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
     </div>
   </div>
 </div><!-- /pg-404 -->
+</main>
 
 <!-- FOOTER (always rendered) -->
 <footer id="site-footer">
@@ -3274,12 +3300,12 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   <span class="wa-tt">Ask our assistant</span>
 </button>
 
-<div class="ai-panel" id="ai-panel">
+<div class="ai-panel" id="ai-panel" role="dialog" aria-modal="false" aria-label="BinDawood AI assistant chat">
   <div class="ai-head">
     <p class="ai-head-t"><span class="dot"></span> BinDawood Assistant</p>
     <button class="ai-close" onclick="toggleAI()" aria-label="Close assistant">✕</button>
   </div>
-  <div class="ai-body" id="ai-body"></div>
+  <div class="ai-body" id="ai-body" aria-live="polite"></div>
   <div class="ai-chips" id="ai-chips"></div>
   <div class="ai-input-bar">
     <input class="ai-input" id="ai-input" type="text" placeholder="Ask about shipping, sizing, custom orders…" onkeydown="if(event.key==='Enter')aiSend()">
@@ -3564,13 +3590,13 @@ function indexProducts(){
    ============================ */
 function buildGalleryHTML(images){
   if(images.length<=1){
-    return '<img src="'+images[0]+'" style="width:100%;height:100%;object-fit:cover">';
+    return '<img loading="lazy" decoding="async" src="'+images[0]+'" style="width:100%;height:100%;object-fit:cover">';
   }
-  var imgsHtml=images.map(function(src){return '<img src="'+src+'">';}).join('');
+  var imgsHtml=images.map(function(src){return '<img loading="lazy" decoding="async" src="'+src+'">';}).join('');
   var dotsHtml=images.map(function(_,i){return '<div class="pslider-dot'+(i===0?' ac':'')+'"></div>';}).join('');
   return '<div class="pslider"><div class="pslider-track">'+imgsHtml+'</div>'
-    +'<button class="pslider-btn pslider-prev">&#8249;</button>'
-    +'<button class="pslider-btn pslider-next">&#8250;</button>'
+    +'<button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>'
+    +'<button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>'
     +'<div class="pslider-dots">'+dotsHtml+'</div></div>';
 }
 
@@ -3618,7 +3644,7 @@ function renderProductCardRow(container,pids){
     if(!p)return;
     var card=document.createElement('div');
     card.className='pc';
-    card.innerHTML='<div class="pi" style="cursor:pointer"><img src="'+p.images[0]+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div></div>'
+    card.innerHTML='<div class="pi" style="cursor:pointer"><img loading="lazy" decoding="async" src="'+p.images[0]+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div></div>'
       +'<div class="pif"><p class="pct">'+p.catLabel+'</p><p class="pn" style="cursor:pointer">'+p.name+'</p>'
       +'<div class="pa"><a href="'+p.waHref+'" target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>';
     card.querySelector('.pi').onclick=function(){openProduct(p.pid);};
