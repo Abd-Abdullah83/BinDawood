@@ -516,6 +516,50 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 .modal-ov.op{display:flex}
 .modal-box{position:relative;max-width:480px;width:100%;max-height:88vh;overflow-y:auto;background:var(--dark);border:1px solid var(--border);padding:2.5rem}
 @media(max-width:600px){.modal-box{padding:1.8rem}}
+
+/* ============================
+   PHASE 5: CUSTOM TAILORING BUILDER
+   ============================ */
+.tb-wrap{max-width:820px;margin:4rem auto 0;background:rgba(255,255,255,.02);border:1px solid var(--border);padding:3rem}
+@media(max-width:600px){.tb-wrap{padding:1.6rem 1.2rem}}
+.tb-progress{margin-bottom:2.5rem}
+.tb-progress-track{height:2px;background:var(--border);position:relative;margin-bottom:.8rem}
+.tb-progress-fill{height:2px;background:var(--gold);transition:width .4s ease}
+.tb-progress-label{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between}
+.tb-progress-label span:last-child{color:var(--gold)}
+.tb-title{font-family:var(--fd);font-size:1.5rem;color:var(--ivory);margin-bottom:.4rem}
+.tb-sub{font-size:.8rem;color:var(--muted);margin-bottom:1.8rem;line-height:1.7}
+.chip-grid{display:flex;flex-wrap:wrap;gap:.7rem}
+.chip{padding:.7rem 1.3rem;border:1px solid var(--border);font-size:.78rem;color:rgba(245,240,230,.75);cursor:pointer;transition:var(--t);background:transparent}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.chip.sel{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.color-grid{display:flex;flex-wrap:wrap;gap:1rem}
+.color-swatch{width:46px;height:46px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:var(--t);position:relative}
+.color-swatch.sel{border-color:var(--gold);transform:scale(1.1)}
+.color-swatch.sel::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.tb-custom-color{margin-top:1.2rem}
+.tb-ordertype-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+@media(max-width:600px){.tb-ordertype-grid{grid-template-columns:1fr}}
+.tb-order-card{border:1px solid var(--border);padding:1.8rem;cursor:pointer;transition:var(--t)}
+.tb-order-card:hover{border-color:var(--gold)}
+.tb-order-card.sel{border-color:var(--gold);background:rgba(201,165,90,.06)}
+.tb-order-ic{font-size:1.6rem;margin-bottom:.8rem}
+.tb-order-t{font-family:var(--fd);font-size:1.15rem;color:var(--ivory);margin-bottom:.5rem}
+.tb-order-d{font-size:.76rem;color:var(--muted);line-height:1.6}
+.tb-meas-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+@media(max-width:600px){.tb-meas-grid{grid-template-columns:1fr}}
+.tb-meas-skip{margin-top:1.2rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.6rem;cursor:pointer}
+.tb-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;gap:1rem}
+.tb-nav-warn{font-size:.72rem;color:var(--maroon);margin-top:.8rem;display:none}
+.tb-nav-warn.show{display:block}
+.tb-summary-list{border:1px solid var(--border2)}
+.tb-summary-row{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 1.2rem;border-bottom:1px solid var(--border2);font-size:.82rem}
+.tb-summary-row:last-child{border-bottom:none}
+.tb-summary-row span:first-child{color:var(--muted);letter-spacing:.05em;text-transform:uppercase;font-size:.62rem;padding-top:.15rem}
+.tb-summary-row span:last-child{color:var(--ivory);font-family:var(--fd);text-align:right;max-width:60%}
+.tb-toggle-row{display:flex;justify-content:center;gap:0;border:1px solid var(--border);margin-bottom:2.5rem}
+.tb-toggle-btn{flex:1;padding:.9rem;text-align:center;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:var(--t)}
+.tb-toggle-btn.ac{background:var(--gold);color:var(--black)}
 </style>
 </head>
 <body>
@@ -2246,12 +2290,26 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       <div class="tc" style="margin-top:5rem">
         <div class="dv" style="margin-bottom:3rem"></div>
         <h3 class="md" style="margin-bottom:1.2rem">Ready to Begin?</h3>
-        <p style="font-size:.85rem;color:var(--muted);max-width:440px;margin:0 auto 2rem;line-height:1.8">Book your complimentary design consultation. No commitment required — just a conversation about your dream look. Importers and bulk buyers can head to our <a onclick="sp('importer')" style="color:var(--gold);text-decoration:underline;cursor:pointer">Importer &amp; Bulk Orders</a> page instead.</p>
+        <p style="font-size:.85rem;color:var(--muted);max-width:440px;margin:0 auto 2rem;line-height:1.8">Book your complimentary design consultation, or use the step-by-step builder below to describe exactly what you have in mind — it takes about two minutes and sends everything straight to our team on WhatsApp.</p>
         <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
           <a onclick="sp('appointment')" class="btn btn-gold">Book Consultation</a>
           <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+would+like+to+discuss+a+custom+tailoring+order." target="_blank" class="btn btn-wa">WhatsApp for Custom Order</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CUSTOM TAILORING BUILDER (NEW)
+       ============================ -->
+  <section class="sec sec-dg">
+    <div class="con">
+      <div class="tc rv" style="margin-bottom:1rem">
+        <div class="sh tc"><span class="gl"></span><span class="eyebrow">Design It Yourself</span><span class="gl"></span></div>
+        <h2 class="lg">Build Your <em class="gold" style="font-style:italic">Custom Order</em></h2>
+        <p style="font-size:.85rem;color:var(--muted);max-width:520px;margin:1rem auto 0">Whether you need a single piece for your own wedding or a bulk run for your store, walk through the options below — no pricing shown, nothing charged. Your final selections go straight to our team on WhatsApp.</p>
+      </div>
+      <div class="tb-wrap rv" id="tb-app"></div>
     </div>
   </section>
 </div><!-- /pg-tailoring -->
@@ -2439,7 +2497,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 
     <div class="tc rv" style="margin-top:4rem">
       <div class="dv" style="margin-bottom:2rem"></div>
-      <p style="font-size:.85rem;color:var(--muted);max-width:520px;margin:0 auto">Looking for retail pieces instead of bulk/wholesale? Visit our <a onclick="sp('collections')" style="color:var(--gold);text-decoration:underline;cursor:pointer">Collections</a> page or see where we've <a onclick="sp('exports')" style="color:var(--gold);text-decoration:underline;cursor:pointer">already shipped</a>.</p>
+      <p style="font-size:.85rem;color:var(--muted);max-width:520px;margin:0 auto">Looking for retail pieces instead of bulk/wholesale? Visit our <a onclick="sp('collections')" style="color:var(--gold);text-decoration:underline;cursor:pointer">Collections</a> page or see where we've <a onclick="sp('exports')" style="color:var(--gold);text-decoration:underline;cursor:pointer">already shipped</a>. Prefer a guided step-by-step option instead of this form? Try our <a onclick="sp('tailoring')" style="color:var(--gold);text-decoration:underline;cursor:pointer">Custom Tailoring Builder</a> — it covers bulk orders too.</p>
     </div>
   </div>
 </div><!-- /pg-importer -->
@@ -3585,6 +3643,226 @@ var counterObs=new IntersectionObserver(function(entries){
   });
 },{threshold:0.4});
 document.querySelectorAll('.cnt-r').forEach(function(el){counterObs.observe(el)});
+
+/* ============================
+   PHASE 5: CUSTOM TAILORING BUILDER
+   ============================ */
+var TB_STEPS=[
+  {key:'orderType',title:'What Are You Ordering?',sub:'This helps us tailor the rest of the questions to your needs.',type:'ordertype'},
+  {key:'garment',title:'Choose Your Garment',sub:'Select the piece you would like us to create.',type:'chips',options:['Sherwani','Prince Coat','Pent Coat','Waist Coat','Shalwar Qameez','Stone-Embroidered Suit','Turban / Kula']},
+  {key:'fabric',title:'Select Your Fabric',sub:'Not sure yet? Our consultants can guide you once you submit.',type:'chips',options:['Banarasi Silk','Velvet','Organza','Georgette','Cotton-Silk Blend','Imported Suiting','Not Sure — Need Guidance']},
+  {key:'color',title:'Choose a Colour Palette',sub:'Pick a swatch, or describe a custom shade below.',type:'color'},
+  {key:'collar',title:'Collar Style',sub:'',type:'chips',options:['Mandarin','Stand Collar','Nehru','Classic Lapel','Shawl Collar','Not Sure']},
+  {key:'sleeves',title:'Sleeve Style',sub:'',type:'chips',options:['Full Sleeve','Cuffed','Bell Sleeve','Not Sure']},
+  {key:'buttons',title:'Button Style',sub:'',type:'chips',options:['Brass','Fabric-Covered','Pearl','Crystal','Standard']},
+  {key:'pockets',title:'Pocket Style',sub:'',type:'chips',options:['Flap Pockets','Besom Pockets','Patch Pockets','No Pockets']},
+  {key:'embroidery',title:'Embroidery Style',sub:'',type:'chips',options:['Minimal / Plain','Zardozi','Floral','Geometric / Mosaic','Vine & Leaf','Not Sure']},
+  {key:'stonework',title:'Stone &amp; Crystal Work',sub:'',type:'chips',options:['None','Light','Moderate','Heavy','Full Stone &amp; Crystal Work']},
+  {key:'lining',title:'Lining',sub:'',type:'chips',options:['Cotton','Silk','Satin','Not Sure']},
+  {key:'measurements',title:'Measurements',sub:'',type:'measurements'},
+  {key:'reference',title:'Reference Images / Inspiration',sub:'Paste a link, or describe a style you liked from our Collections page.',type:'text'},
+  {key:'notes',title:'Special Notes',sub:'Timeline, budget expectations, anything else that helps us prepare an accurate response.',type:'textarea'},
+  {key:'summary',title:'Review &amp; Submit',sub:'Check your selections, add your contact details, and send it to our team.',type:'summary'}
+];
+var TB_COLORS=[
+  {name:'Ivory',hex:'#F5F0E6'},{name:'Maroon',hex:'#6B1520'},{name:'Navy',hex:'#1a2a4a'},
+  {name:'Black',hex:'#0A0A0A'},{name:'Gold',hex:'#C9A55A'},{name:'Emerald Green',hex:'#1C3A2C'},
+  {name:'Slate Blue',hex:'#3d5a80'},{name:'Charcoal',hex:'#2b2b2b'}
+];
+var tbData={orderType:'',garment:'',fabric:'',color:'',collar:'',sleeves:'',buttons:'',pockets:'',embroidery:'',stonework:'',lining:'',
+  measurements:{chest:'',waist:'',shoulder:'',sleeveLen:'',length:'',skip:false},
+  qty:'',sizeRange:'',reference:'',notes:'',contact:{name:'',phone:'',email:'',company:''}};
+var tbStep=0;
+
+function tbEsc(s){return (s||'').replace(/&amp;/g,'&');}
+
+function tbRenderProgress(){
+  var pct=Math.round((tbStep/(TB_STEPS.length-1))*100);
+  return '<div class="tb-progress"><div class="tb-progress-track"><div class="tb-progress-fill" style="width:'+pct+'%"></div></div>'
+    +'<div class="tb-progress-label"><span>Step '+(tbStep+1)+' of '+TB_STEPS.length+'</span><span>'+pct+'% Complete</span></div></div>';
+}
+
+function tbRender(){
+  var app=document.getElementById('tb-app');
+  if(!app)return;
+  var s=TB_STEPS[tbStep];
+  var html=tbRenderProgress();
+  html+='<p class="tb-title">'+s.title+'</p>';
+  if(s.sub)html+='<p class="tb-sub">'+s.sub+'</p>';
+
+  if(s.type==='ordertype'){
+    html+='<div class="tb-ordertype-grid">'
+      +'<div class="tb-order-card'+(tbData.orderType==='retail'?' sel':'')+'" onclick="tbSetOrderType(\'retail\')">'
+        +'<div class="tb-order-ic">🧵</div><p class="tb-order-t">Single Custom Piece</p>'
+        +'<p class="tb-order-d">A one-off bespoke garment for your own wedding or event, tailored to your measurements.</p></div>'
+      +'<div class="tb-order-card'+(tbData.orderType==='bulk'?' sel':'')+'" onclick="tbSetOrderType(\'bulk\')">'
+        +'<div class="tb-order-ic">📦</div><p class="tb-order-t">Bulk / Importer Order</p>'
+        +'<p class="tb-order-d">Multiple pieces for retail stock, wholesale, or export — quantity and size range instead of one fitting.</p></div>'
+      +'</div>';
+  }else if(s.type==='chips'){
+    html+='<div class="chip-grid">'+s.options.map(function(o){
+      var v=tbEsc(o);
+      return '<div class="chip'+(tbData[s.key]===v?' sel':'')+'" onclick="tbSelectChip(\''+s.key+'\',\''+v.replace(/'/g,"\\'")+'\')">'+o+'</div>';
+    }).join('')+'</div>';
+  }else if(s.type==='color'){
+    html+='<div class="color-grid">'+TB_COLORS.map(function(c){
+      return '<div class="color-swatch'+(tbData.color===c.name?' sel':'')+'" style="background:'+c.hex+'" title="'+c.name+'" onclick="tbSelectChip(\'color\',\''+c.name+'\')"></div>';
+    }).join('')+'</div>'
+    +'<div class="tb-custom-color"><label class="fl">Or describe a custom colour</label>'
+    +'<input class="fi-g" id="tb-color-custom" value="'+(TB_COLORS.some(function(c){return c.name===tbData.color})?'':tbData.color)+'" placeholder="e.g. dusty rose, bottle green with gold trim" oninput="tbData.color=this.value">'
+    +'</div>';
+  }else if(s.type==='measurements'){
+    if(tbData.orderType==='bulk'){
+      html+='<div class="tb-meas-grid">'
+        +'<div class="fg-r"><label class="fl">Estimated Quantity</label><input class="fi-g" id="tb-qty" value="'+tbData.qty+'" placeholder="e.g. 25 pieces" oninput="tbData.qty=this.value"></div>'
+        +'<div class="fg-r"><label class="fl">Size Range Needed</label><input class="fi-g" id="tb-sizerange" value="'+tbData.sizeRange+'" placeholder="e.g. S–XXL, or chest 38–46 inch" oninput="tbData.sizeRange=this.value"></div>'
+        +'</div>';
+    }else{
+      var m=tbData.measurements;
+      html+='<div class="tb-meas-grid">'
+        +'<div class="fg-r"><label class="fl">Chest (inches)</label><input class="fi-g" id="tb-chest" value="'+m.chest+'" placeholder="e.g. 40" oninput="tbData.measurements.chest=this.value"></div>'
+        +'<div class="fg-r"><label class="fl">Waist (inches)</label><input class="fi-g" id="tb-waist" value="'+m.waist+'" placeholder="e.g. 34" oninput="tbData.measurements.waist=this.value"></div>'
+        +'<div class="fg-r"><label class="fl">Shoulder (inches)</label><input class="fi-g" id="tb-shoulder" value="'+m.shoulder+'" placeholder="e.g. 18" oninput="tbData.measurements.shoulder=this.value"></div>'
+        +'<div class="fg-r"><label class="fl">Sleeve Length (inches)</label><input class="fi-g" id="tb-sleevelen" value="'+m.sleeveLen+'" placeholder="e.g. 24" oninput="tbData.measurements.sleeveLen=this.value"></div>'
+        +'<div class="fg-r"><label class="fl">Garment Length (inches)</label><input class="fi-g" id="tb-length" value="'+m.length+'" placeholder="e.g. 44" oninput="tbData.measurements.length=this.value"></div>'
+        +'</div>'
+        +'<label class="tb-meas-skip"><input type="checkbox" id="tb-meas-skip" '+(m.skip?'checked':'')+' onchange="tbData.measurements.skip=this.checked;tbRender()"> I don\'t have my measurements yet — I\'ll confirm via WhatsApp or a video call instead</label>';
+    }
+  }else if(s.type==='text'){
+    html+='<input class="fi-g" id="tb-text-'+s.key+'" value="'+(tbData[s.key]||'')+'" placeholder="'+(s.placeholder||'')+'" oninput="tbData.'+s.key+'=this.value">';
+  }else if(s.type==='textarea'){
+    html+='<textarea class="fi-g" id="tb-textarea-'+s.key+'" placeholder="'+(s.placeholder||'')+'" oninput="tbData.'+s.key+'=this.value">'+(tbData[s.key]||'')+'</textarea>';
+  }else if(s.type==='summary'){
+    html+=tbRenderSummary();
+  }
+
+  html+='<div class="tb-nav-warn" id="tb-warn">Please make a selection before continuing.</div>';
+
+  if(s.type!=='summary'){
+    html+='<div class="tb-nav">'
+      +'<button class="btn btn-out btn-sm" onclick="tbBack()" '+(tbStep===0?'disabled':'')+'>← Back</button>'
+      +'<button class="btn btn-gold btn-sm" onclick="tbNext()">Continue →</button>'
+      +'</div>';
+  }
+
+  app.innerHTML=html;
+}
+
+function tbRenderSummary(){
+  var rows=[];
+  rows.push(['Order Type',tbData.orderType==='bulk'?'Bulk / Importer Order':'Single Custom Piece']);
+  if(tbData.garment)rows.push(['Garment',tbData.garment]);
+  if(tbData.fabric)rows.push(['Fabric',tbData.fabric]);
+  if(tbData.color)rows.push(['Colour',tbData.color]);
+  if(tbData.collar)rows.push(['Collar',tbData.collar]);
+  if(tbData.sleeves)rows.push(['Sleeves',tbData.sleeves]);
+  if(tbData.buttons)rows.push(['Buttons',tbData.buttons]);
+  if(tbData.pockets)rows.push(['Pockets',tbData.pockets]);
+  if(tbData.embroidery)rows.push(['Embroidery',tbEsc(tbData.embroidery)]);
+  if(tbData.stonework)rows.push(['Stone Work',tbEsc(tbData.stonework)]);
+  if(tbData.lining)rows.push(['Lining',tbData.lining]);
+  if(tbData.orderType==='bulk'){
+    if(tbData.qty)rows.push(['Quantity',tbData.qty]);
+    if(tbData.sizeRange)rows.push(['Size Range',tbData.sizeRange]);
+  }else{
+    var m=tbData.measurements;
+    if(m.skip)rows.push(['Measurements','To be confirmed via WhatsApp/video call']);
+    else if(m.chest||m.waist||m.shoulder||m.sleeveLen||m.length)rows.push(['Measurements','Chest '+m.chest+'", Waist '+m.waist+'", Shoulder '+m.shoulder+'", Sleeve '+m.sleeveLen+'", Length '+m.length+'"']);
+  }
+  if(tbData.reference)rows.push(['Reference',tbData.reference]);
+  if(tbData.notes)rows.push(['Notes',tbData.notes]);
+
+  var listHtml='<div class="tb-summary-list">'+rows.map(function(r){
+    return '<div class="tb-summary-row"><span>'+r[0]+'</span><span>'+r[1]+'</span></div>';
+  }).join('')+'</div>';
+
+  var contactHtml='<div style="margin-top:2rem">'
+    +'<div class="f-row">'
+    +'<div class="fg-r"><label class="fl">Full Name</label><input class="fi-g" id="tb-c-name" value="'+tbData.contact.name+'" placeholder="Your name" oninput="tbData.contact.name=this.value"></div>'
+    +'<div class="fg-r"><label class="fl">Phone / WhatsApp</label><input class="fi-g" id="tb-c-phone" value="'+tbData.contact.phone+'" placeholder="+92 333 7777882" oninput="tbData.contact.phone=this.value"></div>'
+    +'</div>'
+    +'<div class="f-row">'
+    +'<div class="fg-r"><label class="fl">Email (optional)</label><input class="fi-g" id="tb-c-email" value="'+tbData.contact.email+'" placeholder="you@example.com" oninput="tbData.contact.email=this.value"></div>'
+    +'<div class="fg-r"><label class="fl">Company (if applicable)</label><input class="fi-g" id="tb-c-company" value="'+tbData.contact.company+'" placeholder="Optional" oninput="tbData.contact.company=this.value"></div>'
+    +'</div>'
+    +'</div>';
+
+  var successHtml='<div class="success-msg" id="tb-success">✅ Your custom order details have been sent via WhatsApp. Our team will follow up shortly. JazakAllah Khair!</div>';
+
+  var navHtml='<div class="tb-nav">'
+    +'<button class="btn btn-out btn-sm" onclick="tbBack()">← Back</button>'
+    +'<button class="btn btn-gold" onclick="tbSubmit()">Send via WhatsApp</button>'
+    +'</div>';
+
+  return listHtml+contactHtml+successHtml+navHtml;
+}
+
+function tbSetOrderType(type){
+  tbData.orderType=type;
+  tbNext();
+}
+function tbSelectChip(key,value){
+  tbData[key]=(tbData[key]===value)?'':value;
+  tbRender();
+}
+function tbValidateStep(){
+  var s=TB_STEPS[tbStep];
+  var warn=document.getElementById('tb-warn');
+  if(s.key==='orderType'&&!tbData.orderType){if(warn)warn.classList.add('show');return false;}
+  if(s.key==='garment'&&!tbData.garment){if(warn)warn.classList.add('show');return false;}
+  return true;
+}
+function tbNext(){
+  if(!tbValidateStep())return;
+  if(tbStep<TB_STEPS.length-1){tbStep++;tbRender();scrollTbTop();}
+}
+function tbBack(){
+  if(tbStep>0){tbStep--;tbRender();scrollTbTop();}
+}
+function scrollTbTop(){
+  var app=document.getElementById('tb-app');
+  if(app)app.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function tbSubmit(){
+  if(!tbData.contact.name||!tbData.contact.phone){
+    alert('Please fill in your name and phone number so our team can reach you.');
+    return;
+  }
+  var lines=['Assalam+o+Alaikum!+I+would+like+to+submit+a+custom+tailoring+request+from+the+website+builder.',''];
+  var msg='Assalam+o+Alaikum!+Custom+Tailoring+Builder+Submission.'
+    +'%0A%0AOrder+Type:+'+encodeURIComponent(tbData.orderType==='bulk'?'Bulk / Importer Order':'Single Custom Piece')
+    +(tbData.garment?'%0AGarment:+'+encodeURIComponent(tbData.garment):'')
+    +(tbData.fabric?'%0AFabric:+'+encodeURIComponent(tbData.fabric):'')
+    +(tbData.color?'%0AColour:+'+encodeURIComponent(tbData.color):'')
+    +(tbData.collar?'%0ACollar:+'+encodeURIComponent(tbData.collar):'')
+    +(tbData.sleeves?'%0ASleeves:+'+encodeURIComponent(tbData.sleeves):'')
+    +(tbData.buttons?'%0AButtons:+'+encodeURIComponent(tbData.buttons):'')
+    +(tbData.pockets?'%0APockets:+'+encodeURIComponent(tbData.pockets):'')
+    +(tbData.embroidery?'%0AEmbroidery:+'+encodeURIComponent(tbEsc(tbData.embroidery)):'')
+    +(tbData.stonework?'%0AStone+Work:+'+encodeURIComponent(tbEsc(tbData.stonework)):'')
+    +(tbData.lining?'%0ALining:+'+encodeURIComponent(tbData.lining):'');
+  if(tbData.orderType==='bulk'){
+    if(tbData.qty)msg+='%0AQuantity:+'+encodeURIComponent(tbData.qty);
+    if(tbData.sizeRange)msg+='%0ASize+Range:+'+encodeURIComponent(tbData.sizeRange);
+  }else{
+    var m=tbData.measurements;
+    if(m.skip)msg+='%0AMeasurements:+To+be+confirmed+via+WhatsApp%2Fvideo+call';
+    else if(m.chest||m.waist||m.shoulder||m.sleeveLen||m.length)msg+='%0AMeasurements:+Chest+'+encodeURIComponent(m.chest)+'in,+Waist+'+encodeURIComponent(m.waist)+'in,+Shoulder+'+encodeURIComponent(m.shoulder)+'in,+Sleeve+'+encodeURIComponent(m.sleeveLen)+'in,+Length+'+encodeURIComponent(m.length)+'in';
+  }
+  if(tbData.reference)msg+='%0AReference:+'+encodeURIComponent(tbData.reference);
+  if(tbData.notes)msg+='%0ANotes:+'+encodeURIComponent(tbData.notes);
+  msg+='%0A%0AName:+'+encodeURIComponent(tbData.contact.name)
+    +'%0APhone:+'+encodeURIComponent(tbData.contact.phone)
+    +(tbData.contact.email?'%0AEmail:+'+encodeURIComponent(tbData.contact.email):'')
+    +(tbData.contact.company?'%0ACompany:+'+encodeURIComponent(tbData.contact.company):'');
+
+  window.open('https://wa.me/923337777882?text='+msg,'_blank');
+  var successEl=document.getElementById('tb-success');
+  if(successEl)successEl.style.display='block';
+}
+
+if(document.getElementById('tb-app'))tbRender();
 </script>
 
 </body>
