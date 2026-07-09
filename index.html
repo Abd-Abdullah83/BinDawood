@@ -244,11 +244,7 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
 .fi-g:focus{border-color:var(--gold);background:rgba(201,165,90,.05)}
 .fi-g::placeholder{color:var(--muted)}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-select.fi-g {
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-}
+select.fi-g{appearance: none; -webkit-appearance:none;cursor:pointer}
 select.fi-g option{background:#1a1a1a}
 textarea.fi-g{min-height:130px;resize:vertical}
 .ct-g{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;margin-top:3.5rem}
@@ -355,6 +351,171 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 .pslider-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:5}
 .pslider-dot{width:5px;height:5px;border-radius:50%;background:rgba(245,240,230,.4);cursor:pointer;transition:background .2s}
 .pslider-dot.ac{background:var(--gold)}
+
+/* ============================
+   PHASE 2: NAV ICONS, MEGA MENU, SEARCH, WISHLIST, BACK-TO-TOP, TRUST BADGES
+   ============================ */
+.nic{display:flex;align-items:center;gap:1.1rem}
+.nic-btn{position:relative;background:none;border:none;color:rgba(245,240,230,.75);font-size:1.05rem;cursor:pointer;transition:var(--t);display:flex;align-items:center;justify-content:center;width:32px;height:32px}
+.nic-btn:hover{color:var(--gold);transform:translateY(-1px)}
+.nic-badge{position:absolute;top:-4px;right:-4px;background:var(--gold);color:var(--black);font-size:.55rem;font-weight:600;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1}
+.nic-badge.hidden{display:none}
+
+/* Mega menu */
+.nm li.has-mega{position:relative}
+.mega{position:fixed;top:var(--nh);left:0;right:0;background:rgba(10,10,10,.98);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);padding:2.2rem 0;opacity:0;visibility:hidden;transform:translateY(-8px);transition:var(--t);z-index:998}
+.nm li.has-mega:hover .mega,.mega.op{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-g{max-width:1280px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2.2rem}
+.mega-col-t{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.mega-lk{display:block;font-size:.82rem;color:rgba(245,240,230,.65);padding:.5rem 0;cursor:pointer;transition:var(--t);border-bottom:1px solid var(--border2)}
+.mega-lk:hover{color:var(--gold);padding-left:.3rem}
+
+/* Search overlay */
+.search-ov{position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:2000;display:none;flex-direction:column;padding:8vh 2rem 2rem;backdrop-filter:blur(6px)}
+.search-ov.op{display:flex}
+.search-bar{max-width:720px;margin:0 auto;width:100%}
+.search-in-wrap{display:flex;align-items:center;gap:1rem;border-bottom:1px solid var(--border);padding-bottom:1rem}
+.search-in{flex:1;background:none;border:none;color:var(--ivory);font-family:var(--fd);font-size:clamp(1.3rem,3vw,2rem);outline:none}
+.search-in::placeholder{color:var(--muted)}
+.search-close{background:none;border:1px solid var(--border);color:var(--ivory);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;flex-shrink:0;transition:var(--t)}
+.search-close:hover{border-color:var(--gold);color:var(--gold)}
+.search-res{max-width:720px;margin:2rem auto 0;width:100%;overflow-y:auto;flex:1}
+.search-item{display:flex;align-items:center;gap:1.2rem;padding:1rem 0;border-bottom:1px solid var(--border2);cursor:pointer;transition:var(--t)}
+.search-item:hover{padding-left:.5rem}
+.search-thumb{width:56px;height:56px;flex-shrink:0;background-size:cover;background-position:center;position:relative}
+.search-item-n{font-family:var(--fd);font-size:1rem;color:var(--ivory)}
+.search-item-c{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.2rem}
+.search-empty{color:var(--muted);font-size:.85rem;text-align:center;padding:2rem 0}
+
+/* Wishlist heart button on product cards */
+.wl-btn{position:absolute;top:1rem;left:1rem;width:34px;height:34px;background:rgba(10,10,10,.55);border:1px solid rgba(245,240,230,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:var(--ivory);z-index:2;cursor:pointer;transition:var(--t)}
+.wl-btn:hover{border-color:var(--gold);color:var(--gold)}
+.wl-btn.active{color:var(--maroon);background:var(--gold);border-color:var(--gold)}
+
+/* Back to top */
+.btt{position:fixed;bottom:2rem;right:5.5rem;width:44px;height:44px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;z-index:998;opacity:0;visibility:hidden;transform:translateY(10px);transition:var(--t)}
+.btt.vis{opacity:1;visibility:visible;transform:translateY(0)}
+.btt:hover{border-color:var(--gold);background:rgba(201,165,90,.1)}
+
+/* Trust badges + newsletter in footer */
+.ft-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-top:3.5rem;margin-bottom:3.5rem}
+.ft-tb{background:var(--dark);padding:1.6rem 1.2rem;text-align:center}
+.ft-tb-ic{font-size:1.3rem;margin-bottom:.6rem}
+.ft-tb-t{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-l)}
+.ft-news{padding:2.2rem;border:1px solid var(--border);background:rgba(255,255,255,.02);margin-bottom:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.ft-news-form{display:flex;gap:.7rem;flex-wrap:wrap}
+.ft-news-in{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--ivory);padding:.75rem 1.1rem;font-size:.82rem;min-width:220px;outline:none}
+.ft-news-in:focus{border-color:var(--gold)}
+
+@media(max-width:1024px){
+  .mega-g{grid-template-columns:repeat(2,1fr)}
+  .ft-trust{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nic{gap:.7rem}
+  .btt{right:auto;left:2rem}
+  .ft-news{flex-direction:column;align-items:flex-start}
+}
+
+/* ============================
+   PHASE 3: HERO SLIDER
+   ============================ */
+.hero{padding:0}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;visibility:hidden;transition:opacity 1.1s ease;display:flex;align-items:center;justify-content:center}
+.hero-slide.ac{opacity:1;visibility:visible;z-index:1}
+.hero-slide .hov{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,.88) 0%,rgba(10,10,10,.45) 55%,rgba(10,10,10,.75) 100%)}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(10,10,10,.4);border:1px solid rgba(245,240,230,.3);color:var(--ivory);font-size:1.3rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:var(--t)}
+.hero-arrow:hover{border-color:var(--gold);color:var(--gold);background:rgba(10,10,10,.7)}
+.hero-prev{left:1.5rem}
+.hero-next{right:1.5rem}
+.hero-dots{position:absolute;bottom:5.5rem;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;z-index:3}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:rgba(245,240,230,.35);cursor:pointer;transition:var(--t)}
+.hero-dot.ac{background:var(--gold);width:24px;border-radius:3px}
+@media(max-width:768px){
+  .hero-arrow{width:36px;height:36px;font-size:1rem}
+  .hero-prev{left:.6rem}
+  .hero-next{right:.6rem}
+  .hero-dots{bottom:4rem}
+}
+
+/* Masonry / Pinterest-style gallery */
+.masonry{column-count:3;column-gap:4px}
+.masonry .mi{break-inside:avoid;margin-bottom:4px;position:relative;overflow:hidden;cursor:pointer}
+.masonry .mi img{width:100%;display:block;transition:transform .8s ease}
+.masonry .mi:hover img{transform:scale(1.045)}
+.masonry .mi .mih{position:absolute;inset:0;background:rgba(10,10,10,0);display:flex;align-items:flex-end;padding:1.2rem;transition:var(--t)}
+.masonry .mi:hover .mih{background:linear-gradient(to top,rgba(10,10,10,.75),transparent 60%)}
+.masonry .mi .mit{font-family:var(--fd);font-size:1rem;color:var(--ivory);opacity:0;transform:translateY(6px);transition:var(--t)}
+.masonry .mi:hover .mit{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.masonry{column-count:2}}
+@media(max-width:600px){.masonry{column-count:1}}
+
+/* Trending / New Arrivals rows (home) */
+.hrow-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:2.2rem;flex-wrap:wrap}
+.hrow-track{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+@media(max-width:1024px){.hrow-track{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.hrow-track{grid-template-columns:1fr}}
+.hrow-track .pc .pi{height:320px}
+
+/* Animated counters */
+.cnt-r{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border)}
+.cnt-i{background:var(--black);padding:2.6rem 1.5rem;text-align:center}
+.cnt-n{font-family:var(--fd);font-size:2.6rem;color:var(--gold);font-weight:300;line-height:1}
+.cnt-l{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.5rem}
+@media(max-width:768px){.cnt-r{grid-template-columns:repeat(2,1fr)}}
+
+/* Social / video-style strip */
+.social-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.social-card{position:relative;height:260px;overflow:hidden;cursor:pointer;background-size:cover;background-position:center}
+.social-card .sco{position:absolute;inset:0;background:rgba(10,10,10,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;transition:var(--t)}
+.social-card:hover .sco{background:rgba(10,10,10,.65)}
+.social-play{width:52px;height:52px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;transition:var(--t)}
+.social-card:hover .social-play{background:var(--gold);color:var(--black)}
+.social-t{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ivory)}
+@media(max-width:768px){.social-strip{grid-template-columns:1fr}}
+
+/* ============================
+   PHASE 4: SORT/PAGINATION BAR
+   ============================ */
+.sort-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border2);margin-bottom:2px}
+.sort-count{font-size:.72rem;color:var(--muted);letter-spacing:.05em}
+.sort-sel-wrap{display:flex;align-items:center;gap:.7rem}
+.sort-sel{width:auto;padding:.55rem 1rem;font-size:.72rem}
+.pager{display:flex;justify-content:center;align-items:center;gap:.5rem;margin-top:3rem;flex-wrap:wrap}
+.pager-btn{width:38px;height:38px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.78rem;cursor:pointer;transition:var(--t);display:flex;align-items:center;justify-content:center}
+.pager-btn:hover{border-color:var(--gold);color:var(--gold)}
+.pager-btn.ac{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.pager-btn.nav{width:auto;padding:0 1rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase}
+.pager-btn:disabled{opacity:.3;cursor:not-allowed}
+
+/* ============================
+   PHASE 4: PRODUCT DETAIL PAGE
+   ============================ */
+.breadcrumb{font-size:.68rem;color:var(--muted);letter-spacing:.05em;margin-bottom:2rem}
+.breadcrumb a{color:var(--gold);cursor:pointer}
+.pd-g{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;margin-bottom:5rem}
+.pd-gallery{position:relative;height:560px;background:var(--card)}
+.pd-gallery .pslider{height:100%}
+.pd-desc{font-size:.88rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem}
+.pd-meta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:1rem}
+.pd-meta-i{background:var(--dark);padding:1rem 1.2rem}
+.pd-meta-i span{display:block;margin-bottom:.3rem}
+.pd-meta-i p{font-size:.82rem;color:var(--ivory);font-family:var(--fd)}
+.pd-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin:1.5rem 0}
+.pd-share{display:flex;align-items:center;gap:.6rem;margin-top:1rem}
+.pd-share-ic{width:32px;height:32px;border:1px solid var(--border);color:var(--muted);font-size:.65rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--t)}
+.pd-share-ic:hover{border-color:var(--gold);color:var(--gold)}
+.pd-row{margin-top:4rem}
+@media(max-width:1024px){.pd-g{grid-template-columns:1fr;gap:2rem}.pd-gallery{height:420px}}
+
+/* ============================
+   PHASE 4: BUY NOW MODAL (reusable overlay)
+   ============================ */
+.modal-ov{position:fixed;inset:0;background:rgba(10,10,10,.85);z-index:2100;display:none;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(4px)}
+.modal-ov.op{display:flex}
+.modal-box{position:relative;max-width:480px;width:100%;max-height:88vh;overflow-y:auto;background:var(--dark);border:1px solid var(--border);padding:2.5rem}
+@media(max-width:600px){.modal-box{padding:1.8rem}}
 </style>
 </head>
 <body>
@@ -370,7 +531,35 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 </div>
     <ul class="nm">
       <li><a onclick="sp('home')" data-p="home">Home</a></li>
-      <li><a onclick="sp('collections')" data-p="collections">Collections</a></li>
+      <li class="has-mega">
+        <a onclick="sp('collections')" data-p="collections">Collections</a>
+        <div class="mega">
+          <div class="mega-g">
+            <div>
+              <span class="mega-col-t">Groom Wear</span>
+              <a class="mega-lk" onclick="sp('collections');filterProd('sherwani',null)">Sherwanis</a>
+              <a class="mega-lk" onclick="sp('collections');filterProd('prince',null)">Prince Coats</a>
+              <a class="mega-lk" onclick="sp('collections');filterProd('pent',null)">Pent Coats</a>
+            </div>
+            <div>
+              <span class="mega-col-t">Formal Pieces</span>
+              <a class="mega-lk" onclick="sp('collections');filterProd('waist',null)">Waist Coats</a>
+              <a class="mega-lk" onclick="sp('collections');filterProd('shalwar',null)">Shalwar Qameez</a>
+              <a class="mega-lk" onclick="sp('collections');filterProd('stone',null)">Stone Embroidered</a>
+            </div>
+            <div>
+              <span class="mega-col-t">Accessories</span>
+              <a class="mega-lk" onclick="sp('collections');filterProd('kula',null)">Turbans &amp; Kula</a>
+              <a class="mega-lk" onclick="sp('collections');filterProd('all',null)">View All Collections</a>
+            </div>
+            <div>
+              <span class="mega-col-t">For Buyers</span>
+              <a class="mega-lk" onclick="sp('exports')">Global Exports</a>
+              <a class="mega-lk" onclick="sp('importer')">Importer &amp; Bulk Orders</a>
+            </div>
+          </div>
+        </div>
+      </li>
       <li><a onclick="sp('tailoring')" data-p="tailoring">Custom Tailoring</a></li>
       <li><a onclick="sp('exports')" data-p="exports">Global Exports</a></li>
       <li><a onclick="sp('importer')" data-p="importer">Importer Inquiries</a></li>
@@ -379,12 +568,29 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       <li><a onclick="sp('faq')" data-p="faq">FAQ</a></li>
       <li><a onclick="sp('contact')" data-p="contact">Contact</a></li>
     </ul>
-    <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+would+like+to+book+an+appointment+at+BinDawood+Dulha+House." target="_blank" class="btn btn-og ncta">Book Appointment</a>
+    <div class="nic">
+      <button class="nic-btn" onclick="openSearch()" aria-label="Search">🔍</button>
+      <button class="nic-btn" onclick="sp('wishlist')" aria-label="Wishlist">
+        ♥<span class="nic-badge hidden" id="wl-badge">0</span>
+      </button>
+      <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+would+like+to+book+an+appointment+at+BinDawood+Dulha+House." target="_blank" class="btn btn-og ncta">Book Appointment</a>
+    </div>
     <div class="nt" onclick="toggleMob()" id="nt">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-ov" id="search-ov">
+  <div class="search-bar">
+    <div class="search-in-wrap">
+      <input class="search-in" id="search-in" type="text" placeholder="Search sherwanis, prince coats, kula…" autocomplete="off" oninput="runSearch(this.value)">
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+    </div>
+  </div>
+  <div class="search-res" id="search-res"></div>
+</div>
 
 <!-- MOBILE MENU -->
 <div class="mob" id="mob">
@@ -397,36 +603,119 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   <a onclick="sp('gallery');closeMob()">Gallery</a>
   <a onclick="sp('faq');closeMob()">FAQ</a>
   <a onclick="sp('contact');closeMob()">Contact</a>
+  <a onclick="sp('wishlist');closeMob()">♥ Wishlist</a>
+  <a onclick="sp('policies');closeMob()">Shipping, Returns &amp; Terms</a>
   <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+would+like+to+book+an+appointment." target="_blank" style="color:var(--gold)">📱 WhatsApp Us</a>
 </div>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <!-- =====================
      PAGE: HOME
      ===================== -->
 <div class="pg ac" id="pg-home">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hbg"></div>
-    <div class="hjali jali"></div>
-    <div class="hov"></div>
-    <div class="hc">
-      <div class="hbadge rv">
-        <span class="gl"></span>
-        <span class="eyebrow">Sialkot, Punjab, Pakistan — Serving Clients Worldwide</span>
-        <span class="gl"></span>
+  <!-- HERO SLIDER -->
+  <section class="hero" id="hero">
+    <div class="hero-slides" id="hero-slides">
+
+      <div class="hero-slide ac" style="background-image:url('images/sherwanis/royal-ivory.jpg')">
+        <div class="hov"></div>
+        <div class="hc">
+          <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">Sialkot, Punjab, Pakistan — Serving Clients Worldwide</span><span class="gl"></span></div>
+          <h1 class="xl ht rv d1">Where Tradition<br>Meets <em>Royal Elegance</em></h1>
+          <p class="hsub rv d2">Crafting the perfect dulha since generations. From ivory-embroidered sherwanis to gold brocade prince coats — every stitch is a promise of perfection.</p>
+          <div class="hbtns rv d3">
+            <a onclick="sp('collections')" class="btn btn-gold">Explore Collection</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+would+like+to+book+an+appointment." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
+            <a onclick="sp('appointment')" class="btn btn-out">Book Appointment</a>
+          </div>
+        </div>
       </div>
-      <h1 class="xl ht rv d1">
-        Where Tradition<br>
-        Meets <em>Royal Elegance</em>
-      </h1>
-      <p class="hsub rv d2">Crafting the perfect dulha since generations. From ivory-embroidered sherwanis to gold brocade prince coats — every stitch is a promise of perfection. Trusted by local families and international importers alike.</p>
-      <div class="hbtns rv d3">
-        <a onclick="sp('collections')" class="btn btn-gold">Explore Collection</a>
-        <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+would+like+to+book+an+appointment." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
-        <a onclick="sp('appointment')" class="btn btn-out">Book Appointment</a>
+
+      <div class="hero-slide" style="background-image:url('images/prince-coats/pc11.jpg')">
+        <div class="hov"></div>
+        <div class="hc">
+          <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">Signature Prince Coats</span><span class="gl"></span></div>
+          <h1 class="xl ht rv d1">Structured<br><em>Statement Pieces</em></h1>
+          <p class="hsub rv d2">Champagne-gold brocade, antique brass buttons, mandarin collars — tailored for the groom who commands the room.</p>
+          <div class="hbtns rv d3">
+            <a onclick="sp('collections');filterProd('prince',null)" class="btn btn-gold">View Prince Coats</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
+          </div>
+        </div>
       </div>
+
+      <div class="hero-slide" style="background-image:url('images/stone-embroidered/maroon-jewel.jpg')">
+        <div class="hov"></div>
+        <div class="hc">
+          <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">Stone-Embroidered Luxury</span><span class="gl"></span></div>
+          <h1 class="xl ht rv d1">Hand-Placed<br><em>Jewel &amp; Crystal Work</em></h1>
+          <p class="hsub rv d2">Swarovski-quality stones and seed pearls, set by hand — our most opulent creations for grooms who demand the extraordinary.</p>
+          <div class="hbtns rv d3">
+            <a onclick="sp('collections');filterProd('stone',null)" class="btn btn-gold">View Stone Work</a>
+            <a onclick="sp('importer')" class="btn btn-out">Importer &amp; Bulk Orders</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image:url('images/pent-coats/p11.jpg')">
+        <div class="hov"></div>
+        <div class="hc">
+          <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">The Modern Groom</span><span class="gl"></span></div>
+          <h1 class="xl ht rv d1">Sharp Tailoring<br><em>Contemporary Elegance</em></h1>
+          <p class="hsub rv d2">Structured three-piece pent coats in premium suiting — the definition of understated formal power.</p>
+          <div class="hbtns rv d3">
+            <a onclick="sp('collections');filterProd('pent',null)" class="btn btn-gold">View Pent Coats</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image:url('images/kula/k41.jpg')">
+        <div class="hov"></div>
+        <div class="hc">
+          <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">Complete the Look</span><span class="gl"></span></div>
+          <h1 class="xl ht rv d1">Turbans &amp; Kula<br><em>Fit for a King</em></h1>
+          <p class="hsub rv d2">Pankha fans, jewelled brooches, and flowing tails — the finishing touch our consultants match perfectly to your attire.</p>
+          <div class="hbtns rv d3">
+            <a onclick="sp('collections');filterProd('kula',null)" class="btn btn-gold">View Turbans</a>
+            <a onclick="sp('tailoring')" class="btn btn-out">Custom Tailoring</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image:url('images/prince-coats/midnight-garden.jpg')">
+        <div class="hov"></div>
+        <div class="hc">
+          <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">For International Buyers</span><span class="gl"></span></div>
+          <h1 class="xl ht rv d1">Exported<br><em>Around the World</em></h1>
+          <p class="hsub rv d2">From Sialkot to Birmingham, Toronto and Dubai — retail clients and importers alike trust our craftsmanship across borders.</p>
+          <div class="hbtns rv d3">
+            <a onclick="sp('exports')" class="btn btn-gold">Our Global Reach</a>
+            <a onclick="sp('importer')" class="btn btn-out">Importer &amp; Bulk Orders</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image:url('images/sherwanis/crimson-velvet.jpg')">
+        <div class="hov"></div>
+        <div class="hc">
+          <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">Bespoke From First Stitch</span><span class="gl"></span></div>
+          <h1 class="xl ht rv d1">Your Vision,<br><em>Perfectly Tailored</em></h1>
+          <p class="hsub rv d2">Every fabric, embroidery pattern, and stone-work detail — designed with you, from consultation to final fitting.</p>
+          <div class="hbtns rv d3">
+            <a onclick="sp('tailoring')" class="btn btn-gold">Start Custom Tailoring</a>
+            <a onclick="sp('appointment')" class="btn btn-out">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <button class="hero-arrow hero-prev" onclick="heroGo(heroCur-1)" aria-label="Previous slide">‹</button>
+    <button class="hero-arrow hero-next" onclick="heroGo(heroCur+1)" aria-label="Next slide">›</button>
+    <div class="hero-dots" id="hero-dots"></div>
+
     <div class="hscr" onclick="document.getElementById('cats').scrollIntoView({behavior:'smooth'})">
       <div class="hscrl"></div>
       <span>Scroll</span>
@@ -569,34 +858,124 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
     </div>
   </section>
 
-  <!-- SIGNATURE COLLECTION GALLERY -->
+  <!-- TRENDING NOW -->
+  <section class="sec">
+    <div class="con">
+      <div class="hrow-head rv">
+        <div>
+          <div class="sh"><span class="gl"></span><span class="eyebrow">Most Requested</span></div>
+          <h2 class="lg" style="margin-top:.4rem">Trending Now</h2>
+        </div>
+        <a onclick="sp('collections')" class="btn btn-og btn-sm">View All →</a>
+      </div>
+      <div class="hrow-track rv">
+        <div class="pc">
+          <div class="pi"><img src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Signature</div></div>
+          <div class="pif"><p class="pct">Sherwani</p><p class="pn">Royal Ivory Sherwani</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Royal+Ivory+Sherwani.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+        </div>
+        <div class="pc">
+          <div class="pi"><img src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Popular</div></div>
+          <div class="pif"><p class="pct">Prince Coat</p><p class="pn">Navy Imperial Prince Coat</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Navy+Imperial+Prince+Coat.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+        </div>
+        <div class="pc">
+          <div class="pi"><img src="images/stone-embroidered/maroon-jewel.jpg" alt="Maroon Jewel Groom Suit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Most Opulent</div></div>
+          <div class="pif"><p class="pct">Stone Embroidered</p><p class="pn">Maroon Jewel Groom Suit</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Maroon+Jewel+Groom+Suit.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+        </div>
+        <div class="pc">
+          <div class="pi"><img src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">Bestseller</div></div>
+          <div class="pif"><p class="pct">Pent Coat</p><p class="pn">3-Piece Forest Classic</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+3-Piece+Forest+Classic+Pent+Coat.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
   <section class="sec sec-dg">
+    <div class="con">
+      <div class="hrow-head rv">
+        <div>
+          <div class="sh"><span class="gl"></span><span class="eyebrow">Just Added</span></div>
+          <h2 class="lg" style="margin-top:.4rem">New Arrivals</h2>
+        </div>
+        <a onclick="sp('collections')" class="btn btn-og btn-sm">View All →</a>
+      </div>
+      <div class="hrow-track rv">
+        <div class="pc">
+          <div class="pi"><img src="images/prince-coats/pc131.jpg" alt="Prince Coat 13" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
+          <div class="pif"><p class="pct">Prince Coat</p><p class="pn">Prince Coat — Style 13</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+        </div>
+        <div class="pc">
+          <div class="pi"><img src="images/pent-coats/p142.jpg" alt="Pent Coat 14" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
+          <div class="pif"><p class="pct">Pent Coat</p><p class="pn">Pent Coat — Style 14</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+14.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+        </div>
+        <div class="pc">
+          <div class="pi"><img src="images/sherwanis/s131.jpg" alt="Sherwani Style 13" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
+          <div class="pif"><p class="pct">Sherwani</p><p class="pn">Sherwani Style 13</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+sherwani+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+        </div>
+        <div class="pc">
+          <div class="pi"><img src="images/kula/k11.jpg" alt="Black Gold-Embroidered Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
+          <div class="pif"><p class="pct">Turban / Kula</p><p class="pn">Black Gold-Embroidered Pankha Kula</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Black+Gold-Embroidered+Pankha+Kula.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE COLLECTION GALLERY (PINTEREST-STYLE MASONRY) -->
+  <section class="sec">
     <div class="con">
       <div class="tc rv" style="margin-bottom:2.5rem">
         <div class="sh tc"><span class="gl"></span><span class="eyebrow">Signature Collection</span><span class="gl"></span></div>
         <h2 class="lg">Crafted for the<br><em class="gold" style="font-style:italic">Discerning Groom</em></h2>
       </div>
-      <div class="gg rv">
-        <div class="gi" onclick="sp('collections')">
-         <img src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease"><div class="emb"></div>
-          <div class="gih"><div class="git">Royal Ivory Sherwani<br><span style="font-size:.65rem;letter-spacing:.12em;color:var(--gold-l)">View Collection →</span></div></div>
+      <div class="masonry rv">
+        <div class="mi" onclick="sp('collections');filterProd('sherwani',null)">
+          <img src="images/sherwanis/royal-ivory.jpg" alt="Royal Ivory Sherwani">
+          <div class="mih"><span class="mit">Royal Ivory Sherwani</span></div>
         </div>
-        <div class="gi" onclick="sp('collections')">
-  <img src="images/sherwanis/crimson-velvet.jpg" alt="Crimson Velvet Sherwani" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease"><div class="emb"></div>
-  <div class="gih"><div class="git">Crimson Velvet Sherwani</div></div>
-</div>
-<div class="gi" onclick="sp('collections')">
-  <img src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease"><div class="emb"></div>
-  <div class="gih"><div class="git">Navy Brocade Prince Coat</div></div>
-</div>
-<div class="gi" onclick="sp('collections')">
-  <img src="images/prince-coats/midnight-garden.jpg" alt="Midnight Garden Prince Coat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease"><div class="emb"></div>
-  <div class="gih"><div class="git">Midnight Floral Coat</div></div>
-</div>
-        <div class="gi" onclick="sp('collections')">
-          <img src="images/shalwar-qameez/collection.jpg" alt="Groom Kula & Shalwar-Qameez Collection" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease"><div class="emb"></div>
-          <div class="gih"><div class="git">Groom Kula Collection &amp; Sherwanis</div></div>
+        <div class="mi" onclick="sp('collections');filterProd('prince',null)">
+          <img src="images/prince-coats/pc11.jpg" alt="Navy Imperial Prince Coat">
+          <div class="mih"><span class="mit">Navy Brocade Prince Coat</span></div>
         </div>
+        <div class="mi" onclick="sp('collections');filterProd('sherwani',null)">
+          <img src="images/sherwanis/crimson-velvet.jpg" alt="Crimson Velvet Sherwani">
+          <div class="mih"><span class="mit">Crimson Velvet Sherwani</span></div>
+        </div>
+        <div class="mi" onclick="sp('collections');filterProd('stone',null)">
+          <img src="images/stone-embroidered/maroon-jewel.jpg" alt="Maroon Jewel Groom Suit">
+          <div class="mih"><span class="mit">Maroon Jewel Groom Suit</span></div>
+        </div>
+        <div class="mi" onclick="sp('collections');filterProd('prince',null)">
+          <img src="images/prince-coats/midnight-garden.jpg" alt="Midnight Garden Prince Coat">
+          <div class="mih"><span class="mit">Midnight Floral Coat</span></div>
+        </div>
+        <div class="mi" onclick="sp('collections');filterProd('kula',null)">
+          <img src="images/shalwar-qameez/collection.jpg" alt="Groom Kula & Shalwar-Qameez Collection">
+          <div class="mih"><span class="mit">Groom Kula Collection &amp; Sherwanis</span></div>
+        </div>
+        <div class="mi" onclick="sp('collections');filterProd('pent',null)">
+          <img src="images/pent-coats/p11.jpg" alt="3-Piece Forest Classic">
+          <div class="mih"><span class="mit">3-Piece Forest Classic</span></div>
+        </div>
+        <div class="mi" onclick="sp('collections');filterProd('stone',null)">
+          <img src="images/stone-embroidered/e21.jpg" alt="Ivory Multicolour Floral Sherwani">
+          <div class="mih"><span class="mit">Ivory Multicolour Floral Sherwani</span></div>
+        </div>
+        <div class="mi" onclick="sp('collections');filterProd('waist',null)">
+          <img src="images/waist-coats/wc11.jpg" alt="Beige Diamond-Embroidered Waistcoat">
+          <div class="mih"><span class="mit">Beige Diamond-Embroidered Waistcoat</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIMATED STAT COUNTERS -->
+  <section class="sec sec-dg">
+    <div class="con">
+      <div class="cnt-r rv" id="home-counters">
+        <div class="cnt-i"><p class="cnt-n" data-count="2500" data-suffix="+">0</p><p class="cnt-l">Grooms Dressed</p></div>
+        <div class="cnt-i"><p class="cnt-n" data-count="15" data-suffix="+">0</p><p class="cnt-l">Years of Excellence</p></div>
+        <div class="cnt-i"><p class="cnt-n" data-count="6" data-suffix="+">0</p><p class="cnt-l">Countries Served</p></div>
+        <div class="cnt-i"><p class="cnt-n" data-count="30" data-suffix="+">0</p><p class="cnt-l">Master Artisans</p></div>
       </div>
     </div>
   </section>
@@ -614,6 +993,27 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           <a onclick="sp('exports')" class="btn btn-og">Our Global Reach</a>
           <a onclick="sp('importer')" class="btn btn-gold">Importer &amp; Bulk Orders</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOLLOW OUR CRAFTSMANSHIP (SOCIAL STRIP) -->
+  <section class="sec sec-dg">
+    <div class="con">
+      <div class="tc rv" style="margin-bottom:2.5rem">
+        <div class="sh tc"><span class="gl"></span><span class="eyebrow">Behind the Stitches</span><span class="gl"></span></div>
+        <h2 class="lg">Follow Our <em class="gold" style="font-style:italic">Craftsmanship</em></h2>
+      </div>
+      <div class="social-strip rv">
+        <a class="social-card" style="background-image:url('images/sherwanis/s41.jpg')" href="https://www.instagram.com/bindawood255" target="_blank">
+          <div class="sco"><div class="social-play">▶</div><span class="social-t">Instagram Reels</span></div>
+        </a>
+        <a class="social-card" style="background-image:url('images/prince-coats/pc31.jpg')" href="https://www.tiktok.com/@bindawood255" target="_blank">
+          <div class="sco"><div class="social-play">▶</div><span class="social-t">TikTok</span></div>
+        </a>
+        <a class="social-card" style="background-image:url('images/pent-coats/p44.jpg')" href="https://whatsapp.com/channel/0029VbCtx6VAzNboL0duFr0G" target="_blank">
+          <div class="sco"><div class="social-play">💬</div><span class="social-t">WhatsApp Channel</span></div>
+        </a>
       </div>
     </div>
   </section>
@@ -708,6 +1108,18 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
       <div class="fb" onclick="filterProd('shalwar',this)">Shalwar Qameez</div>
       <div class="fb" onclick="filterProd('stone',this)">Stone Embroidered</div>
       <div class="fb" onclick="filterProd('kula',this)">Kula / Turban</div>
+    </div>
+    <div class="sort-bar">
+      <p class="sort-count" id="sort-count"></p>
+      <div class="sort-sel-wrap">
+        <label class="fl" style="margin:0">Sort:</label>
+        <select class="fi-g sort-sel" id="sort-sel" onchange="sortProducts(this.value)">
+          <option value="default">Featured</option>
+          <option value="new">Newest First</option>
+          <option value="az">Name: A–Z</option>
+          <option value="za">Name: Z–A</option>
+        </select>
+      </div>
     </div>
     <div class="pg-grid" id="prod-grid">
 
@@ -1046,7 +1458,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coat+Style+12.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
         </div>
       </div>
-         <div class="pc" data-cat="prince">
+         <div class="pc" data-cat="prince" data-new="1">
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
@@ -1338,7 +1750,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           <div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coat+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a></div>
         </div>
       </div>
-         <div class="pc" data-cat="pent">
+         <div class="pc" data-cat="pent" data-new="1">
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
@@ -1516,7 +1928,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         </div>
       </div>
     <!-- KULA -->
-      <div class="pc" data-cat="kula">
+      <div class="pc" data-cat="kula" data-new="1">
         <div class="pi"><img src="images/kula/k11.jpg" alt="Black Gold-Embroidered Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">In Stock</div></div>
         <div class="pif">
           <p class="pct">Turban / Kula</p>
@@ -1666,7 +2078,7 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           </div>
         </div>
       </div>
- <div class="pc" data-cat="sherwani">
+ <div class="pc" data-cat="sherwani" data-new="1">
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
@@ -1701,8 +2113,75 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         </div>
       </div>
     </div>
+    <div class="pager" id="pager"></div>
   </div>
 </div><!-- /pg-collections -->
+
+<!-- =====================
+     PAGE: PRODUCT DETAIL (NEW — populated dynamically by JS)
+     ===================== -->
+<div class="pg" id="pg-product">
+  <div class="con" style="padding-top:calc(var(--nh) + 40px);padding-bottom:80px">
+    <div class="breadcrumb" id="pd-crumb"></div>
+    <div class="pd-g">
+      <div class="pd-gallery" id="pd-gallery"></div>
+      <div class="pd-info">
+        <p class="pct" id="pd-cat">Category</p>
+        <h1 class="lg" id="pd-name" style="margin:.3rem 0 1rem">Product Name</h1>
+        <p class="pd-desc" id="pd-desc"></p>
+
+        <div class="pd-meta">
+          <div class="pd-meta-i"><span class="eyebrow">Material</span><p>Premium hand-selected fabric</p></div>
+          <div class="pd-meta-i"><span class="eyebrow">Fit</span><p>Tailored to your measurements</p></div>
+          <div class="pd-meta-i"><span class="eyebrow">Availability</span><p>Made-to-order</p></div>
+          <div class="pd-meta-i"><span class="eyebrow">Lead Time</span><p>2–4 weeks (express available)</p></div>
+        </div>
+
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.8;margin:1.5rem 0">Every fabric, colour, embroidery pattern and stone-work detail on this piece can be fully customised. Pricing is confirmed directly with our team based on your exact specification and quantity.</p>
+
+        <div class="pd-actions">
+          <button class="btn btn-gold" id="pd-buy-btn">Buy Now</button>
+          <a class="btn btn-wa" id="pd-inquire-btn" target="_blank">📱 Inquire via WhatsApp</a>
+          <button class="btn btn-og" id="pd-wl-btn">♥ Save to Wishlist</button>
+        </div>
+
+        <div class="pd-share">
+          <span class="eyebrow">Share:</span>
+          <a id="pd-share-wa" target="_blank" class="pd-share-ic" aria-label="Share on WhatsApp">WA</a>
+          <a id="pd-share-fb" target="_blank" class="pd-share-ic" aria-label="Share on Facebook">FB</a>
+          <button class="pd-share-ic" onclick="copyProductLink()" aria-label="Copy link">🔗</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pd-row" id="pd-related-wrap">
+      <div class="hrow-head rv"><h2 class="lg">You May Also Like</h2></div>
+      <div class="hrow-track" id="pd-related"></div>
+    </div>
+
+    <div class="pd-row" id="pd-recent-wrap">
+      <div class="hrow-head rv"><h2 class="lg">Recently Viewed</h2></div>
+      <div class="hrow-track" id="pd-recent"></div>
+    </div>
+  </div>
+</div><!-- /pg-product -->
+
+<!-- BUY NOW MODAL -->
+<div class="modal-ov" id="buy-modal">
+  <div class="modal-box">
+    <button class="search-close" onclick="closeBuyModal()" aria-label="Close" style="position:absolute;top:1.2rem;right:1.2rem">✕</button>
+    <div class="sh"><span class="gl"></span><span class="eyebrow">Buy Now</span></div>
+    <h3 class="md" style="margin:.5rem 0 1.2rem" id="buy-modal-title">Complete Your Order Request</h3>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7">Share your details and we'll confirm pricing, sizing, and delivery with you directly over WhatsApp.</p>
+    <div class="fg-r"><label class="fl">Full Name</label><input class="fi-g" type="text" id="buy-name" placeholder="Your name"></div>
+    <div class="fg-r"><label class="fl">Phone / WhatsApp</label><input class="fi-g" type="tel" id="buy-phone" placeholder="+92 333 7777882"></div>
+    <div class="fg-r"><label class="fl">Delivery Address</label><input class="fi-g" type="text" id="buy-address" placeholder="Street address"></div>
+    <div class="fg-r"><label class="fl">City / Country</label><input class="fi-g" type="text" id="buy-city" placeholder="e.g. Lahore, Pakistan"></div>
+    <div class="fg-r"><label class="fl">Notes (size, colour preference, etc.)</label><textarea class="fi-g" id="buy-notes" placeholder="Optional"></textarea></div>
+    <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="submitBuyNow()">Send Order Request via WhatsApp</button>
+  </div>
+</div>
+
 <!-- =====================
      PAGE: TAILORING
      ===================== -->
@@ -2337,6 +2816,81 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
   </div>
 </div><!-- /pg-faq -->
 
+<!-- =====================
+     PAGE: WISHLIST (NEW)
+     ===================== -->
+<div class="pg" id="pg-wishlist">
+  <div class="ph">
+    <div class="con tc">
+      <div class="sh tc"><span class="gl"></span><span class="eyebrow">Saved For You</span><span class="gl"></span></div>
+      <h1 class="lg" style="margin:.6rem 0 1rem">Your Wishlist</h1>
+      <p style="font-size:.85rem;color:var(--muted);max-width:480px;margin:0 auto">Pieces you've saved while browsing, kept right here in your browser. Tap the heart on any product to add or remove it.</p>
+    </div>
+  </div>
+  <div class="con" style="padding-bottom:80px">
+    <div class="pg-grid" id="wishlist-grid"></div>
+    <div class="tc rv" id="wishlist-empty" style="padding:3rem 0;display:none">
+      <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.5rem">Your wishlist is empty — browse the collection and tap the ♥ on anything you love.</p>
+      <a onclick="sp('collections')" class="btn btn-gold">Browse Collections</a>
+    </div>
+  </div>
+</div><!-- /pg-wishlist -->
+
+<!-- =====================
+     PAGE: POLICIES (SHIPPING / RETURNS / TERMS) (NEW)
+     ===================== -->
+<div class="pg" id="pg-policies">
+  <div class="ph">
+    <div class="con tc">
+      <div class="sh tc"><span class="gl"></span><span class="eyebrow">Good to Know</span><span class="gl"></span></div>
+      <h1 class="lg" style="margin:.6rem 0 1rem">Shipping, Returns &amp; Terms</h1>
+      <p style="font-size:.85rem;color:var(--muted);max-width:480px;margin:0 auto">The essentials for retail customers and importers alike. For anything not covered here, just ask us on WhatsApp.</p>
+    </div>
+  </div>
+  <div class="con" style="padding-bottom:80px">
+    <div class="fq-l rv">
+
+      <div class="fq-i op">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-qt">Shipping &amp; Delivery</span>
+          <span class="fq-tg">+</span>
+        </div>
+        <div class="fq-a" style="max-height:400px"><p>Domestic orders within Pakistan are delivered via trusted courier, typically within 3–7 days after completion depending on your city. International orders — retail or bulk/importer — ship via courier or freight depending on quantity; exact timelines and carrier options are confirmed with you directly on WhatsApp once your order and destination country are known, since customs and freight logistics vary by market. Express production and shipping is available for time-sensitive orders — mention your deadline when you inquire.</p></div>
+      </div>
+
+      <div class="fq-i">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-qt">Returns &amp; Exchanges</span>
+          <span class="fq-tg">+</span>
+        </div>
+        <div class="fq-a"><p>Because every piece is custom-tailored to your measurements and specifications, made-to-order garments are not eligible for standard return once production has begun. We protect against fit issues with up to three fitting sessions before final delivery. If a completed order arrives with a manufacturing defect, contact us within 7 days of delivery via WhatsApp with photos and we will make it right — repair, remake, or store credit, assessed case by case.</p></div>
+      </div>
+
+      <div class="fq-i">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-qt">Bulk &amp; Importer Order Terms</span>
+          <span class="fq-tg">+</span>
+        </div>
+        <div class="fq-a"><p>Bulk and wholesale orders typically require an advance deposit to begin production, with the balance due before shipment — exact terms are agreed directly with you based on order size and destination. A sample piece can usually be produced and shipped first so you can confirm quality before committing to the full run. Export documentation support is available on request; see our Importer &amp; Bulk Orders page to start a conversation.</p></div>
+      </div>
+
+      <div class="fq-i">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-qt">General Terms &amp; Conditions</span>
+          <span class="fq-tg">+</span>
+        </div>
+        <div class="fq-a"><p>All pricing is quoted individually per order — nothing is fixed or published — and is confirmed in writing over WhatsApp before you commit. Product photos represent the design and craftsmanship style; because every piece is handmade, minor natural variation in embroidery placement or fabric grain may occur. By placing an order you agree to the measurements and specifications confirmed with our team. For any dispute, our team will always try to resolve things directly and fairly before anything else.</p></div>
+      </div>
+
+    </div>
+    <div class="tc" style="margin-top:4rem">
+      <div class="dv" style="margin-bottom:2.5rem"></div>
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.5rem">Have a question not covered here?</p>
+      <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+have+a+question+about+shipping%2Freturns%2Fterms." target="_blank" class="btn btn-gold">Ask Us on WhatsApp</a>
+    </div>
+  </div>
+</div><!-- /pg-policies -->
+
 <!-- FOOTER (always rendered) -->
 <footer id="site-footer">
   <div class="con">
@@ -2369,6 +2923,8 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
           <li><a onclick="sp('exports')">Global Exports</a></li>
           <li><a onclick="sp('importer')">Importer &amp; Bulk Orders</a></li>
           <li><a onclick="sp('appointment')">Book Appointment</a></li>
+          <li><a onclick="sp('wishlist')">Your Wishlist</a></li>
+          <li><a onclick="sp('policies')">Shipping, Returns &amp; Terms</a></li>
           <li><a onclick="sp('about')">Our Heritage</a></li>
           <li><a onclick="sp('gallery')">Reviews</a></li>
           <li><a onclick="sp('faq')">FAQ</a></li>
@@ -2389,6 +2945,25 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
         </div>
       </div>
     </div>
+
+    <div class="ft-trust rv">
+      <div class="ft-tb"><div class="ft-tb-ic">🪡</div><p class="ft-tb-t">Handcrafted in Sialkot</p></div>
+      <div class="ft-tb"><div class="ft-tb-ic">🌍</div><p class="ft-tb-t">Worldwide Shipping</p></div>
+      <div class="ft-tb"><div class="ft-tb-ic">💬</div><p class="ft-tb-t">Direct WhatsApp Ordering</p></div>
+      <div class="ft-tb"><div class="ft-tb-ic">🤝</div><p class="ft-tb-t">2500+ Grooms Dressed</p></div>
+    </div>
+
+    <div class="ft-news rv">
+      <div>
+        <p class="ft-ct" style="margin-bottom:.5rem">Stay Updated</p>
+        <p style="font-size:.85rem;color:var(--ivory);font-family:var(--fd)">New collections, export news &amp; seasonal offers — straight to WhatsApp.</p>
+      </div>
+      <div class="ft-news-form">
+        <input class="ft-news-in" id="news-contact" type="text" placeholder="Your name or WhatsApp number">
+        <button class="btn btn-gold btn-sm" onclick="submitNewsletter()">Notify Me</button>
+      </div>
+    </div>
+
     <div class="ft-bt">
       <p class="ft-cp">© 2025 BinDawood Dulha House. All rights reserved. Sialkot, Punjab, Pakistan.</p>
       <p class="ft-cp">Crafted with ❤️ for the perfect groom — retail &amp; export.</p>
@@ -2415,6 +2990,9 @@ function sp(id){
   initReveal();
   var ft=document.getElementById('site-footer');
   if(ft)ft.style.display='';
+  closeSearch();
+  if(id==='wishlist')renderWishlistPage();
+  if(id==='collections')renderCollectionsPage();
 }
 
 var nav=document.getElementById('nav');
@@ -2444,13 +3022,92 @@ function initReveal(){
 }
 initReveal();
 
+var pgState={cat:'all',sort:'default',page:1,pageSize:12};
+
 function filterProd(cat,btn){
-  document.querySelectorAll('.pc').forEach(function(c){
-c.style.display=(cat==='all'||c.getAttribute('data-cat')===cat)?'':'none';
-  });
+  pgState.cat=cat;
+  pgState.page=1;
   if(btn){
     document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('ac')});
     btn.classList.add('ac');
+  }else{
+    document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('ac')});
+    var idx={all:0,sherwani:1,prince:2,pent:3,waist:4,shalwar:5,stone:6,kula:7}[cat];
+    var tabs=document.querySelectorAll('.fb');
+    if(tabs[idx])tabs[idx].classList.add('ac');
+  }
+  renderCollectionsPage();
+}
+
+function sortProducts(mode){
+  pgState.sort=mode;
+  pgState.page=1;
+  var grid=document.getElementById('prod-grid');
+  if(!grid)return;
+  var all=Array.from(grid.querySelectorAll('.pc'));
+  if(mode==='az'||mode==='za'){
+    all.sort(function(a,b){
+      var an=(a.querySelector('.pn')||{}).textContent||'';
+      var bn=(b.querySelector('.pn')||{}).textContent||'';
+      return mode==='az'?an.localeCompare(bn):bn.localeCompare(an);
+    });
+  }else if(mode==='new'){
+    all.sort(function(a,b){
+      var an=a.getAttribute('data-new')==='1'?1:0;
+      var bn=b.getAttribute('data-new')==='1'?1:0;
+      return bn-an;
+    });
+  }
+  all.forEach(function(node){grid.appendChild(node);});
+  renderCollectionsPage();
+}
+
+function renderCollectionsPage(){
+  var grid=document.getElementById('prod-grid');
+  if(!grid)return;
+  var matches=Array.from(grid.querySelectorAll('.pc')).filter(function(pc){
+    return pgState.cat==='all'||pc.getAttribute('data-cat')===pgState.cat;
+  });
+  Array.from(grid.querySelectorAll('.pc')).forEach(function(pc){pc.style.display='none';});
+  var total=matches.length;
+  var pages=Math.max(1,Math.ceil(total/pgState.pageSize));
+  if(pgState.page>pages)pgState.page=pages;
+  var start=(pgState.page-1)*pgState.pageSize;
+  var end=start+pgState.pageSize;
+  matches.slice(start,end).forEach(function(pc){pc.style.display='';});
+
+  var countEl=document.getElementById('sort-count');
+  if(countEl){
+    if(total===0)countEl.textContent='No products in this category yet.';
+    else countEl.textContent='Showing '+(start+1)+'–'+Math.min(end,total)+' of '+total+' pieces';
+  }
+
+  var pager=document.getElementById('pager');
+  if(pager){
+    pager.innerHTML='';
+    if(pages>1){
+      var prev=document.createElement('button');
+      prev.className='pager-btn nav';
+      prev.textContent='‹ Prev';
+      prev.disabled=pgState.page===1;
+      prev.onclick=function(){pgState.page--;renderCollectionsPage();window.scrollTo({top:document.getElementById('prod-grid').offsetTop-100,behavior:'smooth'});};
+      pager.appendChild(prev);
+      for(var i=1;i<=pages;i++){
+        (function(i){
+          var b=document.createElement('button');
+          b.className='pager-btn'+(i===pgState.page?' ac':'');
+          b.textContent=i;
+          b.onclick=function(){pgState.page=i;renderCollectionsPage();window.scrollTo({top:document.getElementById('prod-grid').offsetTop-100,behavior:'smooth'});};
+          pager.appendChild(b);
+        })(i);
+      }
+      var next=document.createElement('button');
+      next.className='pager-btn nav';
+      next.textContent='Next ›';
+      next.disabled=pgState.page===pages;
+      next.onclick=function(){pgState.page++;renderCollectionsPage();window.scrollTo({top:document.getElementById('prod-grid').offsetTop-100,behavior:'smooth'});};
+      pager.appendChild(next);
+    }
   }
 }
 
@@ -2532,6 +3189,402 @@ function initSlider(wrap){
   dots.forEach(function(d,i){d.addEventListener('click',function(e){e.stopPropagation();go(i)})});
 }
 document.querySelectorAll('.pslider').forEach(initSlider);
+
+/* ============================
+   PHASE 2/4: PRODUCT INDEXING (ids, wishlist heart, buy now, product detail links)
+   ============================ */
+var PRODUCTS={};
+function indexProducts(){
+  document.querySelectorAll('#prod-grid .pc').forEach(function(pc,i){
+    var pid='p'+i;
+    pc.setAttribute('data-pid',pid);
+
+    var nameEl=pc.querySelector('.pn');
+    var catEl=pc.querySelector('.pct');
+    var descEl=pc.querySelector('.pd');
+    var waLink=pc.querySelector('.pa a');
+    var imgs=Array.from(pc.querySelectorAll('.pi img,.pslider-track img')).map(function(img){return img.getAttribute('src');});
+
+    PRODUCTS[pid]={
+      pid:pid,
+      name:nameEl?nameEl.textContent:'Product',
+      cat:pc.getAttribute('data-cat'),
+      catLabel:catEl?catEl.textContent:'',
+      desc:descEl?descEl.textContent:'Every detail on this piece — fabric, embroidery, and stone work — can be fully customised to your preference.',
+      images:imgs.length?imgs:['images/logo.png'],
+      waHref:waLink?waLink.getAttribute('href'):'https://wa.me/923337777882'
+    };
+
+    if(!pc.querySelector('.wl-btn')){
+      var pi=pc.querySelector('.pi');
+      if(pi){
+        var btn=document.createElement('button');
+        btn.className='wl-btn';
+        btn.setAttribute('aria-label','Save to wishlist');
+        btn.innerHTML='♥';
+        btn.onclick=function(e){e.stopPropagation();toggleWishlist(pid,btn);};
+        pi.appendChild(btn);
+      }
+      if(pi)pi.style.cursor='pointer';
+      if(pi)pi.addEventListener('click',function(e){
+        if(e.target.closest('.wl-btn')||e.target.closest('.pslider-btn')||e.target.closest('.pslider-dot'))return;
+        openProduct(pid);
+      });
+    }
+    if(nameEl){
+      nameEl.style.cursor='pointer';
+      nameEl.addEventListener('click',function(){openProduct(pid);});
+    }
+    var pa=pc.querySelector('.pa');
+    if(pa&&!pa.querySelector('.buy-now-btn')){
+      var buyBtn=document.createElement('button');
+      buyBtn.className='btn btn-og btn-sm buy-now-btn';
+      buyBtn.textContent='Buy Now';
+      buyBtn.onclick=function(e){e.stopPropagation();openBuyModal(pid);};
+      pa.insertBefore(buyBtn,pa.firstChild);
+    }
+  });
+  refreshWishlistButtons();
+}
+
+/* ============================
+   PHASE 4: PRODUCT DETAIL PAGE
+   ============================ */
+function buildGalleryHTML(images){
+  if(images.length<=1){
+    return '<img src="'+images[0]+'" style="width:100%;height:100%;object-fit:cover">';
+  }
+  var imgsHtml=images.map(function(src){return '<img src="'+src+'">';}).join('');
+  var dotsHtml=images.map(function(_,i){return '<div class="pslider-dot'+(i===0?' ac':'')+'"></div>';}).join('');
+  return '<div class="pslider"><div class="pslider-track">'+imgsHtml+'</div>'
+    +'<button class="pslider-btn pslider-prev">&#8249;</button>'
+    +'<button class="pslider-btn pslider-next">&#8250;</button>'
+    +'<div class="pslider-dots">'+dotsHtml+'</div></div>';
+}
+
+function openProduct(pid){
+  var p=PRODUCTS[pid];
+  if(!p)return;
+
+  document.getElementById('pd-crumb').innerHTML='<a onclick="sp(\'home\')">Home</a> / <a onclick="sp(\'collections\')">Collections</a> / '+p.name;
+  document.getElementById('pd-gallery').innerHTML=buildGalleryHTML(p.images);
+  document.getElementById('pd-gallery').querySelectorAll('.pslider').forEach(initSlider);
+  document.getElementById('pd-cat').textContent=p.catLabel;
+  document.getElementById('pd-name').textContent=p.name;
+  document.getElementById('pd-desc').textContent=p.desc;
+
+  var inquireBtn=document.getElementById('pd-inquire-btn');
+  inquireBtn.href=p.waHref;
+
+  var buyBtn=document.getElementById('pd-buy-btn');
+  buyBtn.onclick=function(){openBuyModal(pid);};
+
+  var wlBtn=document.getElementById('pd-wl-btn');
+  var inWishlist=getWishlist().indexOf(pid)>-1;
+  wlBtn.textContent=inWishlist?'♥ Saved to Wishlist':'♥ Save to Wishlist';
+  wlBtn.onclick=function(){
+    toggleWishlist(pid,null);
+    var now=getWishlist().indexOf(pid)>-1;
+    wlBtn.textContent=now?'♥ Saved to Wishlist':'♥ Save to Wishlist';
+  };
+
+  var shareText=encodeURIComponent('Check out the '+p.name+' from BinDawood Dulha House!');
+  document.getElementById('pd-share-wa').href='https://wa.me/?text='+shareText;
+  document.getElementById('pd-share-fb').href='https://www.facebook.com/sharer/sharer.php?u=https://bindawoddulhahouse.com';
+
+  renderRelated(p);
+  pushRecentlyViewed(pid);
+  renderRecentlyViewed(pid);
+
+  sp('product');
+}
+
+function renderProductCardRow(container,pids){
+  container.innerHTML='';
+  pids.forEach(function(pid){
+    var p=PRODUCTS[pid];
+    if(!p)return;
+    var card=document.createElement('div');
+    card.className='pc';
+    card.innerHTML='<div class="pi" style="cursor:pointer"><img src="'+p.images[0]+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div></div>'
+      +'<div class="pif"><p class="pct">'+p.catLabel+'</p><p class="pn" style="cursor:pointer">'+p.name+'</p>'
+      +'<div class="pa"><a href="'+p.waHref+'" target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>';
+    card.querySelector('.pi').onclick=function(){openProduct(p.pid);};
+    card.querySelector('.pn').onclick=function(){openProduct(p.pid);};
+    container.appendChild(card);
+  });
+}
+
+function renderRelated(p){
+  var related=Object.values(PRODUCTS).filter(function(o){return o.cat===p.cat&&o.pid!==p.pid;}).slice(0,4);
+  var wrap=document.getElementById('pd-related-wrap');
+  if(related.length===0){wrap.style.display='none';return;}
+  wrap.style.display='';
+  renderProductCardRow(document.getElementById('pd-related'),related.map(function(o){return o.pid;}));
+}
+
+function getRecentlyViewed(){
+  try{return JSON.parse(localStorage.getItem('bdw_recent')||'[]');}catch(e){return [];}
+}
+function pushRecentlyViewed(pid){
+  var list=getRecentlyViewed();
+  list=list.filter(function(x){return x!==pid;});
+  list.unshift(pid);
+  list=list.slice(0,8);
+  try{localStorage.setItem('bdw_recent',JSON.stringify(list));}catch(e){}
+}
+function renderRecentlyViewed(excludePid){
+  var list=getRecentlyViewed().filter(function(x){return x!==excludePid;}).slice(0,4);
+  var wrap=document.getElementById('pd-recent-wrap');
+  if(list.length===0){wrap.style.display='none';return;}
+  wrap.style.display='';
+  renderProductCardRow(document.getElementById('pd-recent'),list);
+}
+
+function copyProductLink(){
+  var url=window.location.href.split('#')[0];
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(url).then(function(){alert('Link copied! (Note: this SPA link points to the homepage — mention the product name when sharing.)');});
+  }else{
+    alert(url);
+  }
+}
+
+/* ============================
+   PHASE 4: BUY NOW MODAL
+   ============================ */
+var currentBuyPid=null;
+function openBuyModal(pid){
+  currentBuyPid=pid;
+  var p=PRODUCTS[pid];
+  document.getElementById('buy-modal-title').textContent=p?('Order Request: '+p.name):'Complete Your Order Request';
+  document.getElementById('buy-modal').classList.add('op');
+}
+function closeBuyModal(){
+  document.getElementById('buy-modal').classList.remove('op');
+}
+function submitBuyNow(){
+  var n=document.getElementById('buy-name').value;
+  var ph=document.getElementById('buy-phone').value;
+  var ad=document.getElementById('buy-address').value;
+  var ci=document.getElementById('buy-city').value;
+  var no=document.getElementById('buy-notes').value;
+  if(!n||!ph){alert('Please fill in your name and phone number.');return;}
+  var p=PRODUCTS[currentBuyPid];
+  var productName=p?p.name:'a product from your website';
+  var msg='Assalam+o+Alaikum!+I+would+like+to+place+an+order.'
+    +'%0A%0AProduct:+'+encodeURIComponent(productName)
+    +'%0AName:+'+encodeURIComponent(n)
+    +'%0APhone:+'+encodeURIComponent(ph)
+    +'%0AAddress:+'+encodeURIComponent(ad)
+    +'%0ACity%2FCountry:+'+encodeURIComponent(ci)
+    +'%0ANotes:+'+encodeURIComponent(no);
+  window.open('https://wa.me/923337777882?text='+msg,'_blank');
+  closeBuyModal();
+  ['buy-name','buy-phone','buy-address','buy-city','buy-notes'].forEach(function(id){document.getElementById(id).value='';});
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')closeBuyModal();
+});
+
+/* ============================
+   WISHLIST (localStorage)
+   ============================ */
+function getWishlist(){
+  try{return JSON.parse(localStorage.getItem('bdw_wishlist')||'[]');}catch(e){return [];}
+}
+function saveWishlist(arr){
+  try{localStorage.setItem('bdw_wishlist',JSON.stringify(arr));}catch(e){}
+  updateWishlistBadge();
+}
+function toggleWishlist(pid,btn){
+  var list=getWishlist();
+  var idx=list.indexOf(pid);
+  if(idx>-1){list.splice(idx,1);if(btn)btn.classList.remove('active');}
+  else{list.push(pid);if(btn)btn.classList.add('active');}
+  saveWishlist(list);
+}
+function refreshWishlistButtons(){
+  var list=getWishlist();
+  document.querySelectorAll('#prod-grid .pc').forEach(function(pc){
+    var btn=pc.querySelector('.wl-btn');
+    if(btn)btn.classList.toggle('active',list.indexOf(pc.getAttribute('data-pid'))>-1);
+  });
+  updateWishlistBadge();
+}
+function updateWishlistBadge(){
+  var list=getWishlist();
+  var badge=document.getElementById('wl-badge');
+  if(!badge)return;
+  badge.textContent=list.length;
+  badge.classList.toggle('hidden',list.length===0);
+}
+function renderWishlistPage(){
+  var list=getWishlist();
+  var grid=document.getElementById('wishlist-grid');
+  var empty=document.getElementById('wishlist-empty');
+  if(!grid)return;
+  grid.innerHTML='';
+  if(list.length===0){empty.style.display='block';return;}
+  empty.style.display='none';
+  list.forEach(function(pid){
+    var src=document.querySelector('#prod-grid .pc[data-pid="'+pid+'"]');
+    if(!src)return;
+    var clone=src.cloneNode(true);
+    clone.style.display='';
+    grid.appendChild(clone);
+  });
+  grid.querySelectorAll('.pslider').forEach(initSlider);
+  grid.querySelectorAll('.pc').forEach(function(pc){
+    var pid=pc.getAttribute('data-pid');
+    var wlBtn=pc.querySelector('.wl-btn');
+    if(wlBtn){
+      wlBtn.classList.add('active');
+      wlBtn.onclick=function(e){e.stopPropagation();toggleWishlist(pid,null);renderWishlistPage();};
+    }
+    var buyBtn=pc.querySelector('.buy-now-btn');
+    if(buyBtn)buyBtn.onclick=function(e){e.stopPropagation();openBuyModal(pid);};
+    var pi=pc.querySelector('.pi');
+    if(pi)pi.onclick=function(e){
+      if(e.target.closest('.wl-btn')||e.target.closest('.pslider-btn')||e.target.closest('.pslider-dot'))return;
+      openProduct(pid);
+    };
+    var nameEl=pc.querySelector('.pn');
+    if(nameEl)nameEl.onclick=function(){openProduct(pid);};
+  });
+}
+
+/* ============================
+   SEARCH OVERLAY
+   ============================ */
+function openSearch(){
+  document.getElementById('search-ov').classList.add('op');
+  var inp=document.getElementById('search-in');
+  inp.value='';
+  document.getElementById('search-res').innerHTML='';
+  setTimeout(function(){inp.focus();},50);
+}
+function closeSearch(){
+  var ov=document.getElementById('search-ov');
+  if(ov)ov.classList.remove('op');
+}
+function runSearch(q){
+  var res=document.getElementById('search-res');
+  q=q.trim().toLowerCase();
+  if(q.length<2){res.innerHTML='';return;}
+  var matches=[];
+  document.querySelectorAll('#prod-grid .pc').forEach(function(pc){
+    var name=(pc.querySelector('.pn')||{}).textContent||'';
+    var cat=(pc.querySelector('.pct')||{}).textContent||'';
+    var desc=(pc.querySelector('.pd')||{}).textContent||'';
+    if((name+' '+cat+' '+desc).toLowerCase().indexOf(q)>-1){
+      var img=pc.querySelector('.pi img,.pslider img');
+      var thumb=img?img.getAttribute('src'):'';
+      matches.push({pid:pc.getAttribute('data-pid'),cat:pc.getAttribute('data-cat'),name:name,catLabel:cat,thumb:thumb});
+    }
+  });
+  if(matches.length===0){res.innerHTML='<p class="search-empty">No products found for "'+q+'". Try a different term, or ask us directly on WhatsApp.</p>';return;}
+  res.innerHTML=matches.slice(0,20).map(function(m){
+    return '<div class="search-item" onclick="goToSearchResult(\''+m.pid+'\',\''+m.cat+'\')">'
+      +'<div class="search-thumb" style="background-image:url(\''+m.thumb+'\')"></div>'
+      +'<div><p class="search-item-n">'+m.name+'</p><p class="search-item-c">'+m.catLabel+'</p></div>'
+      +'</div>';
+  }).join('');
+}
+function goToSearchResult(pid,cat){
+  closeSearch();
+  openProduct(pid);
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')closeSearch();
+});
+
+/* ============================
+   BACK TO TOP
+   ============================ */
+window.addEventListener('scroll',function(){
+  var btt=document.getElementById('btt');
+  if(btt)btt.classList.toggle('vis',window.scrollY>500);
+});
+
+/* ============================
+   NEWSLETTER (routes to WhatsApp)
+   ============================ */
+function submitNewsletter(){
+  var v=document.getElementById('news-contact').value.trim();
+  if(!v){alert('Please enter your name or WhatsApp number.');return;}
+  var msg='Assalam+o+Alaikum!+Please+add+me+to+the+BinDawood+Dulha+House+update+list.%0A%0AContact%3A+'+encodeURIComponent(v);
+  window.open('https://wa.me/923337777882?text='+msg,'_blank');
+  document.getElementById('news-contact').value='';
+}
+
+indexProducts();
+
+/* ============================
+   PHASE 3: HERO SLIDER
+   ============================ */
+var heroCur=0,heroTimer;
+function heroBuildDots(){
+  var slides=document.querySelectorAll('.hero-slide');
+  var dotsWrap=document.getElementById('hero-dots');
+  if(!dotsWrap)return;
+  dotsWrap.innerHTML='';
+  slides.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='hero-dot'+(i===0?' ac':'');
+    d.onclick=function(){heroGo(i);};
+    dotsWrap.appendChild(d);
+  });
+}
+function heroGo(n){
+  var slides=document.querySelectorAll('.hero-slide');
+  var total=slides.length;
+  if(total===0)return;
+  heroCur=(n+total)%total;
+  slides.forEach(function(s,i){s.classList.toggle('ac',i===heroCur)});
+  document.querySelectorAll('.hero-dot').forEach(function(d,i){d.classList.toggle('ac',i===heroCur)});
+  slides[heroCur].querySelectorAll('.rv').forEach(function(el){el.classList.remove('vi');void el.offsetWidth;el.classList.add('vi');});
+  heroRestart();
+}
+function heroNext(){heroGo(heroCur+1)}
+function heroRestart(){
+  clearInterval(heroTimer);
+  heroTimer=setInterval(heroNext,6000);
+}
+heroBuildDots();
+heroRestart();
+var heroEl=document.getElementById('hero');
+if(heroEl){
+  heroEl.addEventListener('mouseenter',function(){clearInterval(heroTimer);});
+  heroEl.addEventListener('mouseleave',function(){heroRestart();});
+}
+
+/* ============================
+   PHASE 3: ANIMATED COUNTERS
+   ============================ */
+function animateCounter(el){
+  var target=parseInt(el.getAttribute('data-count'),10)||0;
+  var suffix=el.getAttribute('data-suffix')||'';
+  var dur=1400,start=null;
+  function step(ts){
+    if(!start)start=ts;
+    var p=Math.min((ts-start)/dur,1);
+    var val=Math.floor(p*target);
+    el.textContent=val+suffix;
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target+suffix;
+  }
+  requestAnimationFrame(step);
+}
+var counterObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-count]').forEach(animateCounter);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.4});
+document.querySelectorAll('.cnt-r').forEach(function(el){counterObs.observe(el)});
 </script>
 
 </body>
