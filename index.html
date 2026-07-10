@@ -275,7 +275,7 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
 .fi-g:focus-visible{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,165,90,.16),0 0 22px -6px rgba(201,165,90,.45)}
 .fi-g::placeholder{color:var(--muted)}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-select.fi-g{appearance:none;-webkit-appearance:none;cursor:pointer}
+select.fi-g{appearance :none;-webkit-appearance:none;cursor:pointer}
 select.fi-g option{background:#1a1a1a}
 textarea.fi-g{min-height:130px;resize:vertical}
 
@@ -313,20 +313,30 @@ textarea.fi-g{min-height:130px;resize:vertical}
 .fq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
 .fq-i.op .fq-a{max-height:240px;padding-bottom:1.4rem}
 .fq-a p{font-size:.85rem;color:var(--muted);line-height:1.9}
-footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem 0 2rem}
-.ft-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem}
+footer{position:relative;background:var(--green-d);border-top:1px solid var(--border);padding:5rem 0 2rem;overflow:hidden}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,165,90,.55) 50%,transparent)}
+footer::after{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:70%;height:60%;background:radial-gradient(ellipse at center,rgba(201,165,90,.05),transparent 70%);pointer-events:none}
+.ft-g{position:relative;z-index:1;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem}
 .ft-lo{font-family:var(--fd);font-size:1.5rem;color:var(--ivory);margin-bottom:1rem}
 .ft-ds{font-size:.8rem;color:var(--muted);line-height:1.8;max-width:260px}
 .ft-so{display:flex;gap:.8rem;margin-top:1.8rem}
-.ft-so a{width:36px;height:36px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--muted);transition:var(--t)}
-.ft-so a:hover{border-color:var(--gold);color:var(--gold)}
+.ft-so a{position:relative;width:36px;height:36px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--muted);overflow:hidden;transition:color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+.ft-so a::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(100%);transition:transform var(--dur-med) var(--ease-out);z-index:-1}
+.ft-so a:hover{border-color:var(--gold);color:var(--black);transform:translateY(-3px);box-shadow:0 8px 18px -6px rgba(201,165,90,.5)}
+.ft-so a:hover::before{transform:translateY(0)}
 .ft-ct{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.3rem}
 .ft-lk{list-style:none}
 .ft-lk li{margin-bottom:.7rem}
-.ft-lk a{font-size:.8rem;color:var(--muted);transition:var(--t);cursor:pointer}
-.ft-lk a:hover{color:var(--gold)}
-.ft-bt{border-top:1px solid var(--border);padding-top:1.8rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.ft-lk a{position:relative;font-size:.8rem;color:var(--muted);transition:color var(--dur-fast) var(--ease-out),padding-left var(--dur-fast) var(--ease-out);cursor:pointer;padding-left:0}
+.ft-lk a::before{content:'—';position:absolute;left:-1rem;opacity:0;color:var(--gold);transition:opacity var(--dur-fast) var(--ease-out),left var(--dur-fast) var(--ease-out)}
+.ft-lk a:hover{color:var(--gold);padding-left:1rem}
+.ft-lk a:hover::before{opacity:1;left:0}
+.ft-bt{position:relative;z-index:1;border-top:1px solid var(--border);padding-top:1.8rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
 .ft-cp{font-size:.68rem;color:var(--muted)}
+.ft-totop{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:color var(--dur-fast) var(--ease-out)}
+.ft-totop:hover{color:var(--gold)}
+.ft-totop span{transition:transform var(--dur-fast) var(--ease-out)}
+.ft-totop:hover span{transform:translateY(-3px)}
 .wa-f{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;z-index:9999;box-shadow:0 4px 18px rgba(37,211,102,.4);transition:var(--t);animation:pls 2.5s ease-in-out infinite;cursor:pointer}
 .wa-f:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.6)}
 @keyframes pls{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.65)}}
@@ -445,14 +455,16 @@ footer{background:var(--green-d);border-top:1px solid var(--border);padding:5rem
 .btt:hover{border-color:var(--gold);background:rgba(201,165,90,.1)}
 
 /* Trust badges + newsletter in footer */
-.ft-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-top:3.5rem;margin-bottom:3.5rem}
+.ft-trust{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-top:3.5rem;margin-bottom:3.5rem}
 .ft-tb{background:var(--dark);padding:1.6rem 1.2rem;text-align:center}
 .ft-tb-ic{font-size:1.3rem;margin-bottom:.6rem}
 .ft-tb-t{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-l)}
-.ft-news{padding:2.2rem;border:1px solid var(--border);background:rgba(255,255,255,.02);margin-bottom:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.ft-news{position:relative;z-index:1;padding:2.2rem;border:1px solid var(--border);background:rgba(255,255,255,.02);margin-bottom:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;transition:border-color var(--dur-med) var(--ease-standard)}
+.ft-news:hover{border-color:rgba(201,165,90,.4)}
 .ft-news-form{display:flex;gap:.7rem;flex-wrap:wrap}
-.ft-news-in{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--ivory);padding:.75rem 1.1rem;font-size:.82rem;min-width:220px;outline:none}
-.ft-news-in:focus{border-color:var(--gold)}
+.ft-news-in{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--ivory);padding:.75rem 1.1rem;font-size:.82rem;min-width:220px;outline:none;transition:border-color var(--dur-fast) var(--ease-standard),background var(--dur-fast) var(--ease-standard),box-shadow var(--dur-fast) var(--ease-standard)}
+.ft-news-in:focus{border-color:var(--gold);background:rgba(201,165,90,.05)}
+.ft-news-in:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(201,165,90,.16),0 0 22px -6px rgba(201,165,90,.45)}
 
 @media(max-width:1024px){
   .mega-g{grid-template-columns:repeat(2,1fr)}
@@ -760,6 +772,31 @@ button,a,input,textarea,select{outline-color:var(--gold)}
   .rv{opacity:1!important;transform:none!important}
   .hero-slide{transition:opacity .01ms!important}
 }
+
+/* ============================
+   STAGE 6: EDITORIAL STORYTELLING
+   ============================ */
+.story-split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.story-img-frame{position:relative;height:540px;overflow:hidden;border:1px solid var(--border)}
+.story-img-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.story-vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(10,10,10,.6) 100%),linear-gradient(to top,rgba(10,10,10,.55) 0%,transparent 35%)}
+.story-eyebrow-line{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.story-title{font-family:var(--fd);font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:300;line-height:1.15;color:var(--ivory);margin-bottom:1.4rem}
+.story-title em{color:var(--gold);font-style:italic}
+.story-body{font-size:.88rem;color:var(--muted);line-height:1.95}
+.story-body p{margin-bottom:1.1rem}
+@media(max-width:1024px){.story-split{grid-template-columns:1fr;gap:2.5rem}.story-img-frame{height:400px}}
+
+.story-quote{position:relative;padding:7rem 0;text-align:center;overflow:hidden;background:var(--green-d)}
+.story-quote .jali-bg{position:absolute;inset:0;opacity:.045}
+.story-quote-text{font-family:var(--fd);font-size:clamp(2rem,5vw,4rem);font-weight:300;line-height:1.16;color:var(--ivory);max-width:920px;margin:0 auto;position:relative;z-index:1}
+.story-quote-text em{color:var(--gold);font-style:italic}
+.story-quote-sub{font-size:.85rem;color:var(--muted);max-width:520px;margin:1.6rem auto 0;line-height:1.85;position:relative;z-index:1}
+@media(max-width:768px){.story-quote{padding:4.5rem 0}}
+
+.story-teaser{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.story-teaser-visual{position:relative;height:380px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;border:1px solid var(--border)}
+@media(max-width:1024px){.story-teaser{grid-template-columns:1fr;gap:2rem}.story-teaser-visual{height:280px}}
 </style>
 </head>
 <body>
@@ -856,7 +893,7 @@ button,a,input,textarea,select{outline-color:var(--gold)}
   <a onclick="sp('measureguide');closeMob()">Measurement Guide</a>
   <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+would+like+to+book+an+appointment." target="_blank" style="color:var(--gold)">📱 WhatsApp Us</a>
 </div>
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<button class="btt" id="btt" onclick="smoothScrollTo(0)" aria-label="Back to top">↑</button>
 
 <!-- =====================
      PAGE: HOME
@@ -969,7 +1006,7 @@ button,a,input,textarea,select{outline-color:var(--gold)}
     <button class="hero-arrow hero-next" onclick="heroGo(heroCur+1)" aria-label="Next slide">›</button>
     <div class="hero-dots" id="hero-dots"></div>
 
-    <div class="hscr" onclick="document.getElementById('cats').scrollIntoView({behavior:'smooth'})">
+    <div class="hscr" onclick="smoothScrollTo(document.getElementById('cats'))">
       <div class="hscrl"></div>
       <span>Scroll</span>
     </div>
@@ -1106,6 +1143,26 @@ button,a,input,textarea,select{outline-color:var(--gold)}
           <div class="fic">⚡</div>
           <p class="fit">Urgent Orders</p>
           <p class="fid">Need something at short notice? We offer express tailoring without compromising our uncompromising standard of quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       STAGE 6: EDITORIAL STORY TEASER (condensed, links to full Our Story)
+       ============================ -->
+  <section class="sec sec-dg">
+    <div class="con">
+      <div class="story-teaser">
+        <div class="story-teaser-visual rv gb4">
+          <span style="font-size:2.4rem">🪡</span>
+          <p class="eyebrow" style="text-align:center;padding:0 1.5rem">Handmade with Precision<br>Since Generations</p>
+        </div>
+        <div class="rv d2">
+          <div class="story-eyebrow-line"><span class="gl"></span><span class="eyebrow">Our Atelier</span></div>
+          <h2 class="story-title">Three Generations,<br><em>One Stitch</em></h2>
+          <p class="story-body" style="margin-bottom:1.6rem">Every piece that leaves our Sialkot workshop passes through the same hands, patience, and standard that has defined this family for generations — no shortcut, no rushed thread.</p>
+          <a onclick="sp('about')" class="btn btn-og">Read Our Story</a>
         </div>
       </div>
     </div>
@@ -2764,6 +2821,40 @@ button,a,input,textarea,select{outline-color:var(--gold)}
       </div>
     </div>
   </section>
+
+  <!-- ============================
+       STAGE 6: THE KARIGAR'S HANDS (editorial storytelling)
+       ============================ -->
+  <section class="sec">
+    <div class="con">
+      <div class="story-split">
+        <div class="story-img-frame rv">
+          <img src="images/stone-embroidered/e11.jpg" alt="Hand-beaded embroidery detail, BinDawood Dulha House" loading="lazy" decoding="async">
+          <div class="story-vignette"></div>
+        </div>
+        <div class="rv d2">
+          <div class="story-eyebrow-line"><span class="gl"></span><span class="eyebrow">The Karigar's Hands</span></div>
+          <h2 class="story-title">Every Bead, Placed<br>by <em>Someone Who Cares</em></h2>
+          <div class="story-body">
+            <p>Behind every finished sherwani is a karigar who has spent years — sometimes decades — learning to place a single bead exactly where it belongs. There is no machine shortcut for this. Dense zardozi work like this can take a single pair of hands several days to complete, stitch by stitch, under the same kind of light their teachers worked under.</p>
+            <p>We don't rush that. A wedding happens once. The work that goes into the outfit should feel like it understands that.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       STAGE 6: THREE GENERATIONS, ONE STITCH (cinematic pull-quote break)
+       ============================ -->
+  <section class="story-quote">
+    <div class="jali-bg jali"></div>
+    <div class="con">
+      <p class="story-quote-text rv">Three Generations.<br><em>One Stitch.</em></p>
+      <p class="story-quote-sub rv d1">What began as a single family workshop in Dara Arraian is now run by the grandchildren of the men who first opened its doors — the same care, the same patience, carried forward one wedding at a time.</p>
+    </div>
+  </section>
+
   <section class="sec">
     <div class="con">
       <div class="tc rv" style="margin-bottom:3rem">
@@ -3402,6 +3493,7 @@ button,a,input,textarea,select{outline-color:var(--gold)}
     <div class="ft-bt">
       <p class="ft-cp">© 2025 BinDawood Dulha House. All rights reserved. Sialkot, Punjab, Pakistan.</p>
       <p class="ft-cp">Crafted with ❤️ for the perfect groom — retail &amp; export.</p>
+      <span class="ft-totop" onclick="smoothScrollTo(0)">Back to Top <span>↑</span></span>
     </div>
   </div>
 </footer>
@@ -3432,6 +3524,29 @@ button,a,input,textarea,select{outline-color:var(--gold)}
 </div>
 
 <script>
+/* ============================
+   STAGE 8: LENIS-AWARE SCROLL HELPER
+   Used everywhere the site scrolls programmatically (back-to-top, page
+   navigation reset, pagination, hero scroll indicator, wizard steps) so
+   every one of those calls stays in sync whether or not Lenis loaded.
+   window.lenis is set later by the module script at the bottom of body;
+   until then (or if the CDN fails) this transparently falls back to the
+   native scroll APIs the site already used before Stage 8.
+   ============================ */
+function smoothScrollTo(target,opts){
+  opts=opts||{};
+  if(window.lenis){
+    window.lenis.scrollTo(target,{duration:opts.instant?0:(opts.duration||1.1),offset:opts.offset||0});
+    return;
+  }
+  if(typeof target==='number'){
+    window.scrollTo({top:target,behavior:opts.instant?'instant':'smooth'});
+  }else if(target&&target.nodeType){
+    if(opts.instant){target.scrollIntoView({block:'start'});}
+    else{target.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+}
+
 function sp(id){
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('ac'));
   var pg=document.getElementById('pg-'+id);
@@ -3441,7 +3556,7 @@ function sp(id){
   document.querySelectorAll('.nm a').forEach(a=>{
     a.classList.toggle('ac',a.getAttribute('data-p')===id);
   });
-  window.scrollTo({top:0,behavior:'instant'});
+  smoothScrollTo(0,{instant:true});
   initReveal();
   var ft=document.getElementById('site-footer');
   if(ft)ft.style.display='';
@@ -3555,14 +3670,14 @@ function renderCollectionsPage(){
       prev.className='pager-btn nav';
       prev.textContent='‹ Prev';
       prev.disabled=pgState.page===1;
-      prev.onclick=function(){pgState.page--;renderCollectionsPage();window.scrollTo({top:document.getElementById('prod-grid').offsetTop-100,behavior:'smooth'});};
+      prev.onclick=function(){pgState.page--;renderCollectionsPage();smoothScrollTo(document.getElementById('prod-grid').offsetTop-100);};
       pager.appendChild(prev);
       for(var i=1;i<=pages;i++){
         (function(i){
           var b=document.createElement('button');
           b.className='pager-btn'+(i===pgState.page?' ac':'');
           b.textContent=i;
-          b.onclick=function(){pgState.page=i;renderCollectionsPage();window.scrollTo({top:document.getElementById('prod-grid').offsetTop-100,behavior:'smooth'});};
+          b.onclick=function(){pgState.page=i;renderCollectionsPage();smoothScrollTo(document.getElementById('prod-grid').offsetTop-100);};
           pager.appendChild(b);
         })(i);
       }
@@ -3570,7 +3685,7 @@ function renderCollectionsPage(){
       next.className='pager-btn nav';
       next.textContent='Next ›';
       next.disabled=pgState.page===pages;
-      next.onclick=function(){pgState.page++;renderCollectionsPage();window.scrollTo({top:document.getElementById('prod-grid').offsetTop-100,behavior:'smooth'});};
+      next.onclick=function(){pgState.page++;renderCollectionsPage();smoothScrollTo(document.getElementById('prod-grid').offsetTop-100);};
       pager.appendChild(next);
     }
   }
@@ -4318,7 +4433,7 @@ function tbBack(){
 }
 function scrollTbTop(){
   var app=document.getElementById('tb-app');
-  if(app)app.scrollIntoView({behavior:'smooth',block:'start'});
+  if(app)smoothScrollTo(app);
 }
 
 function tbSubmit(){
@@ -4552,6 +4667,57 @@ document.addEventListener('keydown',function(e){
   }
 });
 </script>
+
+<!-- ============================
+     STAGE 8: LENIS SMOOTH SCROLL
+     Loaded defensively: skipped entirely under prefers-reduced-motion,
+     and if the CDN fails to load for any reason (offline, ad-blocker,
+     network issue) the site simply continues on native scroll exactly
+     as it did before this stage — nothing here is required for the
+     site to function.
+     ============================ -->
+<script>
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  import('https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.mjs').then(function(mod){
+    var Lenis=mod.default;
+    var lenis=new Lenis({
+      duration:1.1,
+      easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},
+      smoothWheel:true
+    });
+    window.lenis=lenis;
+
+    function raf(time){
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    /* Pause the smoothed scroll whenever any of the site's overlays are
+       open, so the background page can't be scrolled behind a modal —
+       driven purely by watching the .op class each already toggles, no
+       changes needed to any of the existing open/close functions. */
+    var overlayIds=['search-ov','buy-modal','ai-panel','lb-ov'];
+    function syncLenisState(){
+      var anyOpen=overlayIds.some(function(id){
+        var el=document.getElementById(id);
+        return el&&el.classList.contains('op');
+      });
+      if(anyOpen)lenis.stop();else lenis.start();
+    }
+    overlayIds.forEach(function(id){
+      var el=document.getElementById(id);
+      if(!el)return;
+      new MutationObserver(syncLenisState).observe(el,{attributes:true,attributeFilter:['class']});
+    });
+    syncLenisState();
+  }).catch(function(err){
+    console.warn('Lenis smooth-scroll unavailable — continuing with native scroll.',err);
+  });
+})();
+</script>
+
 
 </body>
 </html>
