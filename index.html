@@ -275,7 +275,7 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
 .fi-g:focus-visible{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,165,90,.16),0 0 22px -6px rgba(201,165,90,.45)}
 .fi-g::placeholder{color:var(--muted)}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-select.fi-g{appearance :none;-webkit-appearance:none;cursor:pointer}
+select.fi-g{-webkit-appearance:none;cursor:pointer}
 select.fi-g option{background:#1a1a1a}
 textarea.fi-g{min-height:130px;resize:vertical}
 
@@ -766,11 +766,16 @@ button,a,input,textarea,select{outline-color:var(--gold)}
 .skip-link{position:absolute;top:-100px;left:1rem;background:var(--gold);color:var(--black);padding:.8rem 1.4rem;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;z-index:10000;transition:top .2s ease}
 .skip-link:focus{top:1rem}
 
-/* Respect reduced-motion preference: calm the pulses, slides, and reveals */
+/* Respect reduced-motion preference: calm the pulses, slides, and reveals.
+   Stage 9 QA fix: the original rule zeroed animation/transition *duration*
+   but not *delay* — meaning staggered entrances (hero content, product
+   card cascades) would still visibly wait out their delay before an
+   instant snap, rather than simply appearing. Fixed below. */
 @media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
   .rv{opacity:1!important;transform:none!important}
   .hero-slide{transition:opacity .01ms!important}
+  .pc-stagger,.fl-floating{transition-delay:0s!important}
 }
 
 /* ============================
@@ -3533,6 +3538,10 @@ button,a,input,textarea,select{outline-color:var(--gold)}
    until then (or if the CDN fails) this transparently falls back to the
    native scroll APIs the site already used before Stage 8.
    ============================ */
+function prefersReducedMotion(){
+  return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 function smoothScrollTo(target,opts){
   opts=opts||{};
   if(window.lenis){
@@ -3653,7 +3662,7 @@ function renderCollectionsPage(){
   });
   void grid.offsetWidth; /* force reflow so the removal of .vi above is committed before re-adding it */
   visibleSlice.forEach(function(pc,i){
-    setTimeout(function(){pc.classList.add('vi');},i*45);
+    setTimeout(function(){pc.classList.add('vi');},prefersReducedMotion()?0:i*45);
   });
 
   var countEl=document.getElementById('sort-count');
@@ -3960,7 +3969,7 @@ function renderProductCardRow(container,pids){
     container.appendChild(card);
     (function(el,idx){
       requestAnimationFrame(function(){
-        setTimeout(function(){el.classList.add('vi');},idx*70);
+        setTimeout(function(){el.classList.add('vi');},prefersReducedMotion()?0:idx*70);
       });
     })(card,i);
   });
@@ -4717,7 +4726,6 @@ document.addEventListener('keydown',function(e){
   });
 })();
 </script>
-
 
 </body>
 </html>
