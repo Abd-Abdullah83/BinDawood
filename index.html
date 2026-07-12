@@ -275,7 +275,7 @@ input,textarea,select{font-family:var(--fb);font-weight:300;letter-spacing:.05em
 .fi-g:focus-visible{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,165,90,.16),0 0 22px -6px rgba(201,165,90,.45)}
 .fi-g::placeholder{color:var(--muted)}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-select.fi-g{appearance: none ;-webkit-appearance:none;cursor:pointer}
+select.fi-g{-webkit-appearance:none;cursor:pointer}
 select.fi-g option{background:#1a1a1a}
 textarea.fi-g{min-height:130px;resize:vertical}
 
@@ -582,11 +582,24 @@ footer::after{content:'';position:absolute;top:-40%;left:50%;transform:translate
 .breadcrumb a{color:var(--gold);cursor:pointer}
 .pd-g{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;margin-bottom:5rem}
 .pd-gallery{position:relative;min-width:0}
-.pd-gallery-box{position:relative;height:560px;background:var(--card);border:1px solid var(--border)}
+.pd-gallery-box{position:relative;height:560px;background:var(--card);border:1px solid var(--border);overflow:hidden}
+/* Bespoke corner-bracket framing — a quiet "viewfinder" accent instead of
+   a plain rectangle, giving the gallery its own distinct identity */
+.pd-gallery-box::before,.pd-gallery-box::after{content:'';position:absolute;width:26px;height:26px;pointer-events:none;z-index:6}
+.pd-gallery-box::before{top:10px;left:10px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.pd-gallery-box::after{bottom:10px;right:10px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
 .pd-gallery-box .pslider{height:100%}
-/* Fix: contain (not cover) so full garment/model is always visible — never cropped top/bottom */
-.pd-gallery-box .pslider-track img{object-fit:contain;background:var(--card)}
-.pd-zoom-btn{position:absolute;bottom:1rem;right:1rem;background:rgba(10,10,10,.65);border:1px solid var(--border);color:var(--ivory);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.55rem 1rem;display:flex;align-items:center;gap:.4rem;cursor:pointer;z-index:5;transition:var(--t)}
+/* Each slide = blurred cover-fill backdrop (fills the box completely,
+   no dead letterbox space) + the real photo shown in full via object-fit:
+   contain on top — the standard technique premium retailers use for
+   product photos whose aspect ratio doesn't match the display box. */
+.pd-slide{position:relative;min-width:100%;height:100%;flex-shrink:0;overflow:hidden}
+.pd-slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(30px) brightness(.5) saturate(1.15);transform:scale(1.2);z-index:1}
+.pd-slide-fg{position:relative;z-index:2;width:100%;height:100%;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}
+.pd-gallery-box.zoomable .pd-slide-fg{cursor:zoom-in}
+.pd-gallery-box.zoomable .pd-slide.zoomed .pd-slide-fg{transform:scale(1.9)}
+@media(hover:none),(pointer:coarse){.pd-gallery-box.zoomable .pd-slide-fg{cursor:default}}
+.pd-zoom-btn{position:absolute;bottom:1rem;left:1rem;background:rgba(10,10,10,.65);border:1px solid var(--border);color:var(--ivory);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.55rem 1rem;display:flex;align-items:center;gap:.4rem;cursor:pointer;z-index:5;transition:var(--t)}
 .pd-zoom-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(10,10,10,.85)}
 .pd-thumbs{display:flex;gap:.6rem;margin-top:.8rem;flex-wrap:wrap}
 .pd-thumb{width:64px;height:76px;border:1px solid var(--border);cursor:pointer;opacity:.55;transition:var(--t);overflow:hidden;background:var(--card);flex-shrink:0}
@@ -594,6 +607,7 @@ footer::after{content:'';position:absolute;top:-40%;left:50%;transform:translate
 .pd-thumb:hover{opacity:.85}
 .pd-thumb.ac{opacity:1;border-color:var(--gold)}
 .pd-info{min-width:0}
+.pd-cat-line{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem}
 .pd-desc{font-size:.88rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem;overflow-wrap:break-word}
 .pd-meta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:1rem}
 .pd-meta-i{background:var(--dark);padding:1rem 1.2rem;min-width:0}
@@ -983,9 +997,8 @@ button,a,input,textarea,select{outline-color:var(--gold)}
           <h1 class="xl ht rv d1">Where Tradition<br>Meets <em>Royal Elegance</em></h1>
           <p class="hsub rv d2">Crafting the perfect dulha since generations. From ivory-embroidered sherwanis to gold brocade prince coats — every stitch is a promise of perfection.</p>
           <div class="hbtns rv d3">
-            <a onclick="sp('collections')" class="btn btn-gold">Explore Collection</a>
-            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+would+like+to+book+an+appointment." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
-            <a onclick="sp('appointment')" class="btn btn-out">Book Appointment</a>
+            <a onclick="sp('collections');filterProd('pent',null)" class="btn btn-gold">View Pent Coats</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
           </div>
         </div>
       </div>
@@ -997,8 +1010,8 @@ button,a,input,textarea,select{outline-color:var(--gold)}
           <h1 class="xl ht rv d1">Structured<br><em>Statement Pieces</em></h1>
           <p class="hsub rv d2">Champagne-gold brocade, antique brass buttons, mandarin collars — tailored for the groom who commands the room.</p>
           <div class="hbtns rv d3">
-            <a onclick="sp('collections');filterProd('prince',null)" class="btn btn-gold">View Prince Coats</a>
-            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Prince+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
+            <a onclick="sp('collections');filterProd('pent',null)" class="btn btn-gold">View Pent Coats</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
           </div>
         </div>
       </div>
@@ -1010,8 +1023,8 @@ button,a,input,textarea,select{outline-color:var(--gold)}
           <h1 class="xl ht rv d1">Hand-Placed<br><em>Jewel &amp; Crystal Work</em></h1>
           <p class="hsub rv d2">Swarovski-quality stones and seed pearls, set by hand — our most opulent creations for grooms who demand the extraordinary.</p>
           <div class="hbtns rv d3">
-            <a onclick="sp('collections');filterProd('stone',null)" class="btn btn-gold">View Stone Work</a>
-            <a onclick="sp('importer')" class="btn btn-out">Importer &amp; Bulk Orders</a>
+            <a onclick="sp('collections');filterProd('pent',null)" class="btn btn-gold">View Pent Coats</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
           </div>
         </div>
       </div>
@@ -1036,34 +1049,34 @@ button,a,input,textarea,select{outline-color:var(--gold)}
           <h1 class="xl ht rv d1">Turbans &amp; Kula<br><em>Fit for a King</em></h1>
           <p class="hsub rv d2">Pankha fans, jewelled brooches, and flowing tails — the finishing touch our consultants match perfectly to your attire.</p>
           <div class="hbtns rv d3">
-            <a onclick="sp('collections');filterProd('kula',null)" class="btn btn-gold">View Turbans</a>
-            <a onclick="sp('tailoring')" class="btn btn-out">Custom Tailoring</a>
+            <a onclick="sp('collections');filterProd('pent',null)" class="btn btn-gold">View Pent Coats</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
           </div>
         </div>
       </div>
 
-      <div class="hero-slide" style="background-image:url('images/prince-coats/midnight-garden.jpg')">
+      <div class="hero-slide" style="background-image:url('images/pent-coats/p11.jpg')">
         <div class="hov"></div>
         <div class="hc">
           <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">For International Buyers</span><span class="gl"></span></div>
           <h1 class="xl ht rv d1">Exported<br><em>Around the World</em></h1>
           <p class="hsub rv d2">From Sialkot to Birmingham, Toronto and Dubai — retail clients and importers alike trust our craftsmanship across borders.</p>
           <div class="hbtns rv d3">
-            <a onclick="sp('exports')" class="btn btn-gold">Our Global Reach</a>
-            <a onclick="sp('importer')" class="btn btn-out">Importer &amp; Bulk Orders</a>
+            <a onclick="sp('collections');filterProd('pent',null)" class="btn btn-gold">View Pent Coats</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
           </div>
         </div>
       </div>
 
-      <div class="hero-slide" style="background-image:url('images/sherwanis/crimson-velvet.jpg')">
+      <div class="hero-slide" style="background-image:url('images/pent-coats/p11.jpg')">
         <div class="hov"></div>
         <div class="hc">
           <div class="hbadge rv"><span class="gl"></span><span class="eyebrow">Bespoke From First Stitch</span><span class="gl"></span></div>
           <h1 class="xl ht rv d1">Your Vision,<br><em>Perfectly Tailored</em></h1>
           <p class="hsub rv d2">Every fabric, embroidery pattern, and stone-work detail — designed with you, from consultation to final fitting.</p>
           <div class="hbtns rv d3">
-            <a onclick="sp('tailoring')" class="btn btn-gold">Start Custom Tailoring</a>
-            <a onclick="sp('appointment')" class="btn btn-out">Book Appointment</a>
+            <a onclick="sp('collections');filterProd('pent',null)" class="btn btn-gold">View Pent Coats</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+Pent+Coats." target="_blank" class="btn btn-wa">📱 WhatsApp Us</a>
           </div>
         </div>
       </div>
@@ -1291,7 +1304,7 @@ button,a,input,textarea,select{outline-color:var(--gold)}
         </div>
         <div class="pc rv d2">
           <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s131.jpg" alt="Sherwani Style 13" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
-          <div class="pif"><p class="pct">Sherwani</p><p class="pn">Sherwani Style 13</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+sherwani+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
+          <div class="pif"><p class="pct">Sherwani</p><p class="pn">Sherwani Style 13</p><div class="pa"><a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire</a></div></div>
         </div>
         <div class="pc rv d3">
           <div class="pi"><img loading="lazy" decoding="async" src="images/kula/k11.jpg" alt="Black Gold-Embroidered Pankha Kula" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="emb"></div><div class="pbg">New</div></div>
@@ -1542,35 +1555,35 @@ button,a,input,textarea,select{outline-color:var(--gold)}
         </div>
       </div>
        <div class="pc" data-cat="sherwani">
-        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s51.jpg" alt="Sherwani Style -> 4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s51.jpg" alt="Sherwani — Style 4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
-          <p class="pn">Sherwani Style -> 4</p>
+          <p class="pn">Sherwani — Style 4</p>
           <p class="pd"> Ivory zardozi-embellished sherwani set with matching hand fan, turban, and embroidered juttis — full bridal-groom ensemble.</p>
           <div class="pa">
-            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+->+4.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+4.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
           </div>
         </div>
       </div>
    <div class="pc" data-cat="sherwani">
-        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s61.jpg" alt="Sherwani Style -> 5" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s61.jpg" alt="Sherwani — Style 5" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
-          <p class="pn">Sherwani Style -> 5</p>
+          <p class="pn">Sherwani — Style 5</p>
           <p class="pd">Black sherwani with intricate gold floral embroidery cascading over the shoulders and collar.</p>
           <div class="pa">
-            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+->+5.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+5.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
           </div>
         </div>
       </div>
        <div class="pc" data-cat="sherwani">
-        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s72.jpg" alt="Sherwani Style -> 6" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
+        <div class="pi"><img loading="lazy" decoding="async" src="images/sherwanis/s72.jpg" alt="Sherwani — Style 6" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease"><div class="emb"></div><div class="pbg">Custom Available</div></div>
         <div class="pif">
           <p class="pct">Sherwani</p>
-          <p class="pn">Sherwani Style -> 6</p>
+          <p class="pn">Sherwani — Style 6</p>
           <p class="pd"> Ivory tone-on-tone embroidered sherwani with gold-trimmed collar, paired with matching kurta, trousers, and juttis.</p>
           <div class="pa">
-            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+->+6.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+6.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
           </div>
         </div>
       </div>
@@ -2417,10 +2430,10 @@ button,a,input,textarea,select{outline-color:var(--gold)}
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img loading="lazy" decoding="async" src="images/sherwanis/s111.jpg" alt="sherwani Style 11">
-              <img loading="lazy" decoding="async" src="images/sherwanis/s112.jpg" alt="sherwani Style 11 2">
-               <img loading="lazy" decoding="async" src="images/sherwanis/s113.jpg" alt="sherwani Style 11 3">
-               <img loading="lazy" decoding="async" src="images/sherwanis/s114.jpg" alt="sherwani Style 11 4">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s111.jpg" alt="Sherwani Style 11">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s112.jpg" alt="Sherwani Style 11 2">
+               <img loading="lazy" decoding="async" src="images/sherwanis/s113.jpg" alt="Sherwani Style 11 3">
+               <img loading="lazy" decoding="async" src="images/sherwanis/s114.jpg" alt="Sherwani Style 11 4">
             </div>
             <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
             <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
@@ -2430,10 +2443,10 @@ button,a,input,textarea,select{outline-color:var(--gold)}
         </div>
         <div class="pif">
           <p class="pct">Sherwani</p>
-          <p class="pn">sherwani Style 11</p>
+          <p class="pn">Sherwani Style 11</p>
           <p class="pd">kurta paired with a sherwani coat, featuring twin vertical crystal-and-pearl vine embroidery running from collar to hem.</p>
           <div class="pa">
-            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+sherwani+Style+11.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+11.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
           </div>
         </div>
       </div>
@@ -2441,8 +2454,8 @@ button,a,input,textarea,select{outline-color:var(--gold)}
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img loading="lazy" decoding="async" src="images/sherwanis/s121.jpg" alt="sherwani Style 12">
-              <img loading="lazy" decoding="async" src="images/sherwanis/s122.jpg" alt="sherwani Style 12 2">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s121.jpg" alt="Sherwani Style 12">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s122.jpg" alt="Sherwani Style 12 2">
             </div>
             <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
             <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
@@ -2452,10 +2465,10 @@ button,a,input,textarea,select{outline-color:var(--gold)}
         </div>
         <div class="pif">
           <p class="pct">Sherwani</p>
-          <p class="pn">sherwani Style 12</p>
+          <p class="pn">Sherwani Style 12</p>
           <p class="pd">kurta paired with a sherwani coat, featuring twin vertical crystal-and-pearl vine embroidery running from collar to hem.</p>
           <div class="pa">
-            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+sherwani+Style+12.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+12.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
           </div>
         </div>
       </div>
@@ -2463,8 +2476,8 @@ button,a,input,textarea,select{outline-color:var(--gold)}
         <div class="pi">
           <div class="pslider">
             <div class="pslider-track">
-              <img loading="lazy" decoding="async" src="images/sherwanis/s131.jpg" alt="sherwani Style 13">
-              <img loading="lazy" decoding="async" src="images/sherwanis/s132.jpg" alt="sherwani Style 13 2">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s131.jpg" alt="Sherwani Style 13">
+              <img loading="lazy" decoding="async" src="images/sherwanis/s132.jpg" alt="Sherwani Style 13 2">
             </div>
             <button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>
             <button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>
@@ -2474,10 +2487,10 @@ button,a,input,textarea,select{outline-color:var(--gold)}
         </div>
         <div class="pif">
           <p class="pct">Sherwani</p>
-          <p class="pn">sherwani Style 13</p>
+          <p class="pn">Sherwani Style 13</p>
           <p class="pd">kurta paired with a sherwani coat, featuring twin vertical crystal-and-pearl vine embroidery running from collar to hem.</p>
           <div class="pa">
-            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+sherwani+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
+            <a href="https://wa.me/923337777882?text=Assalam+o+Alaikum!+I+am+interested+in+the+Sherwani+Style+13.+Please+share+details+and+pricing." target="_blank" class="btn btn-gold btn-sm">Inquire via WhatsApp</a>
           </div>
         </div>
       </div>
@@ -3980,21 +3993,81 @@ function indexProducts(){
 }
 
 /* ============================
+   FIX: HOMEPAGE TRENDING NOW / NEW ARRIVALS CARDS WERE NOT CLICKABLE
+   These live outside #prod-grid so indexProducts() never touched them.
+   Matched by product name against the already-indexed PRODUCTS map
+   (built from Collections, which has the real pid/images/waHref), then
+   wired with the same click-to-open, wishlist heart, Quick View label,
+   and Buy Now button as every other product card on the site.
+   ============================ */
+function wireHomepageProductCards(){
+  document.querySelectorAll('.hrow-track .pc').forEach(function(pc){
+    if(pc.hasAttribute('data-pid'))return;
+    var nameEl=pc.querySelector('.pn');
+    if(!nameEl)return;
+    var name=nameEl.textContent.trim();
+    var match=Object.values(PRODUCTS).find(function(p){return p.name.trim()===name;});
+    if(!match)return;
+    var pid=match.pid;
+    pc.setAttribute('data-pid',pid);
+
+    var pi=pc.querySelector('.pi');
+    if(pi){
+      pi.style.cursor='pointer';
+      if(!pi.querySelector('.wl-btn')){
+        var btn=document.createElement('button');
+        btn.className='wl-btn';
+        btn.setAttribute('aria-label','Save to wishlist');
+        btn.innerHTML='♥';
+        btn.onclick=function(e){e.stopPropagation();toggleWishlist(pid,btn);};
+        pi.appendChild(btn);
+
+        var qv=document.createElement('span');
+        qv.className='pc-qv';
+        qv.textContent='Quick View';
+        pi.appendChild(qv);
+      }
+      pi.addEventListener('click',function(e){
+        if(e.target.closest('.wl-btn'))return;
+        openProduct(pid);
+      });
+    }
+    nameEl.style.cursor='pointer';
+    nameEl.addEventListener('click',function(){openProduct(pid);});
+
+    var pa=pc.querySelector('.pa');
+    if(pa&&!pa.querySelector('.buy-now-btn')){
+      var buyBtn=document.createElement('button');
+      buyBtn.className='btn btn-og btn-sm buy-now-btn';
+      buyBtn.textContent='Buy Now';
+      buyBtn.onclick=function(e){e.stopPropagation();openBuyModal(pid);};
+      pa.insertBefore(buyBtn,pa.firstChild);
+    }
+  });
+  refreshWishlistButtons();
+}
+
+/* ============================
    PHASE 4/9: PRODUCT DETAIL PAGE + ZOOM GALLERY
    ============================ */
 var pdCurrentImages=[];
 
 function buildGalleryHTML(images){
-  var imgsHtml=images.map(function(src){return '<img loading="lazy" decoding="async" src="'+src+'">';}).join('');
+  var slidesHtml=images.map(function(src){
+    return '<div class="pd-slide">'
+      +'<div class="pd-slide-bg" style="background-image:url(\''+src+'\')"></div>'
+      +'<img class="pd-slide-fg" loading="lazy" decoding="async" src="'+src+'">'
+      +'</div>';
+  }).join('');
   var dotsHtml=images.map(function(_,i){return '<div class="pslider-dot'+(i===0?' ac':'')+'"></div>';}).join('');
   var arrowsHtml=images.length>1
     ? '<button class="pslider-btn pslider-prev" aria-label="Previous image">&#8249;</button>'
       +'<button class="pslider-btn pslider-next" aria-label="Next image">&#8250;</button>'
       +'<div class="pslider-dots">'+dotsHtml+'</div>'
     : '';
-  var boxHtml='<div class="pd-gallery-box"><div class="pslider"><div class="pslider-track">'+imgsHtml+'</div>'
+  var boxHtml='<div class="pd-gallery-box zoomable"><div class="pslider"><div class="pslider-track">'+slidesHtml+'</div>'
     +arrowsHtml
-    +'<button class="pd-zoom-btn" onclick="openLightbox()" aria-label="Open full-size zoom view">🔍 Zoom</button>'
+    +'<button class="pd-zoom-btn" onclick="openLightbox()" aria-label="Open full-size zoom view"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span> Zoom</button>'
     +'</div></div>';
   var thumbsHtml='';
   if(images.length>1){
@@ -4013,6 +4086,35 @@ function wireGalleryThumbs(){
       var i=parseInt(t.getAttribute('data-idx'),10);
       if(sliderWrap&&sliderWrap._goToSlide)sliderWrap._goToSlide(i);
     };
+  });
+  wireGalleryMagnifier(galleryEl);
+}
+
+/* ============================
+   PRODUCT PAGE: CURSOR MAGNIFIER ZOOM (desktop only)
+   Hovering the main gallery image zooms in and pans to follow the
+   cursor — separate from, and complementary to, the full-screen
+   lightbox (which is for a fully immersive zoomed view).
+   ============================ */
+function wireGalleryMagnifier(galleryEl){
+  var box=galleryEl.querySelector('.pd-gallery-box');
+  if(!box)return;
+  if(!(window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine)').matches))return;
+  box.addEventListener('mousemove',function(e){
+    var wrap=box.querySelector('.pslider');
+    var idx=wrap?parseInt(wrap.getAttribute('data-current')||'0',10):0;
+    var slides=box.querySelectorAll('.pd-slide');
+    var active=slides[idx];
+    if(!active)return;
+    var img=active.querySelector('.pd-slide-fg');
+    var rect=active.getBoundingClientRect();
+    var x=((e.clientX-rect.left)/rect.width)*100;
+    var y=((e.clientY-rect.top)/rect.height)*100;
+    img.style.transformOrigin=x+'% '+y+'%';
+    active.classList.add('zoomed');
+  });
+  box.addEventListener('mouseleave',function(){
+    box.querySelectorAll('.pd-slide.zoomed').forEach(function(s){s.classList.remove('zoomed');});
   });
 }
 
@@ -4167,7 +4269,7 @@ function toggleWishlist(pid,btn){
 }
 function refreshWishlistButtons(){
   var list=getWishlist();
-  document.querySelectorAll('#prod-grid .pc').forEach(function(pc){
+  document.querySelectorAll('#prod-grid .pc, .hrow-track .pc').forEach(function(pc){
     var btn=pc.querySelector('.wl-btn');
     if(btn)btn.classList.toggle('active',list.indexOf(pc.getAttribute('data-pid'))>-1);
   });
@@ -4280,6 +4382,7 @@ function submitNewsletter(){
 }
 
 indexProducts();
+wireHomepageProductCards();
 
 /* ============================
    PHASE 3: HERO SLIDER
